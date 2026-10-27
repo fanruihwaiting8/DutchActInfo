@@ -10,6 +10,9 @@ on:
       - 'web/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
+  # Called by refresh.yml: a push made with GITHUB_TOKEN does NOT trigger the
+  # "push" event above, so the refresh workflow has to invoke this one directly.
+  workflow_call:
 
 permissions:
   contents: read
