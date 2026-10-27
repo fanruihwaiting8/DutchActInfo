@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0f172a">
 <title>Dutch Weekend Activities</title>
 <meta name="description" content="Weekend festivals, concerts and comedy shows within a 1.5 hour drive of Den Haag, for this month and next month.">
-<link rel="stylesheet" href="styles.css?v=20261027c">
+<link rel="stylesheet" href="styles.css?v=20261027d">
 </head>
 <body>
 <header class="topbar">
@@ -28,6 +28,16 @@
     <div class="search-row">
       <input type="search" id="q" data-i18n-placeholder="searchPlaceholder" placeholder="Search event, artist, venue or city" autocomplete="off">
       <button type="button" class="ghost small" id="reset" data-i18n="reset">Reset</button>
+    </div>
+
+    <div class="home-row">
+      <label class="pc-field" for="postcode">
+        <span data-i18n="postcodeLabel">Your postcode</span>
+        <input type="text" id="postcode" inputmode="numeric" maxlength="8" autocomplete="postal-code"
+               data-i18n-placeholder="postcodePlaceholder" placeholder="e.g. 2511">
+      </label>
+      <button type="button" class="ghost small" id="postcode-clear" data-i18n="postcodeReset">Default city</button>
+      <span class="pc-note" id="home-note"></span>
     </div>
 
     <div class="chip-row" id="when-row" role="group" data-i18n-label="whenGroup" aria-label="Weekend">
@@ -98,14 +108,16 @@
     <li data-i18n="aboutFilter">Events outside the Netherlands are filtered out with a city-to-province table covering every Dutch place.</li>
     <li data-i18n="aboutRefresh">The dataset is refreshed automatically every day by a GitHub Actions workflow.</li>
     <li data-i18n="aboutStatic">Everything is static: no account, no tracking, works offline once loaded.</li>
+    <li data-i18n="aboutGuide">Each card can open a travel guide: the nearest train station, a transit route from your postcode, and nearby car parks listed from the most expensive hourly rate down. Parking prices come from OpenStreetMap and are only as fresh as the last edit there.</li>
   </ul>
   <p class="src-list" id="about-sources"></p>
   <form method="dialog"><button class="primary" data-i18n="close">Close</button></form>
 </dialog>
 
-<script src="data.js?v=20261027c"></script>
-<script src="i18n.js?v=20261027c"></script>
-<script src="app.js?v=20261027c"></script>
+<script src="data.js?v=20261027d"></script>
+<script src="places.js?v=20261027d"></script>
+<script src="i18n.js?v=20261027d"></script>
+<script src="app.js?v=20261027d"></script>
 <noscript>
   <p class="empty" data-i18n="needJs">This page needs JavaScript to filter the agenda.</p>
 </noscript>

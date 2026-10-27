@@ -284,12 +284,25 @@
     }
   }
 
+  function fire(type, node) {
+    var event = { target: node };
+    var current = node;
+    while (current) {
+      (current.listeners && current.listeners[type] || []).forEach(function (handler) {
+        handler.call(current, event);
+      });
+      current = current.parentNode;
+    }
+  }
+
   global.__dom = {
     Node: Node,
     parseHTML: parseHTML,
     document: document,
     click: click,
     change: change,
+    fire: fire,
+    type: function (node, value) { node.value = String(value); fire('input', node); },
     opened: opened,
     refreshIds: function () {
       byId = {};

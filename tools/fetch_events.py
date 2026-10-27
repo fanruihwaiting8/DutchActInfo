@@ -35,7 +35,9 @@ HOME_CITY_NAME = "Den Haag"
 ROAD_FACTOR = 1.2
 ROAD_SPEED_KMH = 85.0
 CITY_OVERHEAD_MIN = 12
-# Drop anything further than this; a 2.5 hour drive is not a weekend trip.
+# Default "too far" line used by the page. Nothing is dropped here: the visitor
+# can type any postcode, so the whole country has to stay in the dataset and the
+# page recomputes the drive from wherever they live.
 MAX_TRAVEL_MINUTES = 130
 # Villages below this size rarely host anything worth the drive, unless it is a
 # festival (those are often held in a field next to a tiny village on purpose).
@@ -194,7 +196,7 @@ def collect_day_sources(days: list[dt.date], log) -> list[dict]:
 def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
               window_start: dt.date, window_end: dt.date, log) -> list[dict]:
     merged: dict[str, dict] = {}
-    skipped_foreign = skipped_window = skipped_distance = 0
+    skipped_foreign = skipped_window = far_from_home = 0
 
     for row in rows:
         start = parse_date(row.get("start", ""))
@@ -219,8 +221,7 @@ def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
 
         travel = cities.travel_of(city_key)
         if travel["travel_minutes"] is not None and travel["travel_minutes"] > MAX_TRAVEL_MINUTES:
-            skipped_distance += 1
-            continue
+            far_from_home += 1
 
         # keep only the weekend dates this event actually covers
         dates, cursor = [], max(start, window_start)
@@ -274,7 +275,8 @@ def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
         }
 
     log(f"kept {len(merged)} events (skipped {skipped_foreign} non-NL, "
-        f"{skipped_window} out of window, {skipped_distance} too far to drive)")
+        f"{skipped_window} out of window; {far_from_home} beyond "
+        f"{MAX_TRAVEL_MINUTES} min from {HOME_CITY_NAME} but still shipped)")
     return sorted(merged.values(), key=lambda item: (item["dates"][0], item["city"], item["title"]))
 
 
@@ -290,8 +292,16 @@ def build_payload(events: list[dict], window_start: dt.date, window_end: dt.date
         "provinces": cities.provinces,
         "home": {
             "city": HOME_CITY_NAME,
+            "lat": (cities.home or [None, None])[0],
+            "lon": (cities.home or [None, None])[1],
             "max_travel_minutes": MAX_TRAVEL_MINUTES,
             "tiers": {name: limit for limit, name in TRAVEL_TIERS},
+            # The page redoes this maths for the visitor's own postcode.
+            "model": {
+                "road_factor": ROAD_FACTOR,
+                "speed_kmh": ROAD_SPEED_KMH,
+                "overhead_min": CITY_OVERHEAD_MIN,
+            },
         },
         "sources": [
             {

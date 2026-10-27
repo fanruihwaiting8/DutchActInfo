@@ -2,7 +2,7 @@
    page actually renders and reacts to clicks. This catches runtime errors that
    the pure-logic tests in tools/test_app.js cannot see.
 
-   jsc tools/dom_shim.js web/data.js web/i18n.js web/app.js tools/test_dom.js
+   jsc tools/dom_shim.js web/data.js web/i18n.js web/places.js web/app.js tools/test_dom.js
 */
 (function (global) {
   'use strict';
@@ -104,6 +104,96 @@
   dom.click(id('lang-btn'));
   check('language button switches back to English',
     !hasHan(doc.title) && String(doc.title) === englishTitle);
+
+  /* ----------------------------------------------------------travel guide */
+
+  function guides() {
+    return cards().map(function (card) { return card.querySelector('.guide'); });
+  }
+
+  function priceValue(text) {
+    var found = String(text).match(/(\d+(?:[.,]\d+)?)/);
+    return found ? parseFloat(found[1].replace(',', '.')) : null;
+  }
+
+  var guided = cards();
+  check('every card carries exactly one travel guide', guided.every(function (card) {
+    return card.querySelectorAll('.guide').length === 1;
+  }));
+  check('every guide has a summary and two advice lines', guides().every(function (box) {
+    return box.querySelectorAll('summary').length === 1
+      && box.querySelectorAll('.guide-line').length === 2;
+  }));
+  check('every guide links a transit route', guides().every(function (box) {
+    var link = box.querySelectorAll('.guide-link')[0];
+    return !!link && String(link.href).indexOf('travelmode=transit') > 0
+      && String(link.href).indexOf('origin=') > 0;
+  }));
+  check('every guide links a parking search', guides().every(function (box) {
+    var link = box.querySelectorAll('.guide-link')[1];
+    return !!link && String(link.href).indexOf('/maps/search/') > 0;
+  }));
+
+  var listed = guides().filter(function (box) {
+    return box.querySelectorAll('.parking-list').length === 1;
+  });
+  check('at least one guide lists real car parks', listed.length > 0);
+  check('listed guides add the rate footnote', listed.every(function (box) {
+    return box.querySelectorAll('.guide-note').length === 1;
+  }));
+  check('car parks run from dearest to cheapest', listed.every(function (box) {
+    var prices = box.querySelector('.parking-list').querySelectorAll('li').map(function (row) {
+      return priceValue(row.querySelector('.p-price').textContent);
+    });
+    var seenBlank = false;
+    for (var i = 0; i < prices.length; i += 1) {
+      if (prices[i] === null) { seenBlank = true; continue; }
+      if (seenBlank) { return false; }
+      if (i > 0 && prices[i - 1] !== null && prices[i] > prices[i - 1]) { return false; }
+    }
+    return true;
+  }));
+  check('every listed car park shows a name and a distance', listed.every(function (box) {
+    return box.querySelector('.parking-list').querySelectorAll('li').every(function (row) {
+      return String(row.querySelector('.p-name').textContent).length > 0
+        && /\d/.test(String(row.querySelector('.p-meta').textContent));
+    });
+  }));
+
+  var guideClicks = dom.opened.length;
+  dom.click(guides()[0].querySelector('summary'));
+  check('opening a guide does not open the event page', dom.opened.length === guideClicks);
+
+  /* --------------------------------------------------------- postcode home */
+
+  function travelText() {
+    return id('results').querySelectorAll('.travel').map(function (node) {
+      return String(node.textContent);
+    }).join('|');
+  }
+
+  var defaultNote = String(id('home-note').textContent);
+  var defaultTravel = travelText();
+
+  dom.type(id('postcode'), '7511');
+  check('a valid postcode is accepted', id('home-note').classList.contains('bad') === false
+    && String(id('home-note').textContent) !== defaultNote);
+  check('the accepted postcode names its own town',
+    String(id('home-note').textContent).toLowerCase().indexOf('enschede') > 0);
+  check('drive times are recalculated from the new centre', travelText() !== defaultTravel);
+  check('cards stay on screen after moving the centre', cards().length > 0);
+  check('the new centre feeds the transit links',
+    String(guides()[0].querySelectorAll('.guide-link')[0].href).indexOf('7511') > 0);
+
+  dom.type(id('postcode'), '99');
+  check('a half-typed postcode is flagged', id('home-note').classList.contains('bad') === true);
+
+  dom.click(id('postcode-clear'));
+  check('clearing the field empties the input', String(id('postcode').value) === '');
+  check('clearing the field restores the default centre',
+    id('home-note').classList.contains('bad') === false
+    && String(id('home-note').textContent) === defaultNote);
+  check('clearing the field restores the default drive times', travelText() === defaultTravel);
 
   /* ----------------------------------------------------------------- reset */
 

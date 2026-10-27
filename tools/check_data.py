@@ -6,6 +6,7 @@ GitHub Pages. Run with: python tools/check_data.py
 from __future__ import annotations
 
 import datetime as dt
+import json
 import os
 import re
 import sys
@@ -20,7 +21,13 @@ MIN_PROVINCES = 6
 MIN_RECOMMENDED = 100
 TRAVEL_TIERS = {"near", "hour", "ninety", "far", "unknown"}
 WITHIN_90 = {"near", "hour", "ninety"}
-MAX_TRAVEL_MINUTES = 130
+# Events are no longer dropped when they sit far from the default centre, so
+# the ceiling only has to cover the longest drive inside the Netherlands.
+MAX_TRAVEL_MINUTES = 300
+# web/places.js feeds the postcode box and the per-event travel guides.
+MIN_POSTCODES = 3000
+MIN_GUIDE_CITIES = 500
+MIN_PARKING_CITIES = 100
 
 
 def fail(problems: list[str], message: str) -> None:
@@ -105,6 +112,39 @@ def main() -> int:
         head = handle.read(400)
     if "window.ACTIVITY_DATA" not in head:
         fail(problems, "web/data.js does not assign window.ACTIVITY_DATA")
+
+    # The postcode centre and the travel guides both read web/places.js, so a
+    # missing or truncated file would silently disable those features.
+    places_js = os.path.join(WEB_DIR, "places.js")
+    places = {}
+    if not os.path.exists(places_js):
+        fail(problems, "web/places.js is missing - run tools/build_places.py")
+    else:
+        with open(places_js, encoding="utf-8") as handle:
+            body = handle.read()
+        marker = "window.ACTIVITY_PLACES = "
+        start_at = body.find(marker)
+        if start_at < 0:
+            fail(problems, "web/places.js does not assign window.ACTIVITY_PLACES")
+        else:
+            try:
+                places = json.loads(body[start_at + len(marker):].strip().rstrip(";"))
+            except ValueError as error:
+                fail(problems, f"web/places.js is not valid JSON: {error}")
+    if places:
+        if len(places.get("postcodes") or {}) < MIN_POSTCODES:
+            fail(problems, f"only {len(places.get('postcodes') or {})} postcodes in web/places.js")
+        guide_cities = places.get("cities") or {}
+        if len(guide_cities) < MIN_GUIDE_CITIES:
+            fail(problems, f"only {len(guide_cities)} cities in web/places.js")
+        with_parking = sum(1 for row in guide_cities.values() if len(row) > 4 and row[4])
+        if with_parking < MIN_PARKING_CITIES:
+            fail(problems, f"only {with_parking} cities carry car parks in web/places.js")
+        for name, row in guide_cities.items():
+            prices = [lot[1] for lot in (row[4] if len(row) > 4 else []) if lot[1]]
+            if prices != sorted(prices, reverse=True):
+                fail(problems, f"car parks for {name} are not sorted dearest first")
+                break
 
     if problems:
         print("dataset validation FAILED:")

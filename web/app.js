@@ -6,6 +6,7 @@
 
   var PAGE_SIZE = 40;
   var LANG_KEY = 'dai.lang';
+  var PC_KEY = 'dai.postcode';
 
   /* Used when i18n.js is not loaded (unit tests run app.js on its own). */
   var FALLBACK = {
@@ -202,8 +203,22 @@
   /* ------------------------------------------------------------- rendering */
 
   var data = global.ACTIVITY_DATA || { events: [], sources: [], provinces: [] };
-  var home = (data.home && data.home.city) || 'Den Haag';
+  var places = global.ACTIVITY_PLACES || { postcodes: {}, cities: {} };
+  var baseHome = {
+    label: (data.home && data.home.city) || 'Den Haag',
+    lat: data.home && data.home.lat,
+    lon: data.home && data.home.lon
+  };
+  var TIERS = (data.home && data.home.tiers) || { near: 45, hour: 70, ninety: 90 };
+  var MODEL = (data.home && data.home.model)
+    || { road_factor: 1.2, speed_kmh: 85.0, overhead_min: 12 };
+  var home = baseHome.label;
+  var homeCode = '';
+  var homePoint = baseHome.lat != null && baseHome.lon != null
+    ? [baseHome.lat, baseHome.lon]
+    : null;
   var entries = expand(data.events);
+  var baseTravel = null;
 
   function defaultState() {
     return {
@@ -232,6 +247,108 @@
     try { global.localStorage && global.localStorage.setItem(LANG_KEY, value); } catch (err) { /* ignore */ }
   }
 
+  /* --------------------------------------------- postcode centre + distance */
+
+  function normalisePostcode(value) {
+    var digits = String(value == null ? '' : value).replace(/\D/g, '').slice(0, 4);
+    return /^\d{4}$/.test(digits) ? digits : '';
+  }
+
+  function storedPostcode() {
+    try {
+      return normalisePostcode(global.localStorage && global.localStorage.getItem(PC_KEY));
+    } catch (err) { return ''; }
+  }
+
+  function storePostcode(value) {
+    try {
+      if (!global.localStorage) { return; }
+      if (value) { global.localStorage.setItem(PC_KEY, value); }
+      else { global.localStorage.removeItem(PC_KEY); }
+    } catch (err) { /* ignore */ }
+  }
+
+  function haversineKm(lat1, lon1, lat2, lon2) {
+    var rad = Math.PI / 180;
+    var dlat = (lat2 - lat1) * rad;
+    var dlon = (lon2 - lon1) * rad;
+    var a = Math.sin(dlat / 2) * Math.sin(dlat / 2)
+      + Math.cos(lat1 * rad) * Math.cos(lat2 * rad) * Math.sin(dlon / 2) * Math.sin(dlon / 2);
+    return 6371 * 2 * Math.asin(Math.sqrt(a));
+  }
+
+  function tierOf(minutes) {
+    if (minutes <= TIERS.near) { return 'near'; }
+    if (minutes <= TIERS.hour) { return 'hour'; }
+    if (minutes <= TIERS.ninety) { return 'ninety'; }
+    return 'far';
+  }
+
+  /* Recalculate every event against the current centre, then resort. */
+  function recomputeTravel() {
+    var cities = places.cities || {};
+    if (!baseTravel) {
+      /* Keep the figures the generator shipped so clearing the postcode can
+         put them back, even when the feed carries no home coordinates. */
+      baseTravel = (data.events || []).map(function (event) {
+        return [event.distance_km, event.travel_minutes, event.travel];
+      });
+    }
+    if (homePoint) {
+      (data.events || []).forEach(function (event) {
+        var point = cities[event.city];
+        if (!point) { return; }
+        var km = haversineKm(homePoint[0], homePoint[1], point[0], point[1]);
+        var minutes = Math.round(km * MODEL.road_factor / MODEL.speed_kmh * 60 + MODEL.overhead_min);
+        event.distance_km = km < 10 ? Math.round(km * 10) / 10 : Math.round(km);
+        event.travel_minutes = minutes;
+        event.travel = tierOf(minutes);
+      });
+    } else {
+      (data.events || []).forEach(function (event, index) {
+        var row = baseTravel[index];
+        if (!row) { return; }
+        event.distance_km = row[0];
+        event.travel_minutes = row[1];
+        event.travel = row[2];
+      });
+    }
+    entries = expand(data.events);
+    context.nextRange = nextWeekendDates(entries, context.today);
+  }
+
+  function setHome(code) {
+    var table = places.postcodes || {};
+    var row = code ? table[code] : null;
+    if (row) {
+      homeCode = code;
+      homePoint = [row[0], row[1]];
+      home = row[2] || baseHome.label;
+    } else {
+      homeCode = '';
+      homePoint = baseHome.lat != null && baseHome.lon != null
+        ? [baseHome.lat, baseHome.lon]
+        : null;
+      home = baseHome.label;
+    }
+    recomputeTravel();
+    return !!row;
+  }
+
+  function updateHomeNote(bad) {
+    if (!el.homeNote) { return; }
+    el.homeNote.className = bad ? 'pc-note bad' : 'pc-note';
+    el.homeNote.textContent = bad ? t('postcodeBad') : t('postcodeOk')(home);
+  }
+
+  /* The centre name shows up in the note and in the about dialog. */
+  function refreshHomeTexts(bad) {
+    if (el.aboutRadius) {
+      el.aboutRadius.textContent = String(t('aboutRadius')).replace('{home}', home);
+    }
+    updateHomeNote(bad);
+  }
+
   function cacheElements() {
     el = {
       results: document.getElementById('results'),
@@ -250,7 +367,10 @@
       aboutSources: document.getElementById('about-sources'),
       aboutRadius: document.getElementById('about-radius'),
       langBtn: document.getElementById('lang-btn'),
-      includeLocal: document.getElementById('include-local')
+      includeLocal: document.getElementById('include-local'),
+      postcode: document.getElementById('postcode'),
+      postcodeClear: document.getElementById('postcode-clear'),
+      homeNote: document.getElementById('home-note')
     };
   }
 
@@ -285,6 +405,7 @@
       var stamp = data.generated_at.replace('T', ' ').replace('Z', ' UTC');
       el.updated.textContent = t('updated')(stamp, data.total || 0);
     }
+    updateHomeNote(!!(el.postcode && el.postcode.value.trim() && !homeCode));
   }
 
   function fillSelect(select, values, allLabel) {
@@ -336,6 +457,112 @@
       node.appendChild(tag);
     }
     return node;
+  }
+
+  /* ------------------------------------------------- travel guide per card */
+
+  function mapsLink(url, label) {
+    var link = document.createElement('a');
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.className = 'guide-link';
+    link.textContent = label;
+    return link;
+  }
+
+  function originText() {
+    return homeCode ? homeCode + ' Netherlands' : home + ', Netherlands';
+  }
+
+  function destText(event) {
+    var bits = [];
+    if (event.venue) { bits.push(event.venue); }
+    bits.push(event.city);
+    bits.push('Netherlands');
+    return bits.join(', ');
+  }
+
+  function transitUrl(event) {
+    return 'https://www.google.com/maps/dir/?api=1&origin='
+      + encodeURIComponent(originText())
+      + '&destination=' + encodeURIComponent(destText(event))
+      + '&travelmode=transit';
+  }
+
+  function parkingSearchUrl(event) {
+    var query = 'parking ' + (event.venue ? event.venue + ' ' : '') + event.city;
+    return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query);
+  }
+
+  function priceText(price) {
+    if (price === null || price === undefined) { return t('parkingUnknown'); }
+    if (price <= 0) { return t('parkingFree'); }
+    return t('parkingRate')(price);
+  }
+
+  function parkingItem(row) {
+    var kinds = t('parkingKinds');
+    var item = document.createElement('li');
+    var money = document.createElement('span');
+    money.className = 'p-price';
+    money.textContent = priceText(row[1]);
+    var name = document.createElement('span');
+    name.className = 'p-name';
+    name.textContent = row[0];
+    var extra = document.createElement('span');
+    extra.className = 'p-meta';
+    extra.textContent = (kinds[row[2]] || kinds.surface) + ' \u00b7 ' + t('parkingDistance')(row[3]);
+    item.appendChild(money);
+    item.appendChild(name);
+    item.appendChild(extra);
+    return item;
+  }
+
+  function travelGuide(event) {
+    var city = (places.cities || {})[event.city] || null;
+    var box = document.createElement('details');
+    box.className = 'guide';
+    var head = document.createElement('summary');
+    head.textContent = t('guideTitle');
+    box.appendChild(head);
+
+    var transit = document.createElement('p');
+    transit.className = 'guide-line';
+    var ptLabel = document.createElement('strong');
+    ptLabel.textContent = t('ptHeading');
+    transit.appendChild(ptLabel);
+    transit.appendChild(document.createTextNode(
+      city && city[2] ? t('ptStation')(city[2], city[3]) : t('ptNoStation')
+    ));
+    transit.appendChild(document.createTextNode(' '));
+    transit.appendChild(mapsLink(transitUrl(event), t('ptPlan')));
+    box.appendChild(transit);
+
+    var rows = (city && city[4]) || [];
+    var parking = document.createElement('p');
+    parking.className = 'guide-line';
+    var parkLabel = document.createElement('strong');
+    parkLabel.textContent = t('parkingHeading');
+    parking.appendChild(parkLabel);
+    parking.appendChild(document.createTextNode(
+      rows.length ? t('parkingSorted') : t('parkingNone')
+    ));
+    parking.appendChild(document.createTextNode(' '));
+    parking.appendChild(mapsLink(parkingSearchUrl(event), t('parkingSearch')));
+    box.appendChild(parking);
+
+    if (rows.length) {
+      var list = document.createElement('ul');
+      list.className = 'parking-list';
+      rows.forEach(function (row) { list.appendChild(parkingItem(row)); });
+      box.appendChild(list);
+      var note = document.createElement('p');
+      note.className = 'guide-note';
+      note.textContent = t('parkingNote');
+      box.appendChild(note);
+    }
+    return box;
   }
 
   function card(item) {
@@ -417,6 +644,7 @@
       foot.appendChild(detail);
     }
     if (foot.childNodes.length) { node.appendChild(foot); }
+    node.appendChild(travelGuide(event));
     return node;
   }
 
@@ -521,8 +749,47 @@
   function init() {
     cacheElements();
     lang = detectLang();
+    var saved = storedPostcode();
+    /* Always recalculate once so the figures on screen come from the same
+       formula a postcode change would use - no jump when the user clears it. */
+    setHome(saved);
+    if (el.postcode && homeCode) { el.postcode.value = homeCode; }
     applyI18n();
     rebuildSelects();
+
+    if (el.postcode) {
+      el.postcode.addEventListener('input', function () {
+        var raw = el.postcode.value.trim();
+        var code = normalisePostcode(raw);
+        if (!raw) {
+          setHome('');
+          storePostcode('');
+          refreshHomeTexts(false);
+          state.shown = PAGE_SIZE;
+          rebuildSelects();
+          render();
+          return;
+        }
+        if (!code) { updateHomeNote(true); return; }
+        var ok = setHome(code);
+        storePostcode(ok ? code : '');
+        refreshHomeTexts(!ok);
+        state.shown = PAGE_SIZE;
+        rebuildSelects();
+        render();
+      });
+    }
+    if (el.postcodeClear) {
+      el.postcodeClear.addEventListener('click', function () {
+        if (el.postcode) { el.postcode.value = ''; }
+        setHome('');
+        storePostcode('');
+        refreshHomeTexts(false);
+        state.shown = PAGE_SIZE;
+        rebuildSelects();
+        render();
+      });
+    }
 
     bindChips('when-row', 'when');
     bindChips('cat-row', 'cat');
@@ -578,6 +845,7 @@
     /* Clicking anywhere on a card (not just the links) opens the event page. */
     el.results.addEventListener('click', function (clickEvent) {
       if (clickEvent.target.closest('a') || clickEvent.target.closest('button')) { return; }
+      if (clickEvent.target.closest('.guide')) { return; }
       var host = clickEvent.target.closest('.card');
       if (!host) { return; }
       var url = host.getAttribute('data-url');
