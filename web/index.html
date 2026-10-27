@@ -5,92 +5,109 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
 <title>Dutch Weekend Activities</title>
-<meta name="description" content="Weekend festivals, concerts and comedy shows across the Netherlands for this month and next month.">
-<link rel="stylesheet" href="styles.css?v=20261027">
+<meta name="description" content="Weekend festivals, concerts and comedy shows within a 1.5 hour drive of Den Haag, for this month and next month.">
+<link rel="stylesheet" href="styles.css?v=20261027b">
 </head>
 <body>
 <header class="topbar">
   <div class="brand">
     <span class="flag" aria-hidden="true"></span>
     <div>
-      <h1>Dutch Weekend Activities</h1>
-      <p class="sub" id="window-label">Loading&hellip;</p>
+      <h1 data-i18n="appTitle">Dutch Weekend Activities</h1>
+      <p class="sub" id="window-label" data-i18n="loading">Loading&hellip;</p>
     </div>
   </div>
-  <button type="button" class="ghost" id="about-btn">About</button>
+  <div class="topbar-actions">
+    <button type="button" class="ghost small" id="lang-btn" data-i18n="langToggle" data-i18n-title="langToggleTitle">&#20013;&#25991;</button>
+    <button type="button" class="ghost" id="about-btn" data-i18n="about">About</button>
+  </div>
 </header>
 
 <main>
   <section class="filters" aria-label="Filters">
     <div class="search-row">
-      <input type="search" id="q" placeholder="Search event, artist, venue or city" autocomplete="off">
-      <button type="button" class="ghost small" id="reset">Reset</button>
+      <input type="search" id="q" data-i18n-placeholder="searchPlaceholder" placeholder="Search event, artist, venue or city" autocomplete="off">
+      <button type="button" class="ghost small" id="reset" data-i18n="reset">Reset</button>
     </div>
 
-    <div class="chip-row" id="when-row" role="group" aria-label="Weekend">
-      <button type="button" class="chip active" data-when="all">All weekends</button>
-      <button type="button" class="chip" data-when="next">This weekend</button>
-      <button type="button" class="chip" data-when="month">This month</button>
-      <button type="button" class="chip" data-when="nextmonth">Next month</button>
+    <div class="chip-row" id="when-row" role="group" data-i18n-label="whenGroup" aria-label="Weekend">
+      <button type="button" class="chip active" data-when="all" data-i18n="whenAll">All weekends</button>
+      <button type="button" class="chip" data-when="next" data-i18n="whenNext">This weekend</button>
+      <button type="button" class="chip" data-when="month" data-i18n="whenMonth">This month</button>
+      <button type="button" class="chip" data-when="nextmonth" data-i18n="whenNextMonth">Next month</button>
     </div>
 
-    <div class="chip-row" id="cat-row" role="group" aria-label="Category">
-      <button type="button" class="chip active" data-cat="all">All types</button>
-      <button type="button" class="chip" data-cat="festival">Festivals</button>
-      <button type="button" class="chip" data-cat="concert">Concerts</button>
-      <button type="button" class="chip" data-cat="comedy">Comedy</button>
+    <div class="chip-row" id="cat-row" role="group" data-i18n-label="catGroup" aria-label="Category">
+      <button type="button" class="chip active" data-cat="all" data-i18n="catAll">All types</button>
+      <button type="button" class="chip" data-cat="festival" data-i18n="catFestival">Festivals</button>
+      <button type="button" class="chip" data-cat="concert" data-i18n="catConcert">Concerts</button>
+      <button type="button" class="chip" data-cat="comedy" data-i18n="catComedy">Comedy</button>
+    </div>
+
+    <div class="chip-row" id="travel-row" role="group" data-i18n-label="travelGroup" aria-label="Drive time">
+      <button type="button" class="chip" data-travel="hour" data-i18n="travelHour">Within 1 hour</button>
+      <button type="button" class="chip active" data-travel="ninety" data-i18n="travelNinety">Within 1.5 hours</button>
+      <button type="button" class="chip" data-travel="all" data-i18n="travelAll">Any distance</button>
     </div>
 
     <div class="select-row">
       <label class="field">
-        <span>Province</span>
+        <span data-i18n="province">Province</span>
         <select id="province"><option value="all">All provinces</option></select>
       </label>
       <label class="field">
-        <span>City</span>
+        <span data-i18n="city">City</span>
         <select id="city"><option value="all">All cities</option></select>
       </label>
       <label class="field">
-        <span>Day</span>
+        <span data-i18n="day">Day</span>
         <select id="day">
-          <option value="all">Fri / Sat / Sun</option>
-          <option value="5">Friday</option>
-          <option value="6">Saturday</option>
-          <option value="0">Sunday</option>
+          <option value="all" data-i18n="allDays">Fri / Sat / Sun</option>
+          <option value="5" data-i18n="friday">Friday</option>
+          <option value="6" data-i18n="saturday">Saturday</option>
+          <option value="0" data-i18n="sunday">Sunday</option>
         </select>
       </label>
     </div>
+
+    <label class="toggle">
+      <input type="checkbox" id="include-local">
+      <span data-i18n="includeLocal">Include small-town events</span>
+      <small data-i18n="includeLocalHint">Villages under 15,000 people are hidden by default</small>
+    </label>
 
     <p class="count" id="count"></p>
   </section>
 
   <section id="results" aria-live="polite"></section>
 
-  <p class="empty" id="empty" hidden>No activities match these filters. Try widening the search.</p>
+  <p class="empty" id="empty" data-i18n="empty" hidden>No activities match these filters. Try widening the search.</p>
 </main>
 
 <footer>
   <p id="updated"></p>
   <p class="sources" id="sources"></p>
-  <p class="disclaimer">Data is scraped from public Dutch agendas once a day. Always confirm dates and tickets on the organiser's page.</p>
+  <p class="disclaimer" data-i18n="disclaimer">Data is scraped from public Dutch agendas once a day. Always confirm dates and tickets on the organiser's page.</p>
 </footer>
 
 <dialog id="about">
-  <h2>About this page</h2>
-  <p>This page lists <strong>weekend activities (Friday, Saturday, Sunday)</strong> in the Netherlands for the <strong>current month and the next month</strong>, so you can see what is on without digging through several agendas.</p>
+  <h2 data-i18n="aboutHeading">About this page</h2>
+  <p data-i18n="aboutIntro">This page lists weekend activities (Friday, Saturday, Sunday) in the Netherlands for the current month and the next month, so you can see what is on without digging through several agendas.</p>
+  <p id="about-radius" data-i18n="aboutRadius">Everything is measured as a drive from Den Haag.</p>
   <ul>
-    <li>Events outside the Netherlands are filtered out with a city-to-province table covering every Dutch place.</li>
-    <li>The dataset is refreshed automatically every day by a GitHub Actions workflow.</li>
-    <li>Everything is static: no account, no tracking, works offline once loaded.</li>
+    <li data-i18n="aboutFilter">Events outside the Netherlands are filtered out with a city-to-province table covering every Dutch place.</li>
+    <li data-i18n="aboutRefresh">The dataset is refreshed automatically every day by a GitHub Actions workflow.</li>
+    <li data-i18n="aboutStatic">Everything is static: no account, no tracking, works offline once loaded.</li>
   </ul>
   <p class="src-list" id="about-sources"></p>
-  <form method="dialog"><button class="primary">Close</button></form>
+  <form method="dialog"><button class="primary" data-i18n="close">Close</button></form>
 </dialog>
 
-<script src="data.js?v=20261027"></script>
-<script src="app.js?v=20261027"></script>
+<script src="data.js?v=20261027b"></script>
+<script src="i18n.js?v=20261027b"></script>
+<script src="app.js?v=20261027b"></script>
 <noscript>
-  <p class="empty">This page needs JavaScript to filter the agenda.</p>
+  <p class="empty" data-i18n="needJs">This page needs JavaScript to filter the agenda.</p>
 </noscript>
 </body>
 </html>

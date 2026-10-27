@@ -1,7 +1,7 @@
 /* Smoke tests for web/app.js pure helpers.
    Run with macOS JavaScriptCore:
    /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc \
-     tools/jsc_shim.js web/data.js web/app.js tools/test_app.js                */
+     tools/jsc_shim.js web/data.js web/i18n.js web/app.js tools/test_app.js   */
 
 var failures = 0;
 
@@ -143,6 +143,59 @@ check('groups are sorted and non-empty',
   }));
 check('grouping preserves the item count',
   groups.reduce(function (sum, group) { return sum + group.items.length; }, 0) === 200);
+
+/* ------------------------------------------------------------ drive time */
+
+check('dataset carries a home city', !!data.home && !!data.home.city, JSON.stringify(data.home));
+check('every event has a travel tier and minutes',
+  data.events.every(function (event) {
+    return typeof event.travel === 'string' && typeof event.travel_minutes === 'number';
+  }));
+check('every event has a boolean local flag',
+  data.events.every(function (event) { return typeof event.local === 'boolean'; }));
+
+var withinHour = core.filterEntries(entries, state({ travel: 'hour' }), context);
+check('1-hour filter keeps only near/hour tiers',
+  withinHour.length > 0 && withinHour.every(function (item) {
+    return item.event.travel === 'near' || item.event.travel === 'hour';
+  }), withinHour.length);
+
+var withinNinety = core.filterEntries(entries, state({ travel: 'ninety' }), context);
+check('1.5-hour filter is a superset of the 1-hour filter',
+  withinNinety.length >= withinHour.length && withinNinety.every(function (item) {
+    return item.event.travel !== 'far' && item.event.travel !== 'unknown';
+  }), withinNinety.length + ' vs ' + withinHour.length);
+
+var noLocal = core.filterEntries(entries, state({ includeLocal: false }), context);
+check('hiding small towns drops the local events',
+  noLocal.every(function (item) { return !item.event.local; })
+    && noLocal.length <= entries.length, noLocal.length + ' of ' + entries.length);
+
+var recommended = core.filterEntries(entries, state({ travel: 'ninety', includeLocal: false }), context);
+check('default view still has plenty to show', recommended.length > 100, recommended.length);
+
+check('every event within 1.5 hours is at most 95 minutes away',
+  withinNinety.every(function (item) { return item.event.travel_minutes <= 95; }));
+
+/* ------------------------------------------------------------------ i18n */
+
+var i18n = this.ACTIVITY_I18N;
+check('i18n bundle is loaded with both languages', !!i18n && !!i18n.en && !!i18n.zh);
+if (i18n && i18n.en && i18n.zh) {
+  var missing = Object.keys(i18n.en).filter(function (key) { return i18n.zh[key] === undefined; });
+  check('Chinese bundle covers every English key', missing.length === 0, missing.join(', '));
+  var extra = Object.keys(i18n.zh).filter(function (key) { return i18n.en[key] === undefined; });
+  check('Chinese bundle has no stray keys', extra.length === 0, extra.join(', '));
+  check('both bundles agree on key types',
+    Object.keys(i18n.en).every(function (key) { return typeof i18n.en[key] === typeof i18n.zh[key]; }));
+  check('month and day tables are complete',
+    i18n.zh.months.length === 12 && i18n.zh.days.length === 7
+      && i18n.en.months.length === 12 && i18n.en.days.length === 7);
+  check('travel text renders in Chinese',
+    i18n.zh.travelText(21, 30, 'Den Haag').indexOf('Den Haag') >= 0,
+    i18n.zh.travelText(21, 30, 'Den Haag'));
+  check('about text has a home placeholder', i18n.zh.aboutRadius.indexOf('{home}') >= 0);
+}
 
 print('');
 print(failures === 0 ? 'ALL TESTS PASSED' : failures + ' TEST(S) FAILED');

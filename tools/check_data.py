@@ -14,7 +14,13 @@ from common import DATA_DIR, WEB_DIR, read_json
 
 ISO = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 MIN_EVENTS = 200
-MIN_PROVINCES = 8
+# The dataset is clipped to a drivable radius, so the far-flung provinces
+# (Groningen, Drenthe, Limburg) legitimately drop out.
+MIN_PROVINCES = 6
+MIN_RECOMMENDED = 100
+TRAVEL_TIERS = {"near", "hour", "ninety", "far", "unknown"}
+WITHIN_90 = {"near", "hour", "ninety"}
+MAX_TRAVEL_MINUTES = 130
 
 
 def fail(problems: list[str], message: str) -> None:
@@ -52,6 +58,16 @@ def main() -> int:
     if not categories or categories == {"other"}:
         fail(problems, f"suspicious categories {categories!r}")
 
+    home = payload.get("home") or {}
+    if not home.get("city"):
+        fail(problems, "payload has no home city")
+
+    recommended = sum(1 for event in events
+                      if event.get("travel") in WITHIN_90 and not event.get("local"))
+    if recommended < MIN_RECOMMENDED:
+        fail(problems, f"only {recommended} events within 90 minutes of {home.get('city')} "
+                       f"(expected at least {MIN_RECOMMENDED})")
+
     seen_ids: set[str] = set()
     for event in events:
         label = event.get("title") or event.get("url") or "<untitled>"
@@ -70,6 +86,14 @@ def main() -> int:
                 fail(problems, f"date {date} outside window on {label}")
             if dt.date.fromisoformat(date).weekday() not in (4, 5, 6):
                 fail(problems, f"date {date} is not Fri/Sat/Sun on {label}")
+        tier = event.get("travel")
+        if tier not in TRAVEL_TIERS:
+            fail(problems, f"unknown travel tier {tier!r} on {label}")
+        minutes = event.get("travel_minutes")
+        if minutes is not None and (not isinstance(minutes, int) or minutes > MAX_TRAVEL_MINUTES):
+            fail(problems, f"travel_minutes {minutes!r} out of range on {label}")
+        if not isinstance(event.get("local"), bool):
+            fail(problems, f"local flag missing on {label}")
         event_id = event.get("id")
         if event_id in seen_ids:
             fail(problems, f"duplicate id {event_id} on {label}")
@@ -88,8 +112,9 @@ def main() -> int:
             print(f"  - {problem}")
         return 1
 
-    print(f"dataset OK: {len(events)} events, {len(provinces)} provinces, "
-          f"window {start}..{end}, categories {sorted(c for c in categories if c)}")
+    print(f"dataset OK: {len(events)} events ({recommended} recommended within 90 min of "
+          f"{home.get('city')}), {len(provinces)} provinces, window {start}..{end}, "
+          f"categories {sorted(c for c in categories if c)}")
     return 0
 
 

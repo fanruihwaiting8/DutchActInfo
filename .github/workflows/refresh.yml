@@ -13,6 +13,10 @@ on:
         description: 'Also rebuild the city -> province index (slow, rarely needed)'
         type: boolean
         default: false
+      refresh_geo:
+        description: 'Also rebuild the city -> coordinates index (downloads GeoNames NL)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -42,6 +46,12 @@ jobs:
       - name: Rebuild city index (optional)
         if: ${{ inputs.refresh_cities }}
         run: python tools/build_cities.py
+
+      # Coordinates come from GeoNames and are also committed to the repo; the
+      # drive-time filter in fetch_events.py reads data/geo_nl.json.
+      - name: Rebuild geo index (optional)
+        if: ${{ inputs.refresh_geo }}
+        run: python tools/build_geo.py
 
       - name: Fetch activities
         run: python tools/fetch_events.py

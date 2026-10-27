@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import hashlib
+import math
 import os
 import re
 import sys
@@ -24,6 +25,22 @@ from sources import SOURCE_META, cabaretinfo_day, festivalinfo_page, podiuminfo_
 WEEKEND = (4, 5, 6)  # Friday, Saturday, Sunday
 MAX_FESTIVAL_PAGES = 12
 MAX_PER_DAY_PER_SOURCE = 400
+
+# Everything is measured as a drive from this city.
+HOME_CITY_KEY = "den haag"
+HOME_CITY_NAME = "Den Haag"
+# Straight-line kilometres are turned into minutes behind the wheel: Dutch roads
+# add roughly 20% detour on top of the crow-flight distance, motorway speed is
+# about 85 km/h, plus a fixed allowance for city traffic and parking.
+ROAD_FACTOR = 1.2
+ROAD_SPEED_KMH = 85.0
+CITY_OVERHEAD_MIN = 12
+# Drop anything further than this; a 2.5 hour drive is not a weekend trip.
+MAX_TRAVEL_MINUTES = 130
+# Villages below this size rarely host anything worth the drive, unless it is a
+# festival (those are often held in a field next to a tiny village on purpose).
+SMALL_TOWN_POPULATION = 15000
+TRAVEL_TIERS = ((45, "near"), (70, "hour"), (90, "ninety"))
 
 CITY_ALIASES = {
     "s-hertogenbosch": "den bosch",
@@ -76,20 +93,60 @@ def parse_date(value: str) -> dt.date | None:
         return None
 
 
+def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    radius = 6371.0
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = (math.sin(dlat / 2) ** 2
+         + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon / 2) ** 2)
+    return radius * 2 * math.asin(math.sqrt(a))
+
+
+def travel_minutes(distance_km: float) -> int:
+    return int(round(distance_km * ROAD_FACTOR / ROAD_SPEED_KMH * 60 + CITY_OVERHEAD_MIN))
+
+
+def travel_tier(minutes: int) -> str:
+    for limit, name in TRAVEL_TIERS:
+        if minutes <= limit:
+            return name
+    return "far"
+
+
 class CityIndex:
-    def __init__(self, payload: dict | None):
+    def __init__(self, payload: dict | None, geo: dict | None = None):
         payload = payload or {}
         self.cities: dict[str, dict] = payload.get("cities", {})
         self.provinces: list[str] = payload.get("provinces", [])
+        self.geo: dict[str, list] = geo or {}
+        self.home = self.geo.get(HOME_CITY_KEY)
 
-    def lookup(self, raw_city: str) -> dict | None:
+    def resolve_key(self, raw_city: str) -> str:
         key = normalise_city(raw_city)
         if not key:
-            return None
+            return ""
         for candidate in (key, CITY_ALIASES.get(key, ""), key.split(" - ")[0].strip()):
             if candidate and candidate in self.cities:
-                return self.cities[candidate]
-        return None
+                return candidate
+        return ""
+
+    def lookup(self, raw_city: str) -> dict | None:
+        key = self.resolve_key(raw_city)
+        return self.cities[key] if key else None
+
+    def travel_of(self, city_key: str) -> dict:
+        """Distance, drive time and size of a city relative to home."""
+        point = self.geo.get(city_key)
+        if not point or not self.home:
+            return {"distance_km": None, "travel_minutes": None, "travel": "unknown", "population": 0}
+        distance = haversine_km(self.home[0], self.home[1], point[0], point[1])
+        minutes = travel_minutes(distance)
+        return {
+            "distance_km": round(distance),
+            "travel_minutes": minutes,
+            "travel": travel_tier(minutes),
+            "population": point[2],
+        }
 
 
 def event_id(url: str, title: str, start: str) -> str:
@@ -137,7 +194,7 @@ def collect_day_sources(days: list[dt.date], log) -> list[dict]:
 def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
               window_start: dt.date, window_end: dt.date, log) -> list[dict]:
     merged: dict[str, dict] = {}
-    skipped_foreign = skipped_window = 0
+    skipped_foreign = skipped_window = skipped_distance = 0
 
     for row in rows:
         start = parse_date(row.get("start", ""))
@@ -151,12 +208,18 @@ def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
             continue
 
         country = (row.get("country") or "").upper()
-        place = cities.lookup(row.get("city", ""))
+        city_key = cities.resolve_key(row.get("city", ""))
+        place = cities.cities[city_key] if city_key else None
         if country and country not in ("NL", "NETHERLANDS", "NEDERLAND"):
             skipped_foreign += 1
             continue
         if not place:
             skipped_foreign += 1
+            continue
+
+        travel = cities.travel_of(city_key)
+        if travel["travel_minutes"] is not None and travel["travel_minutes"] > MAX_TRAVEL_MINUTES:
+            skipped_distance += 1
             continue
 
         # keep only the weekend dates this event actually covers
@@ -185,6 +248,9 @@ def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
         if len(description) > 240:
             description = description[:237].rstrip() + "..."
 
+        category = SOURCE_META.get(source, {}).get("category", "other")
+        small_town = travel["population"] < SMALL_TOWN_POPULATION and category != "festival"
+
         merged[key] = {
             "id": event_id(row.get("url", ""), row.get("title", ""), dates[0]),
             "title": title,
@@ -199,11 +265,16 @@ def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
             "venue": venue,
             "description": description,
             "performers": (row.get("performers") or [])[:8],
-            "category": SOURCE_META.get(source, {}).get("category", "other"),
+            "category": category,
             "source": source,
+            "distance_km": travel["distance_km"],
+            "travel_minutes": travel["travel_minutes"],
+            "travel": travel["travel"],
+            "local": small_town,
         }
 
-    log(f"kept {len(merged)} events (skipped {skipped_foreign} non-NL, {skipped_window} out of window)")
+    log(f"kept {len(merged)} events (skipped {skipped_foreign} non-NL, "
+        f"{skipped_window} out of window, {skipped_distance} too far to drive)")
     return sorted(merged.values(), key=lambda item: (item["dates"][0], item["city"], item["title"]))
 
 
@@ -217,6 +288,11 @@ def build_payload(events: list[dict], window_start: dt.date, window_end: dt.date
         "window": {"from": window_start.isoformat(), "to": window_end.isoformat()},
         "weekend_days": [day.isoformat() for day in weekends],
         "provinces": cities.provinces,
+        "home": {
+            "city": HOME_CITY_NAME,
+            "max_travel_minutes": MAX_TRAVEL_MINUTES,
+            "tiers": {name: limit for limit, name in TRAVEL_TIERS},
+        },
         "sources": [
             {
                 "id": key,
@@ -250,9 +326,15 @@ def main() -> int:
     scrape_days = upcoming[: args.limit_days] if args.limit_days else upcoming
     log(f"window {window_start} .. {window_end}; {len(weekends)} weekend days, scraping {len(scrape_days)}")
 
-    cities = CityIndex(read_json(os.path.join(DATA_DIR, "cities_nl.json")))
+    cities = CityIndex(
+        read_json(os.path.join(DATA_DIR, "cities_nl.json")),
+        read_json(os.path.join(DATA_DIR, "geo_nl.json"), {}),
+    )
     if not cities.cities:
         log("[error] data/cities_nl.json missing - run tools/build_cities.py first")
+        return 1
+    if not cities.home:
+        log("[error] data/geo_nl.json missing or incomplete - run tools/build_geo.py first")
         return 1
 
     rows: list[dict] = []
