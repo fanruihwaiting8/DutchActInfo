@@ -1,0 +1,45 @@
+name: Deploy web to GitHub Pages
+
+# Publishes the web/ folder (pure static: index.html + styles.css + data.js
+# + app.js) to GitHub Pages. Runs on every push to main, after the daily
+# refresh workflow commits new data, or manually from the Actions tab.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Keep only one deployment at a time; a new push cancels the queued one.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Note: do NOT use "enablement: true". That option calls the API to turn
+      # Pages on and fails because the token lacks permission. Pages Source is
+      # set to "GitHub Actions" manually in repo Settings -> Pages, so we only
+      # read the configuration here.
+      - uses: actions/configure-pages@v5
+
+      - name: Upload web/ as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

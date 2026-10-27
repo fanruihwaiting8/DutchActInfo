@@ -1,0 +1,58 @@
+name: Refresh weekend activities
+
+# Re-scrapes the public Dutch activity agendas every morning, rewrites
+# data/events.json + web/data.js and commits the result. The commit touches
+# web/, which triggers the Pages deployment workflow.
+on:
+  schedule:
+    # 04:10 UTC every day (~06:10 Dutch summer time / 05:10 winter time).
+    - cron: '10 4 * * *'
+  workflow_dispatch:
+    inputs:
+      refresh_cities:
+        description: 'Also rebuild the city -> province index (slow, rarely needed)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# Never cancel a running refresh halfway through - that would commit a
+# partial dataset.
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # The city -> province table changes very rarely, so it is committed to
+      # the repo and only rebuilt when asked for explicitly.
+      - name: Rebuild city index (optional)
+        if: ${{ inputs.refresh_cities }}
+        run: python tools/build_cities.py
+
+      - name: Fetch activities
+        run: python tools/fetch_events.py
+
+      - name: Validate the generated dataset
+        run: python tools/check_data.py
+
+      - name: Commit refreshed dataset
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data web/data.js
+          if git diff --cached --quiet; then
+            echo "No changes in the dataset, nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore(data): refresh weekend activities ($(date -u +%Y-%m-%d))"
+          git push

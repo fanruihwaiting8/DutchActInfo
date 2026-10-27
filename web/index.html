@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>Dutch Weekend Activities</title>
+<meta name="description" content="Weekend festivals, concerts and comedy shows across the Netherlands for this month and next month.">
+<link rel="stylesheet" href="styles.css?v=20261027">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="flag" aria-hidden="true"></span>
+    <div>
+      <h1>Dutch Weekend Activities</h1>
+      <p class="sub" id="window-label">Loading&hellip;</p>
+    </div>
+  </div>
+  <button type="button" class="ghost" id="about-btn">About</button>
+</header>
+
+<main>
+  <section class="filters" aria-label="Filters">
+    <div class="search-row">
+      <input type="search" id="q" placeholder="Search event, artist, venue or city" autocomplete="off">
+      <button type="button" class="ghost small" id="reset">Reset</button>
+    </div>
+
+    <div class="chip-row" id="when-row" role="group" aria-label="Weekend">
+      <button type="button" class="chip active" data-when="all">All weekends</button>
+      <button type="button" class="chip" data-when="next">This weekend</button>
+      <button type="button" class="chip" data-when="month">This month</button>
+      <button type="button" class="chip" data-when="nextmonth">Next month</button>
+    </div>
+
+    <div class="chip-row" id="cat-row" role="group" aria-label="Category">
+      <button type="button" class="chip active" data-cat="all">All types</button>
+      <button type="button" class="chip" data-cat="festival">Festivals</button>
+      <button type="button" class="chip" data-cat="concert">Concerts</button>
+      <button type="button" class="chip" data-cat="comedy">Comedy</button>
+    </div>
+
+    <div class="select-row">
+      <label class="field">
+        <span>Province</span>
+        <select id="province"><option value="all">All provinces</option></select>
+      </label>
+      <label class="field">
+        <span>City</span>
+        <select id="city"><option value="all">All cities</option></select>
+      </label>
+      <label class="field">
+        <span>Day</span>
+        <select id="day">
+          <option value="all">Fri / Sat / Sun</option>
+          <option value="5">Friday</option>
+          <option value="6">Saturday</option>
+          <option value="0">Sunday</option>
+        </select>
+      </label>
+    </div>
+
+    <p class="count" id="count"></p>
+  </section>
+
+  <section id="results" aria-live="polite"></section>
+
+  <p class="empty" id="empty" hidden>No activities match these filters. Try widening the search.</p>
+</main>
+
+<footer>
+  <p id="updated"></p>
+  <p class="sources" id="sources"></p>
+  <p class="disclaimer">Data is scraped from public Dutch agendas once a day. Always confirm dates and tickets on the organiser's page.</p>
+</footer>
+
+<dialog id="about">
+  <h2>About this page</h2>
+  <p>This page lists <strong>weekend activities (Friday, Saturday, Sunday)</strong> in the Netherlands for the <strong>current month and the next month</strong>, so you can see what is on without digging through several agendas.</p>
+  <ul>
+    <li>Events outside the Netherlands are filtered out with a city-to-province table covering every Dutch place.</li>
+    <li>The dataset is refreshed automatically every day by a GitHub Actions workflow.</li>
+    <li>Everything is static: no account, no tracking, works offline once loaded.</li>
+  </ul>
+  <p class="src-list" id="about-sources"></p>
+  <form method="dialog"><button class="primary">Close</button></form>
+</dialog>
+
+<script src="data.js?v=20261027"></script>
+<script src="app.js?v=20261027"></script>
+<noscript>
+  <p class="empty">This page needs JavaScript to filter the agenda.</p>
+</noscript>
+</body>
+</html>
