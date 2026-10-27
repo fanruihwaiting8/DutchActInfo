@@ -49,6 +49,8 @@ tools/           Python scrapers and validation
   fetch_events.py  main scraper -> data/events.json + web/data.js
   check_data.py    sanity checks before commit/deploy
   test_app.js      smoke tests for the frontend logic (run with jsc)
+  dom_shim.js      tiny DOM for jsc, parses the real web/index.html
+  test_dom.js      boots app.js against that DOM and clicks through the UI
 web/             static site (index.html, styles.css, app.js, i18n.js, data.js)
 data/            generated dataset (events.json, cities_nl.json, geo_nl.json)
 .github/workflows/
@@ -84,8 +86,16 @@ No third-party Python packages are required (standard library only).
 
 ```bash
 jsc=/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc
+
+# filtering / formatting / i18n logic
 $jsc tools/jsc_shim.js web/data.js web/i18n.js web/app.js tools/test_app.js
+
+# full page boot: renders index.html, clicks the filters and the language button
+$jsc tools/dom_shim.js web/data.js web/i18n.js web/app.js tools/test_dom.js
 ```
+
+Run both before deploying: the first one covers the pure functions, the second
+one catches runtime errors that would leave the live page frozen.
 
 ## License
 

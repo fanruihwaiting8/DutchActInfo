@@ -309,6 +309,15 @@
     return Object.keys(seen).sort();
   }
 
+  function cityList(province) {
+    var seen = {};
+    (data.events || []).forEach(function (event) {
+      if (province !== 'all' && event.province !== province) { return; }
+      if (event.city) { seen[event.city] = 1; }
+    });
+    return Object.keys(seen).sort();
+  }
+
   function travelLine(event) {
     var node = document.createElement('p');
     node.className = 'travel';
@@ -594,14 +603,3 @@
     init();
   }
 }(typeof globalThis !== 'undefined' ? globalThis : this));
-
-
-
-  function cityList(province) {
-    var seen = {};
-    (data.events || []).forEach(function (event) {
-      if (province !== 'all' && event.province !== province) { return; }
-      if (event.city) { seen[event.city] = 1; }
-    });
-    return Object.keys(seen).sort();
-  }
