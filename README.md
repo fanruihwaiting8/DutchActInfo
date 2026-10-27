@@ -3,7 +3,7 @@
 Weekend activities in the Netherlands for **this month and next month**, refreshed
 automatically every day and published as a static site.
 
-Live site: https://fanruihwaiting8.github.io/DutchActivityInfo/
+Live site: https://fanruihwaiting8.github.io/DutchActInfo/
 
 Only Friday, Saturday and Sunday dates are kept — the point is to answer
 "what can I do this weekend?" without scrolling through weekday listings.
