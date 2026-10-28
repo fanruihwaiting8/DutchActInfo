@@ -69,6 +69,27 @@
   dom.click(chip('travel-row', 'travel', 'all'));
   check('any distance shows at least as many cards', cards().length >= hourCards.length);
 
+  /* -------------------------------------------------------- category chips */
+
+  var CATS = ['festival', 'concert', 'comedy', 'expo', 'museum', 'seasonal'];
+  check('every category has a chip', CATS.every(function (value) {
+    return !!chip('cat-row', 'cat', value);
+  }));
+
+  CATS.forEach(function (value) {
+    dom.click(chip('cat-row', 'cat', value));
+    var shown = cards();
+    check(value + ' chip keeps only matching cards', shown.every(function (card) {
+      var badges = card.querySelectorAll('.badge');
+      return badges.some(function (node) { return node.classList.contains(value); });
+    }));
+    check(value + ' chip shows the empty notice when nothing matches',
+      (shown.length === 0) === (id('empty').hidden === false));
+  });
+
+  dom.click(chip('cat-row', 'cat', 'all'));
+  check('all types chip restores the full list', cards().length > 0);
+
   /* -------------------------------------------------------- small-town flag */
 
   var box = id('include-local');

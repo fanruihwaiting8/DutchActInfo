@@ -13,6 +13,7 @@ import json
 import re
 
 from common import clean_text, fetch
+from museum import MUSEUM_META
 
 JSON_LD_RE = re.compile(
     r'<script[^>]+type="application/ld\+json"[^>]*>(.*?)</script>',
@@ -190,3 +191,7 @@ SOURCE_META = {
         "category": "comedy",
     },
 }
+
+# museum.nl lives in its own module because it needs two passes (sitemap plus
+# detail pages); the metadata is merged here so the payload keeps one registry.
+SOURCE_META.update(MUSEUM_META)

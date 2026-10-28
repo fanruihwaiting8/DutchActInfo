@@ -11,7 +11,10 @@ Only Friday, Saturday and Sunday dates are kept — the point is to answer
 
 ## Features
 
-- Festivals, concerts and comedy shows across the reachable Dutch provinces
+- Festivals, concerts, comedy shows, art exhibitions and museum events across
+  the reachable Dutch provinces
+- A "Carnival & seasonal" filter that collects carnival, Sinterklaas, Christmas
+  market, light festival and New Year style events from every source
 - Drive-time filter: everything is measured as a car trip from Den Haag, with
   one-hour / 1.5-hour / any-distance presets; places more than ~2 hours away
   are dropped at scrape time
@@ -32,6 +35,7 @@ Only Friday, Saturday and Sunday dates are kept — the point is to answer
 | festivalinfo.nl | festivals (schema.org JSON-LD) |
 | podiuminfo.nl | concert agenda per day |
 | cabaretinfo.nl | comedy agenda per day |
+| museum.nl | temporary art exhibitions and museum events (schema.org JSON-LD) |
 | uitagenda.nl | city -> province mapping |
 | geonames.org | city coordinates and population |
 

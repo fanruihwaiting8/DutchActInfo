@@ -101,6 +101,8 @@ def main() -> int:
             fail(problems, f"travel_minutes {minutes!r} out of range on {label}")
         if not isinstance(event.get("local"), bool):
             fail(problems, f"local flag missing on {label}")
+        if not isinstance(event.get("seasonal"), bool):
+            fail(problems, f"seasonal flag missing on {label}")
         event_id = event.get("id")
         if event_id in seen_ids:
             fail(problems, f"duplicate id {event_id} on {label}")
@@ -158,7 +160,8 @@ def main() -> int:
 
     print(f"dataset OK: {len(events)} events ({recommended} recommended within 90 min of "
           f"{home.get('city')}), {len(provinces)} provinces, window {start}..{end}, "
-          f"categories {sorted(c for c in categories if c)}")
+          f"categories {sorted(c for c in categories if c)}, "
+          f"{sum(1 for e in events if e.get('seasonal'))} seasonal")
     return 0
 
 

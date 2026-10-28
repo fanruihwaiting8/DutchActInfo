@@ -81,6 +81,23 @@ check('category filter keeps only festivals',
   festivals.length > 0 && festivals.every(function (item) { return item.event.category === 'festival'; }),
   festivals.length);
 
+var expos = core.filterEntries(entries, state({ cat: 'expo' }), context);
+check('category filter keeps only exhibitions',
+  expos.every(function (item) { return item.event.category === 'expo'; }),
+  expos.length);
+
+var museums = core.filterEntries(entries, state({ cat: 'museum' }), context);
+check('category filter keeps only museum events',
+  museums.every(function (item) { return item.event.category === 'museum'; }),
+  museums.length);
+
+var seasonal = core.filterEntries(entries, state({ cat: 'seasonal' }), context);
+check('seasonal filter uses the flag, not the category',
+  seasonal.every(function (item) { return item.event.seasonal === true; }),
+  seasonal.length);
+check('every event carries a boolean seasonal flag',
+  data.events.every(function (event) { return typeof event.seasonal === 'boolean'; }));
+
 var amsterdam = core.filterEntries(entries, state({ city: 'Amsterdam' }), context);
 check('city filter keeps only Amsterdam',
   amsterdam.length > 0 && amsterdam.every(function (item) { return item.event.city === 'Amsterdam'; }),
@@ -195,6 +212,15 @@ if (i18n && i18n.en && i18n.zh) {
     i18n.zh.travelText(21, 30, 'Den Haag').indexOf('Den Haag') >= 0,
     i18n.zh.travelText(21, 30, 'Den Haag'));
   check('about text has a home placeholder', i18n.zh.aboutRadius.indexOf('{home}') >= 0);
+  check('badge label tables agree on keys',
+    Object.keys(i18n.en.categories).length === Object.keys(i18n.zh.categories).length
+      && Object.keys(i18n.en.categories).every(function (key) {
+        return typeof i18n.zh.categories[key] === 'string';
+      }));
+  check('badge labels cover every category',
+    ['festival', 'concert', 'comedy', 'expo', 'museum', 'seasonal', 'other'].every(function (key) {
+      return !!i18n.en.categories[key] && !!i18n.zh.categories[key];
+    }));
 }
 
 print('');

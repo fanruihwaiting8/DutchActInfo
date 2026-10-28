@@ -13,7 +13,7 @@
     months: ['January', 'February', 'March', 'April', 'May', 'June',
       'July', 'August', 'September', 'October', 'November', 'December'],
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    categories: { festival: 'FESTIVAL', concert: 'CONCERT', comedy: 'COMEDY', other: 'EVENT' }
+    categories: { festival: 'FESTIVAL', concert: 'CONCERT', comedy: 'COMEDY', expo: 'EXHIBITION', museum: 'MUSEUM', seasonal: 'SEASONAL', other: 'EVENT' }
   };
 
   var TRAVEL_SETS = {
@@ -135,7 +135,11 @@
 
   function matchesFilters(item, state, context) {
     var event = item.event;
-    if (state.cat !== 'all' && event.category !== state.cat) { return false; }
+    if (state.cat === 'seasonal') {
+      /* Not a category: carnival / Sinterklaas / Christmas style events are
+         tagged across every source, so match the boolean flag instead. */
+      if (!event.seasonal) { return false; }
+    } else if (state.cat !== 'all' && event.category !== state.cat) { return false; }
     if (state.province !== 'all' && event.province !== state.province) { return false; }
     if (state.city !== 'all' && event.city !== state.city) { return false; }
     if (state.day !== 'all' && weekdayOf(item.date) !== +state.day) { return false; }
@@ -605,6 +609,12 @@
       title.textContent = event.title;
     }
     top.appendChild(badge);
+    if (event.seasonal) {
+      var season = document.createElement('span');
+      season.className = 'badge seasonal';
+      season.textContent = labels.seasonal || 'SEASONAL';
+      top.appendChild(season);
+    }
     top.appendChild(title);
     node.appendChild(top);
 

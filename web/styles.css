@@ -262,6 +262,9 @@ select {
 .badge.festival { background: #3b2a00; color: #ffbf5e; border: 1px solid #6b4b00; }
 .badge.concert { background: #0f2a4a; color: #7fb6ff; border: 1px solid #1d4a80; }
 .badge.comedy { background: #2c1338; color: #e39bff; border: 1px solid #58246e; }
+.badge.expo { background: #13302a; color: #6fe0b8; border: 1px solid #1f5c4c; }
+.badge.museum { background: #2b2410; color: #e3cf7f; border: 1px solid #5b4c1d; }
+.badge.seasonal { background: #3a1420; color: #ff9fb6; border: 1px solid #70243c; }
 .badge.other { background: #26324b; color: #c6d2e6; border: 1px solid #36456a; }
 
 .card h3 { margin: 0; font-size: 15px; line-height: 1.35; font-weight: 650; }

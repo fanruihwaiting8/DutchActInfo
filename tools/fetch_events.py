@@ -20,7 +20,9 @@ import re
 import sys
 
 from common import DATA_DIR, WEB_DIR, clean_text, normalise_city, polite_sleep, read_json, write_json
+from museum import collect_museum
 from sources import SOURCE_META, cabaretinfo_day, festivalinfo_page, podiuminfo_day
+from tagging import is_seasonal
 
 WEEKEND = (4, 5, 6)  # Friday, Saturday, Sunday
 MAX_FESTIVAL_PAGES = 12
@@ -194,7 +196,8 @@ def collect_day_sources(days: list[dt.date], log) -> list[dict]:
 
 
 def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
-              window_start: dt.date, window_end: dt.date, log) -> list[dict]:
+              window_start: dt.date, window_end: dt.date, log,
+              today: dt.date | None = None) -> list[dict]:
     merged: dict[str, dict] = {}
     skipped_foreign = skipped_window = far_from_home = 0
 
@@ -223,8 +226,11 @@ def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
         if travel["travel_minutes"] is not None and travel["travel_minutes"] > MAX_TRAVEL_MINUTES:
             far_from_home += 1
 
-        # keep only the weekend dates this event actually covers
-        dates, cursor = [], max(start, window_start)
+        # keep only the upcoming weekend dates this event actually covers
+        lower = max(start, window_start)
+        if today and today > lower:
+            lower = today
+        dates, cursor = [], lower
         last = min(end, window_end)
         while cursor <= last:
             if cursor.isoformat() in weekend_set:
@@ -250,7 +256,11 @@ def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
             description = description[:237].rstrip() + "..."
 
         category = SOURCE_META.get(source, {}).get("category", "other")
-        small_town = travel["population"] < SMALL_TOWN_POPULATION and category != "festival"
+        # Small villages are hidden by default, but not for the kinds of event
+        # that are deliberately held outside a city: a festival in a field, a
+        # country estate museum, an open-air exhibition.
+        small_town = (travel["population"] < SMALL_TOWN_POPULATION
+                      and category in ("concert", "comedy"))
 
         merged[key] = {
             "id": event_id(row.get("url", ""), row.get("title", ""), dates[0]),
@@ -267,6 +277,7 @@ def normalise(rows: list[dict], cities: CityIndex, weekend_set: set[str],
             "description": description,
             "performers": (row.get("performers") or [])[:8],
             "category": category,
+            "seasonal": is_seasonal(title, description),
             "source": source,
             "distance_km": travel["distance_km"],
             "travel_minutes": travel["travel_minutes"],
@@ -323,6 +334,10 @@ def main() -> int:
     parser.add_argument("--limit-days", type=int, default=0,
                         help="only scrape the first N weekend days (smoke test)")
     parser.add_argument("--skip-festivals", action="store_true")
+    parser.add_argument("--skip-museum", action="store_true",
+                        help="skip museum.nl (the slow source)")
+    parser.add_argument("--museum-limit", type=int, default=0,
+                        help="only fetch the first N museum.nl pages per kind")
     parser.add_argument("--today", default="", help="override today's date (YYYY-MM-DD)")
     args = parser.parse_args()
 
@@ -351,15 +366,19 @@ def main() -> int:
     if not args.skip_festivals:
         rows += collect_festivals(window_start, window_end, log)
     rows += collect_day_sources(scrape_days, log)
+    if not args.skip_museum:
+        rows += collect_museum(window_start, window_end, log, limit=args.museum_limit)
     log(f"raw rows: {len(rows)}")
 
-    weekend_set = {day.isoformat() for day in weekends}
-    events = normalise(rows, cities, weekend_set, window_start, window_end, log)
+    # only upcoming weekend days end up in the dataset - past days would be
+    # hidden by the frontend anyway and long-running exhibitions would bloat it
+    weekend_set = {day.isoformat() for day in upcoming}
+    events = normalise(rows, cities, weekend_set, window_start, window_end, log, today)
     if not events:
         log("[error] no events collected, keeping the previous dataset")
         return 1
 
-    payload = build_payload(events, window_start, window_end, weekends, cities)
+    payload = build_payload(events, window_start, window_end, upcoming, cities)
     json_path = os.path.join(DATA_DIR, "events.json")
     write_json(json_path, payload)
 
