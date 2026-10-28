@@ -504,19 +504,26 @@
   function parkingItem(row) {
     var kinds = t('parkingKinds');
     var item = document.createElement('li');
-    var money = document.createElement('span');
-    money.className = 'p-price';
-    money.textContent = priceText(row[1]);
+    var span = document.createElement('span');
+    span.className = 'p-dist';
+    span.textContent = t('parkingDistance')(row[3]);
     var name = document.createElement('span');
     name.className = 'p-name';
     name.textContent = row[0];
     var extra = document.createElement('span');
     extra.className = 'p-meta';
-    extra.textContent = (kinds[row[2]] || kinds.surface) + ' \u00b7 ' + t('parkingDistance')(row[3]);
-    item.appendChild(money);
+    extra.textContent = priceText(row[1]) + ' \u00b7 ' + (kinds[row[2]] || kinds.surface);
+    item.appendChild(span);
     item.appendChild(name);
     item.appendChild(extra);
     return item;
+  }
+
+  // Nearest car park first. places.js is already written in that order, but
+  // sorting here keeps the list correct if a browser serves an older data file.
+  function parkingRows(city) {
+    var rows = (city && city[4]) || [];
+    return rows.slice().sort(function (a, b) { return a[3] - b[3]; });
   }
 
   function travelGuide(event) {
@@ -539,7 +546,7 @@
     transit.appendChild(mapsLink(transitUrl(event), t('ptPlan')));
     box.appendChild(transit);
 
-    var rows = (city && city[4]) || [];
+    var rows = parkingRows(city);
     var parking = document.createElement('p');
     parking.className = 'guide-line';
     var parkLabel = document.createElement('strong');

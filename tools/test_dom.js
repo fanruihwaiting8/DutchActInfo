@@ -111,9 +111,12 @@
     return cards().map(function (card) { return card.querySelector('.guide'); });
   }
 
-  function priceValue(text) {
-    var found = String(text).match(/(\d+(?:[.,]\d+)?)/);
-    return found ? parseFloat(found[1].replace(',', '.')) : null;
+  function distanceValue(text) {
+    var raw = String(text);
+    var found = raw.match(/(\d+(?:[.,]\d+)?)/);
+    if (!found) { return null; }
+    var value = parseFloat(found[1].replace(',', '.'));
+    return raw.indexOf('km') >= 0 ? value * 1000 : value;
   }
 
   var guided = cards();
@@ -141,22 +144,22 @@
   check('listed guides add the rate footnote', listed.every(function (box) {
     return box.querySelectorAll('.guide-note').length === 1;
   }));
-  check('car parks run from dearest to cheapest', listed.every(function (box) {
-    var prices = box.querySelector('.parking-list').querySelectorAll('li').map(function (row) {
-      return priceValue(row.querySelector('.p-price').textContent);
+  check('car parks run from nearest to furthest', listed.every(function (box) {
+    var metres = box.querySelector('.parking-list').querySelectorAll('li').map(function (row) {
+      return distanceValue(row.querySelector('.p-dist').textContent);
     });
-    var seenBlank = false;
-    for (var i = 0; i < prices.length; i += 1) {
-      if (prices[i] === null) { seenBlank = true; continue; }
-      if (seenBlank) { return false; }
-      if (i > 0 && prices[i - 1] !== null && prices[i] > prices[i - 1]) { return false; }
+    for (var i = 0; i < metres.length; i += 1) {
+      if (metres[i] === null) { return false; }
+      if (i > 0 && metres[i] < metres[i - 1] - 100) { return false; }
     }
     return true;
   }));
-  check('every listed car park shows a name and a distance', listed.every(function (box) {
+  check('every listed car park shows a distance, a name and a rate', listed.every(function (box) {
     return box.querySelector('.parking-list').querySelectorAll('li').every(function (row) {
+      var meta = String(row.querySelector('.p-meta').textContent);
       return String(row.querySelector('.p-name').textContent).length > 0
-        && /\d/.test(String(row.querySelector('.p-meta').textContent));
+        && /\d/.test(String(row.querySelector('.p-dist').textContent))
+        && /\u20ac|free|price unknown/.test(meta);
     });
   }));
 

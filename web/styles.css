@@ -329,16 +329,17 @@ select {
   padding-top: 6px;
 }
 
-.p-price {
+/* Distance leads the row because the list runs from the closest outwards. */
+.p-dist {
   grid-row: 1 / span 2;
   font-size: 13px;
   font-weight: 700;
-  color: #ffbf5e;
+  color: #7fd3a1;
   font-variant-numeric: tabular-nums;
 }
 
 .p-name { font-size: 13px; color: var(--text); overflow-wrap: anywhere; }
-.p-meta { font-size: 11px; color: var(--muted); }
+.p-meta { font-size: 11px; color: #ffbf5e; }
 
 .guide-note { margin: 0 0 9px; font-size: 11px; color: #7f8da5; }
 

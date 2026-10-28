@@ -141,9 +141,13 @@ def main() -> int:
         if with_parking < MIN_PARKING_CITIES:
             fail(problems, f"only {with_parking} cities carry car parks in web/places.js")
         for name, row in guide_cities.items():
-            prices = [lot[1] for lot in (row[4] if len(row) > 4 else []) if lot[1]]
-            if prices != sorted(prices, reverse=True):
-                fail(problems, f"car parks for {name} are not sorted dearest first")
+            lots = row[4] if len(row) > 4 else []
+            metres = [lot[3] for lot in lots]
+            if metres != sorted(metres):
+                fail(problems, f"car parks for {name} are not sorted nearest first")
+                break
+            if any(len(lot) < 4 for lot in lots):
+                fail(problems, f"a car park for {name} is missing its price or distance")
                 break
 
     if problems:

@@ -15,12 +15,6 @@
   ],
   "abcoude": [
     [
-      "Openbare parkeerplaats Hollandse Kade",
-      0.0,
-      "surface",
-      860
-    ],
-    [
       "Dokter van Doornplein",
       null,
       "surface",
@@ -39,6 +33,12 @@
       625
     ],
     [
+      "Openbare parkeerplaats Hollandse Kade",
+      0.0,
+      "surface",
+      860
+    ],
+    [
       "Abcouderstraatweg",
       null,
       "surface",
@@ -53,99 +53,81 @@
   ],
   "alkmaar": [
     [
-      "Parcade",
-      0.8,
+      "Doelenveld",
+      null,
       "surface",
-      626
+      190
     ],
     [
-      "Corfstraat",
-      0.0,
-      "surface",
-      1491
+      "Karperton",
+      null,
+      "garage",
+      234
     ],
     [
-      "Wendelaarstraat",
-      0.0,
-      "surface",
-      1598
+      "Ringers Winkelcentrum",
+      null,
+      "underground",
+      313
     ],
     [
-      "GGZ Noord-Holland-Noord Alkmaar",
-      0.0,
-      "surface",
-      1648
+      "Parkeergarage De Vest",
+      null,
+      "underground",
+      360
     ],
     [
-      "De Hoef",
-      0.0,
-      "surface",
-      1655
+      "Grote Kerk",
+      null,
+      "underground",
+      400
     ],
     [
-      "NS Station Alkmaar Noord",
-      0.0,
-      "surface",
-      1675
+      "Kanaalschiereiland",
+      null,
+      "garage",
+      420
     ]
   ],
   "almelo": [
+    [
+      "Parkeergarage Havenpassage P13",
+      null,
+      "underground",
+      48
+    ],
+    [
+      "Parkeergarage Havenpassage P14",
+      null,
+      "garage",
+      70
+    ],
+    [
+      "Parkeergarage Stadhuisplein",
+      null,
+      "garage",
+      75
+    ],
+    [
+      "Parkeergarage Stadserf P1",
+      null,
+      "garage",
+      389
+    ],
+    [
+      "Parkeergarage Javapark P+R",
+      null,
+      "pr",
+      551
+    ],
     [
       "Gravenstate",
       0.0,
       "surface",
       632
-    ],
-    [
-      "Cogas",
-      0.0,
-      "surface",
-      664
-    ],
-    [
-      "P3",
-      0.0,
-      "surface",
-      1147
-    ],
-    [
-      "P1",
-      0.0,
-      "surface",
-      1290
-    ],
-    [
-      "P2",
-      0.0,
-      "surface",
-      1402
-    ],
-    [
-      "Van Riemsdijkplein",
-      0.0,
-      "surface",
-      2183
     ]
   ],
   "almere": [
-    [
-      "Sportpark Klein-Brandt",
-      0.0,
-      "surface",
-      1134
-    ],
-    [
-      "P&R 't Oor",
-      0.0,
-      "pr",
-      1670
-    ],
-    [
-      "Kiss and Ride",
-      0.0,
-      "surface",
-      1838
-    ],
     [
       "Gezellenhof",
       null,
@@ -163,22 +145,28 @@
       null,
       "surface",
       183
+    ],
+    [
+      "Flevogarage",
+      null,
+      "garage",
+      195
+    ],
+    [
+      "Muntgarage",
+      null,
+      "garage",
+      197
+    ],
+    [
+      "Muntmeesterhof",
+      null,
+      "surface",
+      230
     ]
   ],
   "alphen": [
     [
-      "Rietveldsepad",
-      0.0,
-      "surface",
-      2245
-    ],
-    [
-      "Mini-camping Polderflora",
-      0.0,
-      "surface",
-      2491
-    ],
-    [
       "Bospark",
       null,
       "surface",
@@ -201,22 +189,22 @@
       null,
       "surface",
       418
+    ],
+    [
+      "Euromarkt",
+      null,
+      "surface",
+      473
+    ],
+    [
+      "Toussaintplein",
+      null,
+      "surface",
+      663
     ]
   ],
   "alphen aan den rijn": [
     [
-      "Rietveldsepad",
-      0.0,
-      "surface",
-      2245
-    ],
-    [
-      "Mini-camping Polderflora",
-      0.0,
-      "surface",
-      2491
-    ],
-    [
       "Bospark",
       null,
       "surface",
@@ -239,70 +227,71 @@
       null,
       "surface",
       418
+    ],
+    [
+      "Euromarkt",
+      null,
+      "surface",
+      473
+    ],
+    [
+      "Toussaintplein",
+      null,
+      "surface",
+      663
     ]
   ],
+  "amen": [],
   "amersfoort": [
     [
-      "P Gamma",
-      0.0,
-      "surface",
-      1495
+      "Q-Park Sint-Jorisplein",
+      null,
+      "underground",
+      151
     ],
     [
-      "Damiëtplein",
-      0.0,
-      "surface",
-      1584
+      "Parkeergarage Koestraat",
+      null,
+      "underground",
+      210
     ],
     [
-      "Florisplein",
-      0.0,
-      "surface",
-      1597
+      "Parkeergarage Stadhuisplein",
+      null,
+      "underground",
+      214
     ],
     [
-      "Galaädplein",
-      0.0,
+      "Stadhuisplein",
+      null,
       "surface",
-      1665
+      224
     ],
     [
-      "Turpijnplaats",
-      0.0,
+      "Achter Davidshof",
+      null,
       "surface",
-      1701
+      286
     ],
     [
-      "Aiolplein",
-      0.0,
-      "surface",
-      1713
+      "De Amersfoortse Verzekeringen",
+      null,
+      "underground",
+      311
     ]
   ],
   "amstelveen": [
-    [
-      "Kort parkeren",
-      2.0,
-      "surface",
-      201
-    ],
-    [
-      "Oude Karselaan",
-      0.0,
-      "surface",
-      2010
-    ],
-    [
-      "P2- Hurley/​TC Amsterdam",
-      0.0,
-      "surface",
-      2498
-    ],
     [
       "Q-Park Buitenplein",
       null,
       "garage",
       112
+    ],
+    [
+      "Kort parkeren",
+      2.0,
+      "surface",
+      201
     ],
     [
       "Q-park",
@@ -315,27 +304,21 @@
       null,
       "surface",
       1376
+    ],
+    [
+      "P3",
+      null,
+      "surface",
+      1513
+    ],
+    [
+      "Ibis Budget, Cityden Up",
+      null,
+      "surface",
+      1870
     ]
   ],
   "amsterdam": [
-    [
-      "Piet Hein garage",
-      5.16,
-      "underground",
-      1763
-    ],
-    [
-      "Parking Paradise",
-      4.25,
-      "underground",
-      923
-    ],
-    [
-      "Hirschgebouw",
-      0.0,
-      "underground",
-      1343
-    ],
     [
       "Q-Park Bijenkorf Amsterdam",
       null,
@@ -353,22 +336,28 @@
       null,
       "underground",
       712
+    ],
+    [
+      "Marnix",
+      null,
+      "underground",
+      911
+    ],
+    [
+      "Parking Paradise",
+      4.25,
+      "underground",
+      923
+    ],
+    [
+      "Westelijke K+R Amsterdam Centraal",
+      null,
+      "street",
+      957
     ]
   ],
   "ankeveen": [],
   "apeldoorn": [
-    [
-      "Waleweingaarde",
-      0.0,
-      "surface",
-      1922
-    ],
-    [
-      "Parkeerplaats Dok Zuid",
-      0.0,
-      "surface",
-      1966
-    ],
     [
       "P+R Laan van de Mensenrechten",
       null,
@@ -392,47 +381,77 @@
       null,
       "underground",
       717
+    ],
+    [
+      "Marktplein",
+      null,
+      "underground",
+      773
+    ],
+    [
+      "Museum Centrum",
+      null,
+      "garage",
+      1109
     ]
   ],
   "arnhem": [
-    [
-      "K+R Arnhem Centraal",
-      0.0,
-      "street",
-      867
-    ],
-    [
-      "K+R",
-      0.0,
-      "street",
-      1070
-    ],
-    [
-      "Sligro",
-      0.0,
-      "surface",
-      2009
-    ],
-    [
-      "P+R Station Presikhaaf",
-      0.0,
-      "pr",
-      2296
-    ],
-    [
-      "Praxis",
-      0.0,
-      "surface",
-      2384
-    ],
     [
       "Q-park Broerenstraat",
       null,
       "surface",
       21
+    ],
+    [
+      "Q-Park Broerenstraat",
+      null,
+      "underground",
+      32
+    ],
+    [
+      "St. Catharinaplaats",
+      null,
+      "surface",
+      128
+    ],
+    [
+      "Parkeergarage Musis",
+      null,
+      "garage",
+      260
+    ],
+    [
+      "Parkeergarage Prinsenhof",
+      null,
+      "garage",
+      300
+    ],
+    [
+      "Trans",
+      null,
+      "surface",
+      330
     ]
   ],
   "assen": [
+    [
+      "Oude Molenstraat",
+      null,
+      "surface",
+      30
+    ],
+    [
+      "Zaagmolen",
+      null,
+      "surface",
+      156
+    ],
+    [
+      "Triade",
+      null,
+      "garage",
+      185
+    ],
     [
       "Stelling",
       0.0,
@@ -440,34 +459,16 @@
       193
     ],
     [
+      "Neptunus",
+      null,
+      "garage",
+      206
+    ],
+    [
       "Menning",
       0.0,
       "surface",
       209
-    ],
-    [
-      "Baas Assen",
-      0.0,
-      "surface",
-      277
-    ],
-    [
-      "Fong Sho",
-      0.0,
-      "surface",
-      363
-    ],
-    [
-      "Jumbo",
-      0.0,
-      "surface",
-      550
-    ],
-    [
-      "Winkelcentrum Nobellaan",
-      0.0,
-      "surface",
-      998
     ]
   ],
   "assendelft": [
@@ -486,16 +487,16 @@
   ],
   "austerlitz": [
     [
-      "Bornia",
-      0.0,
-      "surface",
-      1382
-    ],
-    [
       "SV Austerlitz",
       null,
       "surface",
       433
+    ],
+    [
+      "Bornia",
+      0.0,
+      "surface",
+      1382
     ]
   ],
   "baarn": [
@@ -504,18 +505,6 @@
       0.0,
       "surface",
       141
-    ],
-    [
-      "Groeneveld",
-      0.0,
-      "surface",
-      2239
-    ],
-    [
-      "Nijhof",
-      0.0,
-      "surface",
-      2425
     ],
     [
       "Kiss+Ride",
@@ -528,6 +517,32 @@
       null,
       "surface",
       940
+    ],
+    [
+      "Groeneveld",
+      0.0,
+      "surface",
+      2239
+    ],
+    [
+      "Nijhof",
+      0.0,
+      "surface",
+      2425
+    ]
+  ],
+  "balkbrug": [
+    [
+      "Carpool",
+      0.0,
+      "surface",
+      915
+    ],
+    [
+      "prive parking Huige Mode",
+      null,
+      "surface",
+      1115
     ]
   ],
   "barendrecht": [
@@ -536,6 +551,24 @@
       0.0,
       "surface",
       158
+    ],
+    [
+      "Binnenhof",
+      null,
+      "surface",
+      224
+    ],
+    [
+      "Vrachtwagenparkeerterrein Eurekaweg",
+      null,
+      "surface",
+      1079
+    ],
+    [
+      "'t Centrum",
+      null,
+      "surface",
+      1528
     ],
     [
       "P3",
@@ -548,27 +581,15 @@
       0.0,
       "surface",
       1730
-    ],
-    [
-      "McDonald's",
-      0.0,
-      "surface",
-      1737
-    ],
-    [
-      "P1",
-      0.0,
-      "surface",
-      1743
-    ],
-    [
-      "P2",
-      0.0,
-      "surface",
-      1757
     ]
   ],
   "barneveld": [
+    [
+      "Torenplein",
+      null,
+      "surface",
+      100
+    ],
     [
       "Veluwehal",
       0.0,
@@ -598,15 +619,15 @@
       0.0,
       "surface",
       333
-    ],
-    [
-      "De Heus Plein",
-      0.0,
-      "underground",
-      366
     ]
   ],
   "bemmel": [
+    [
+      "de Pollenbrink",
+      null,
+      "surface",
+      155
+    ],
     [
       "Kinkelplein",
       0.0,
@@ -618,12 +639,6 @@
       0.0,
       "surface",
       1101
-    ],
-    [
-      "de Pollenbrink",
-      null,
-      "surface",
-      155
     ],
     [
       "Park Lingezegen",
@@ -643,24 +658,6 @@
   ],
   "bergen op zoom": [
     [
-      "Het Glacis",
-      0.0,
-      "surface",
-      743
-    ],
-    [
-      "Peugeot Bastians",
-      0.0,
-      "surface",
-      1054
-    ],
-    [
-      "Zonneplein",
-      0.0,
-      "surface",
-      1550
-    ],
-    [
       "Pastoor Joorenplein",
       null,
       "surface",
@@ -677,6 +674,24 @@
       null,
       "surface",
       202
+    ],
+    [
+      "P+R terrein Parallelweg",
+      null,
+      "pr",
+      357
+    ],
+    [
+      "Sint-Catharinaplein",
+      null,
+      "surface",
+      375
+    ],
+    [
+      "Plein 13",
+      null,
+      "surface",
+      419
     ]
   ],
   "berkel en rodenrijs": [
@@ -693,28 +708,28 @@
       401
     ],
     [
+      "Sportpark Het Hoge Land",
+      null,
+      "surface",
+      782
+    ],
+    [
+      "Microbenplaats",
+      null,
+      "surface",
+      1435
+    ],
+    [
       "De Groenzoom Ingang Kleihoogt",
       0.0,
       "surface",
       1466
     ],
     [
-      "Winkelcentrum De Vlashoeck",
-      0.0,
-      "underground",
-      1636
-    ],
-    [
-      "Westpolderstraat",
-      0.0,
-      "garage",
-      1687
-    ],
-    [
-      "Parkeergarage Westpolder",
-      0.0,
-      "pr",
-      1759
+      "Theetuin De Hichte/Hoeve Cornelia",
+      null,
+      "surface",
+      1470
     ]
   ],
   "berlicum": [
@@ -739,30 +754,6 @@
   ],
   "best": [
     [
-      "Wilhelminaplein",
-      0.0,
-      "surface",
-      1251
-    ],
-    [
-      "Carpool Best A2",
-      0.0,
-      "surface",
-      1471
-    ],
-    [
-      "Carpool Best-West A2",
-      0.0,
-      "surface",
-      1547
-    ],
-    [
-      "Parkeerplaats Natuurpoort de Scheeken",
-      0.0,
-      "surface",
-      2134
-    ],
-    [
       "P&R",
       null,
       "surface",
@@ -773,27 +764,33 @@
       null,
       "pr",
       146
+    ],
+    [
+      "P+R Spoorstraat",
+      null,
+      "surface",
+      336
+    ],
+    [
+      "Molenveste",
+      null,
+      "underground",
+      382
+    ],
+    [
+      "Raadhuisplein",
+      null,
+      "surface",
+      663
+    ],
+    [
+      "Den Ekker",
+      null,
+      "surface",
+      735
     ]
   ],
   "beuningen": [
-    [
-      "Mauritsplein",
-      0.0,
-      "surface",
-      320
-    ],
-    [
-      "Kerkplein",
-      0.0,
-      "surface",
-      436
-    ],
-    [
-      "Schoolstraat",
-      0.0,
-      "surface",
-      442
-    ],
     [
       "Thorbeckeplein",
       null,
@@ -807,10 +804,28 @@
       259
     ],
     [
+      "Mauritsplein",
+      0.0,
+      "surface",
+      320
+    ],
+    [
       "Amaliaplein",
       null,
       "surface",
       384
+    ],
+    [
+      "Kerkplein",
+      0.0,
+      "surface",
+      436
+    ],
+    [
+      "Schoolstraat",
+      0.0,
+      "surface",
+      442
     ]
   ],
   "beusichem": [
@@ -822,24 +837,6 @@
     ]
   ],
   "beverwijk": [
-    [
-      "Woonplaza",
-      0.0,
-      "surface",
-      547
-    ],
-    [
-      "Wijckerpoort",
-      0.0,
-      "pr",
-      785
-    ],
-    [
-      "Euratomplein",
-      0.0,
-      "pr",
-      2226
-    ],
     [
       "Markt",
       null,
@@ -857,6 +854,24 @@
       null,
       "surface",
       312
+    ],
+    [
+      "Meerplein",
+      null,
+      "surface",
+      344
+    ],
+    [
+      "Wijckermolen",
+      null,
+      "pr",
+      425
+    ],
+    [
+      "Woonplaza",
+      0.0,
+      "surface",
+      547
     ]
   ],
   "bilthoven": [
@@ -873,16 +888,16 @@
       267
     ],
     [
-      "Gezichtslaan",
-      0.0,
-      "surface",
-      1910
-    ],
-    [
       "Het kleine dorp",
       null,
       "surface",
       1194
+    ],
+    [
+      "Gezichtslaan",
+      0.0,
+      "surface",
+      1910
     ]
   ],
   "bladel": [
@@ -915,18 +930,6 @@
   ],
   "bleiswijk": [
     [
-      "Esplaats",
-      0.0,
-      "surface",
-      1801
-    ],
-    [
-      "Vlierplaats",
-      0.0,
-      "surface",
-      2420
-    ],
-    [
       "Frederik Hendrikstraat",
       null,
       "surface",
@@ -949,15 +952,21 @@
       null,
       "surface",
       258
+    ],
+    [
+      "Hoekeindsehof",
+      null,
+      "surface",
+      640
+    ],
+    [
+      "Eikenplaats",
+      null,
+      "surface",
+      1328
     ]
   ],
   "bodegraven": [
-    [
-      "Rohda '76",
-      0.0,
-      "surface",
-      1223
-    ],
     [
       "P+R Bodegraven",
       null,
@@ -969,6 +978,12 @@
       null,
       "surface",
       1006
+    ],
+    [
+      "Rohda '76",
+      0.0,
+      "surface",
+      1223
     ],
     [
       "Buitenkerk",
@@ -985,6 +1000,12 @@
   ],
   "borne": [
     [
+      "De Bree",
+      null,
+      "surface",
+      437
+    ],
+    [
       "De Kleine Loods",
       0.0,
       "surface",
@@ -997,22 +1018,16 @@
       589
     ],
     [
-      "De Koem",
-      0.0,
-      "surface",
-      699
-    ],
-    [
-      "De Bree",
-      null,
-      "surface",
-      437
-    ],
-    [
       "Marktplein",
       null,
       "surface",
       676
+    ],
+    [
+      "De Koem",
+      0.0,
+      "surface",
+      699
     ],
     [
       "Carpool Borne-West A1/A35",
@@ -1037,34 +1052,34 @@
       47
     ],
     [
+      "Raadhuisplein",
+      null,
+      "street",
+      60
+    ],
+    [
+      "Voorofscheweg",
+      null,
+      "surface",
+      114
+    ],
+    [
+      "Boomgaard",
+      null,
+      "surface",
+      210
+    ],
+    [
       "Enterij",
       0.0,
       "surface",
       247
     ],
     [
-      "Veldlaan",
-      0.0,
+      "Merkur Casino",
+      null,
       "surface",
-      916
-    ],
-    [
-      "Zonnedauw",
-      0.0,
-      "surface",
-      990
-    ],
-    [
-      "Ichtuskerk",
-      0.0,
-      "surface",
-      996
-    ],
-    [
-      "Puttelaan",
-      0.0,
-      "street",
-      1009
+      604
     ]
   ],
   "bovenkarspel": [
@@ -1107,16 +1122,16 @@
   ],
   "boxmeer": [
     [
-      "den Urling",
-      0.0,
-      "surface",
-      1613
-    ],
-    [
       "Carpool Boxmeer A73",
       null,
       "surface",
       1220
+    ],
+    [
+      "den Urling",
+      0.0,
+      "surface",
+      1613
     ],
     [
       "Maasziekenhuis",
@@ -1153,43 +1168,49 @@
   ],
   "breda": [
     [
+      "Q-Park Centrum",
+      null,
+      "underground",
+      213
+    ],
+    [
+      "Parkeergarage Oranje Zuid",
+      null,
+      "garage",
+      230
+    ],
+    [
+      "Mols",
+      null,
+      "surface",
+      237
+    ],
+    [
+      "De Barones",
+      null,
+      "garage",
+      258
+    ],
+    [
+      "Chasséparking",
+      null,
+      "underground",
+      425
+    ],
+    [
       "Kiss + Ride",
       0.0,
       "surface",
       465
-    ],
-    [
-      "Albert Heijn Haagdijk",
-      0.0,
-      "surface",
-      566
-    ],
-    [
-      "Politie Breda Centrum",
-      0.0,
-      "surface",
-      609
-    ],
-    [
-      "Haagweg",
-      0.0,
-      "surface",
-      971
-    ],
-    [
-      "De Lunet",
-      0.0,
-      "surface",
-      1058
-    ],
-    [
-      "Jumbo / Aldi Belcrumweg",
-      0.0,
-      "surface",
-      1245
     ]
   ],
   "brummen": [
+    [
+      "station Brummen",
+      null,
+      "pr",
+      597
+    ],
     [
       "Parkeerplaats Kv Melynas",
       0.0,
@@ -1201,12 +1222,6 @@
       0.0,
       "surface",
       2466
-    ],
-    [
-      "station Brummen",
-      null,
-      "pr",
-      597
     ]
   ],
   "brunssum": [
@@ -1223,16 +1238,16 @@
       248
     ],
     [
-      "Blotevoetenpark",
-      0.0,
-      "surface",
-      1566
-    ],
-    [
       "Schutterspark",
       null,
       "surface",
       1290
+    ],
+    [
+      "Blotevoetenpark",
+      0.0,
+      "surface",
+      1566
     ],
     [
       "Bernhardstraat",
@@ -1242,12 +1257,6 @@
     ]
   ],
   "bussum": [
-    [
-      "Burgemeester Wesselingplein",
-      0.0,
-      "surface",
-      2440
-    ],
     [
       "Nieuwe Brink",
       null,
@@ -1271,6 +1280,12 @@
       null,
       "surface",
       1772
+    ],
+    [
+      "Burgemeester Wesselingplein",
+      0.0,
+      "surface",
+      2440
     ]
   ],
   "capelle aan den ijssel": [
@@ -1279,6 +1294,12 @@
       0.0,
       "surface",
       601
+    ],
+    [
+      "P4",
+      null,
+      "surface",
+      860
     ],
     [
       "P+R Schenkel",
@@ -1299,25 +1320,13 @@
       1518
     ],
     [
-      "P+R Capelsebrug",
-      0.0,
-      "pr",
-      1651
-    ],
-    [
-      "Raadhuisplein",
-      0.0,
+      "Vrachtwagenparkeerplaats Groenedijk",
+      null,
       "surface",
-      1819
+      1558
     ]
   ],
   "castricum": [
-    [
-      "Zanderij",
-      0.0,
-      "surface",
-      1437
-    ],
     [
       "Geesterduin",
       null,
@@ -1329,9 +1338,41 @@
       null,
       "surface",
       528
+    ],
+    [
+      "Zanderij",
+      0.0,
+      "surface",
+      1437
+    ]
+  ],
+  "coevorden": [
+    [
+      "Winkelcentrum Gansehof",
+      0.0,
+      "surface",
+      277
+    ],
+    [
+      "P+R Coevorden",
+      null,
+      "pr",
+      329
+    ],
+    [
+      "Parkeren bezoekers",
+      null,
+      "surface",
+      1638
     ]
   ],
   "cuijk": [
+    [
+      "Zwaanplein",
+      null,
+      "surface",
+      71
+    ],
     [
       "'t Tuigleerpleintje",
       0.0,
@@ -1361,15 +1402,27 @@
       0.0,
       "pr",
       560
-    ],
-    [
-      "Carpoolplaats A73 Cuijk",
-      0.0,
-      "street",
-      1792
     ]
   ],
   "culemborg": [
+    [
+      "Sint Janskerkhof",
+      null,
+      "surface",
+      84
+    ],
+    [
+      "Kapelhof",
+      null,
+      "pr",
+      98
+    ],
+    [
+      "Buitenmolenstraat",
+      null,
+      "surface",
+      184
+    ],
     [
       "Mariahof",
       0.0,
@@ -1377,34 +1430,16 @@
       216
     ],
     [
-      "ALDI",
-      0.0,
+      "Het Hof",
+      null,
       "surface",
-      508
+      305
     ],
     [
-      "Palumbus",
-      0.0,
+      "Polikliniek",
+      null,
       "surface",
-      633
-    ],
-    [
-      "Stationsplein",
-      0.0,
-      "pr",
-      769
-    ],
-    [
-      "Chopinplein",
-      0.0,
-      "surface",
-      841
-    ],
-    [
-      "Tafelbaai",
-      0.0,
-      "surface",
-      935
+      370
     ]
   ],
   "dalfsen": [
@@ -1421,6 +1456,12 @@
       0.0,
       "surface",
       837
+    ],
+    [
+      "Volkstuin Nijevelt (Kloosterpark)",
+      null,
+      "street",
+      907
     ],
     [
       "Paperclip",
@@ -1441,19 +1482,33 @@
       1376
     ],
     [
-      "P1",
-      0.0,
+      "Strijkviertel",
+      null,
       "surface",
-      1957
-    ],
-    [
-      "P2",
-      0.0,
-      "garage",
-      2061
+      1659
     ]
   ],
   "de rijp": [],
+  "dedemsvaart": [
+    [
+      "Markt",
+      0.0,
+      "surface",
+      183
+    ],
+    [
+      "De Baron",
+      0.0,
+      "surface",
+      314
+    ],
+    [
+      "Carpool Dedemsvaart N377",
+      null,
+      "surface",
+      943
+    ]
+  ],
   "delft": [
     [
       "Kiss+Ride",
@@ -1468,60 +1523,66 @@
       151
     ],
     [
+      "Delft Station",
+      null,
+      "underground",
+      199
+    ],
+    [
+      "Phoenixgarage",
+      null,
+      "underground",
+      462
+    ],
+    [
       "Pieter Steynstraat",
       0.0,
       "surface",
       567
     ],
     [
-      "Minervaplein",
-      0.0,
-      "surface",
-      1035
-    ],
-    [
-      "de Kringloop",
-      0.0,
-      "surface",
-      1077
-    ],
-    [
-      "Binnenboogerd",
-      0.0,
+      "Zuidpoortgarage",
+      null,
       "underground",
-      1079
+      647
     ]
   ],
   "delfzijl": [
     [
-      "Molenbergplein",
-      0.0,
+      "Johan van den Kornputplein",
+      null,
       "surface",
-      498
+      471
     ],
     [
       "Commandementsplein",
       null,
       "surface",
-      491
+      485
+    ],
+    [
+      "Molenbergplein",
+      0.0,
+      "surface",
+      499
+    ],
+    [
+      "Damsterkade",
+      0.0,
+      "surface",
+      611
     ],
     [
       "Vennenplein",
       null,
       "surface",
-      753
+      749
     ],
     [
       "De Wending",
       null,
       "surface",
       804
-    ],
-    [
-      "Pijpplein",
-      null,
-      "street",
-      1049
     ]
   ],
   "den bosch": [
@@ -1564,24 +1625,6 @@
   ],
   "den haag": [
     [
-      "ParkBee Parking Holland Spoor",
-      2.9,
-      "surface",
-      1811
-    ],
-    [
-      "ParkBee Waldorpstraat 47",
-      2.67,
-      "surface",
-      1711
-    ],
-    [
-      "De Regent II",
-      0.0,
-      "surface",
-      355
-    ],
-    [
       "Westeinde ziekenhuis - bezoekersparkeren",
       null,
       "surface",
@@ -1594,18 +1637,36 @@
       349
     ],
     [
+      "De Regent II",
+      0.0,
+      "surface",
+      355
+    ],
+    [
       "ParkBee",
       null,
       "garage",
       394
+    ],
+    [
+      "Q-Park Torengarage",
+      null,
+      "garage",
+      417
+    ],
+    [
+      "Volautomatische autoberging Noordwal-Veenkade",
+      null,
+      "underground",
+      483
     ]
   ],
   "den helder": [
     [
-      "Parkeergarage Sluisdijk",
-      1.0,
-      "garage",
-      489
+      "Bernhardplein",
+      null,
+      "street",
+      112
     ],
     [
       "Station Den Helder",
@@ -1614,10 +1675,10 @@
       375
     ],
     [
-      "Bernhardplein",
-      null,
-      "street",
-      112
+      "Parkeergarage Sluisdijk",
+      1.0,
+      "garage",
+      489
     ],
     [
       "Marinekazerne Erfprins",
@@ -1634,37 +1695,19 @@
   ],
   "deurne": [
     [
-      "P+R Deurne",
-      0.0,
-      "surface",
-      892
-    ],
-    [
       "Wolfsberg",
       null,
       "surface",
       239
+    ],
+    [
+      "P+R Deurne",
+      0.0,
+      "surface",
+      892
     ]
   ],
   "deventer": [
-    [
-      "Melksterweide",
-      0.0,
-      "surface",
-      1104
-    ],
-    [
-      "P+R",
-      0.0,
-      "pr",
-      2244
-    ],
-    [
-      "Winkelcentrum Borgele",
-      0.0,
-      "surface",
-      2277
-    ],
     [
       "Stationsplein",
       null,
@@ -1682,32 +1725,38 @@
       null,
       "garage",
       222
+    ],
+    [
+      "Centrumgarage",
+      null,
+      "garage",
+      318
+    ],
+    [
+      "Bagijnestraat",
+      null,
+      "surface",
+      581
+    ],
+    [
+      "Stromarkt",
+      null,
+      "street",
+      621
     ]
   ],
   "diemen": [
-    [
-      "Kruidenhof",
-      0.0,
-      "surface",
-      702
-    ],
-    [
-      "Sportpark De Diemen",
-      0.0,
-      "surface",
-      1050
-    ],
-    [
-      "De Nieuwe Ooster",
-      0.0,
-      "surface",
-      1731
-    ],
     [
       "Sporthallen Diemen",
       null,
       "surface",
       490
+    ],
+    [
+      "Kruidenhof",
+      0.0,
+      "surface",
+      702
     ],
     [
       "AGO-Zwembad",
@@ -1720,8 +1769,21 @@
       null,
       "surface",
       979
+    ],
+    [
+      "Sportpark De Diemen",
+      0.0,
+      "surface",
+      1050
+    ],
+    [
+      "Diemer IJsclub",
+      null,
+      "surface",
+      1133
     ]
   ],
+  "diepenheim": [],
   "doetinchem": [
     [
       "Gasthuisstraat",
@@ -1730,34 +1792,34 @@
       126
     ],
     [
-      "Stationsstraat",
-      0.0,
-      "street",
-      722
+      "Nieuwstad",
+      null,
+      "surface",
+      141
     ],
     [
-      "Lidl IJsselstraat",
-      0.0,
-      "surface",
-      771
+      "Catharina Parkeergarage",
+      null,
+      "underground",
+      230
     ],
     [
-      "De Isselborgh",
-      0.0,
+      "Kapoeniestraat",
+      null,
       "surface",
-      1424
+      246
     ],
     [
-      "Rensa Gévier",
-      0.0,
+      "Stadhuis (Tjalmastraat)",
+      null,
       "surface",
-      1838
+      262
     ],
     [
-      "Roggenstede",
-      0.0,
+      "Doctor Huber Noodplaats",
+      null,
       "surface",
-      1862
+      266
     ]
   ],
   "dongen": [
@@ -1794,55 +1856,43 @@
   ],
   "dordrecht": [
     [
+      "Cornelis de Wittplaats",
+      null,
+      "surface",
+      339
+    ],
+    [
+      "Parkeergarage Drievriendenhof",
+      null,
+      "garage",
+      409
+    ],
+    [
+      "Q-Park P+R Station Dordrecht",
+      null,
+      "pr",
+      439
+    ],
+    [
+      "Parkeergarage Visstraat",
+      null,
+      "garage",
+      612
+    ],
+    [
+      "Stek",
+      null,
+      "surface",
+      666
+    ],
+    [
       "VTC",
       0.0,
       "surface",
       672
-    ],
-    [
-      "Anthony Fokkerweg",
-      0.0,
-      "surface",
-      1857
-    ],
-    [
-      "Jurgensstraat",
-      0.0,
-      "street",
-      2089
-    ],
-    [
-      "Marnixstraat",
-      0.0,
-      "street",
-      2092
-    ],
-    [
-      "Meerdervoortstraat",
-      0.0,
-      "street",
-      2126
-    ],
-    [
-      "Jan Luykenstraat",
-      0.0,
-      "street",
-      2132
     ]
   ],
   "drachten": [
-    [
-      "Kiryat-Onoplein",
-      0.0,
-      "surface",
-      1208
-    ],
-    [
-      "Carpool Drachten A7/N31",
-      0.0,
-      "surface",
-      2013
-    ],
     [
       "Torenstraat",
       null,
@@ -1866,6 +1916,18 @@
       null,
       "surface",
       613
+    ],
+    [
+      "Sander Israelsplein",
+      null,
+      "surface",
+      750
+    ],
+    [
+      "Parkeergarage Raadhuisplein",
+      null,
+      "underground",
+      848
     ]
   ],
   "dronten": [
@@ -1886,10 +1948,16 @@
   ],
   "duiven": [
     [
-      "TruckParking Duiven",
-      2.0,
+      "La Gare",
+      null,
       "surface",
-      2127
+      401
+    ],
+    [
+      "P+R Duiven",
+      null,
+      "pr",
+      454
     ],
     [
       "Liemersplein",
@@ -1904,22 +1972,16 @@
       1482
     ],
     [
-      "Hornbach",
-      0.0,
-      "surface",
-      2485
-    ],
-    [
-      "La Gare",
+      "Mileway",
       null,
       "surface",
-      401
+      1845
     ],
     [
-      "P+R Duiven",
-      null,
-      "pr",
-      454
+      "TruckParking Duiven",
+      2.0,
+      "surface",
+      2127
     ]
   ],
   "ede": [
@@ -1936,49 +1998,77 @@
       984
     ],
     [
-      "P-Veluwe Ede",
-      0.0,
-      "surface",
-      1522
-    ],
-    [
-      "Concordiahof",
-      0.0,
-      "surface",
-      1988
-    ],
-    [
-      "Parkweide",
-      0.0,
-      "surface",
-      2221
-    ],
-    [
       "De Halte",
       null,
       "underground",
       1084
+    ],
+    [
+      "K+R noordzijde",
+      null,
+      "street",
+      1128
+    ],
+    [
+      "Bellestein",
+      null,
+      "surface",
+      1386
+    ],
+    [
+      "P&R",
+      null,
+      "surface",
+      1439
+    ]
+  ],
+  "eelderwolde": [
+    [
+      "Kaapse Baan",
+      null,
+      "surface",
+      517
+    ],
+    [
+      "Martini Ziekenhuis - Spoed",
+      null,
+      "surface",
+      1994
+    ],
+    [
+      "Martini Ziekenhuis patiënten & bezoekers",
+      null,
+      "surface",
+      2077
+    ],
+    [
+      "RDW ICT",
+      null,
+      "surface",
+      2483
+    ]
+  ],
+  "eibergen": [
+    [
+      "Hendrik Odinkplein",
+      0.0,
+      "surface",
+      248
+    ],
+    [
+      "Zwikkelaarsplein",
+      0.0,
+      "surface",
+      429
+    ],
+    [
+      "Parkeerplaats TOP Mallumse Molen",
+      null,
+      "surface",
+      1137
     ]
   ],
   "eindhoven": [
-    [
-      "Parking TD-Gebouw",
-      3.0,
-      "surface",
-      877
-    ],
-    [
-      "Aakstraat",
-      0.0,
-      "surface",
-      1770
-    ],
-    [
-      "Evoluon",
-      0.0,
-      "surface",
-      2221
-    ],
     [
       "Q-Park Centrum De Admirant",
       null,
@@ -1996,6 +2086,24 @@
       null,
       "garage",
       294
+    ],
+    [
+      "Hooghuis",
+      null,
+      "underground",
+      299
+    ],
+    [
+      "Q-Park Hooghuisstraat",
+      null,
+      "underground",
+      350
+    ],
+    [
+      "Kiss & Ride",
+      null,
+      "street",
+      361
     ]
   ],
   "elburg": [
@@ -2012,43 +2120,31 @@
       371
     ],
     [
-      "De Vrijheid",
-      0.0,
-      "surface",
-      845
-    ],
-    [
-      "De Oude Vos",
-      0.0,
-      "surface",
-      1020
-    ],
-    [
       "Jos Lussenburgplein",
       null,
       "surface",
       783
     ],
     [
+      "De Vrijheid",
+      0.0,
+      "surface",
+      845
+    ],
+    [
       "Zandverhalen",
       null,
       "surface",
       1006
+    ],
+    [
+      "De Oude Vos",
+      0.0,
+      "surface",
+      1020
     ]
   ],
   "elst": [
-    [
-      "P+R Elst",
-      0.0,
-      "pr",
-      1043
-    ],
-    [
-      "Carpool Elst A325",
-      0.0,
-      "surface",
-      2444
-    ],
     [
       "Europaplein",
       null,
@@ -2066,9 +2162,27 @@
       null,
       "surface",
       757
+    ],
+    [
+      "P+R Elst",
+      0.0,
+      "pr",
+      1043
+    ],
+    [
+      "Carpool Elst A325",
+      0.0,
+      "surface",
+      2444
     ]
   ],
   "emmeloord": [
+    [
+      "Veerplein",
+      null,
+      "surface",
+      543
+    ],
     [
       "Zuiderkade",
       0.0,
@@ -2080,38 +2194,14 @@
       0.0,
       "surface",
       725
-    ],
-    [
-      "Veerplein",
-      null,
-      "surface",
-      543
     ]
   ],
   "emmen": [
-    [
-      "Vreding",
-      2.0,
-      "surface",
-      1292
-    ],
     [
       "Parkeerplaats Oost",
       0.0,
       "surface",
       236
-    ],
-    [
-      "P+R Burg. Tijmesstraat",
-      0.0,
-      "surface",
-      1321
-    ],
-    [
-      "Centrum Zuid 2",
-      0.0,
-      "surface",
-      1599
     ],
     [
       "Klepel",
@@ -2124,27 +2214,27 @@
       null,
       "surface",
       780
+    ],
+    [
+      "Karbeel",
+      null,
+      "surface",
+      879
+    ],
+    [
+      "Wenning",
+      null,
+      "surface",
+      941
+    ],
+    [
+      "Willinkplein zuid",
+      null,
+      "surface",
+      970
     ]
   ],
   "enkhuizen": [
-    [
-      "Dirck Chinapein",
-      0.0,
-      "surface",
-      584
-    ],
-    [
-      "Station",
-      0.0,
-      "pr",
-      606
-    ],
-    [
-      "Koperwiekplein",
-      0.0,
-      "surface",
-      1486
-    ],
     [
       "Boschplein",
       null,
@@ -2158,26 +2248,32 @@
       276
     ],
     [
+      "Dirck Chinapein",
+      0.0,
+      "surface",
+      584
+    ],
+    [
+      "Station",
+      0.0,
+      "pr",
+      606
+    ],
+    [
       "Sprookjeswonderland",
       null,
       "surface",
       1129
+    ],
+    [
+      "Parkeerterrein Zuiderzeemuseum",
+      null,
+      "surface",
+      1378
     ]
   ],
   "ens": [
     [
-      "Mooienhofgarage",
-      0.35,
-      "underground",
-      223
-    ],
-    [
-      "Lidl",
-      0.0,
-      "surface",
-      1309
-    ],
-    [
       "H.J. van Heekgarage",
       null,
       "underground",
@@ -2190,6 +2286,12 @@
       193
     ],
     [
+      "Mooienhofgarage",
+      0.35,
+      "underground",
+      223
+    ],
+    [
       "Hermandad",
       null,
       "garage",
@@ -2200,22 +2302,16 @@
       null,
       "garage",
       427
+    ],
+    [
+      "Stationsplein",
+      null,
+      "garage",
+      428
     ]
   ],
   "enschede": [
     [
-      "Mooienhofgarage",
-      0.35,
-      "underground",
-      223
-    ],
-    [
-      "Lidl",
-      0.0,
-      "surface",
-      1309
-    ],
-    [
       "H.J. van Heekgarage",
       null,
       "underground",
@@ -2228,6 +2324,12 @@
       193
     ],
     [
+      "Mooienhofgarage",
+      0.35,
+      "underground",
+      223
+    ],
+    [
       "Hermandad",
       null,
       "garage",
@@ -2238,6 +2340,12 @@
       null,
       "garage",
       427
+    ],
+    [
+      "Stationsplein",
+      null,
+      "garage",
+      428
     ]
   ],
   "epe": [
@@ -2282,44 +2390,76 @@
   ],
   "etten-leur": [
     [
-      "Stationsplein",
-      0.0,
-      "surface",
-      435
-    ],
-    [
-      "Kiss & Ride Spoorlaan",
-      0.0,
-      "street",
-      463
-    ],
-    [
-      "Kerkwerve",
-      0.0,
-      "surface",
-      766
-    ],
-    [
-      "Van Bergenplein",
-      0.0,
-      "surface",
-      2073
-    ],
-    [
-      "McDonald's",
-      0.0,
-      "surface",
-      2121
-    ],
-    [
       "Oderkerkpark",
       null,
       "surface",
       17
+    ],
+    [
+      "Parkeergarage Centrum Etten-Leur",
+      null,
+      "underground",
+      181
+    ],
+    [
+      "Dreef",
+      null,
+      "surface",
+      266
+    ],
+    [
+      "Korte Dreef",
+      null,
+      "surface",
+      300
+    ],
+    [
+      "Voorvang",
+      null,
+      "surface",
+      335
+    ],
+    [
+      "Roosendaalseweg",
+      null,
+      "surface",
+      401
+    ]
+  ],
+  "franeker": [
+    [
+      "Poiesz",
+      null,
+      "surface",
+      498
+    ],
+    [
+      "Carpool Franeker",
+      0.0,
+      "surface",
+      1822
     ]
   ],
   "geertruidenberg": [],
   "geldermalsen": [
+    [
+      "Oranje Nassaustraat",
+      null,
+      "surface",
+      172
+    ],
+    [
+      "Parkeergarage Koninginnelaan",
+      null,
+      "underground",
+      272
+    ],
+    [
+      "Koninginnelaan",
+      null,
+      "surface",
+      291
+    ],
     [
       "Kniphoek",
       0.0,
@@ -2327,37 +2467,37 @@
       333
     ],
     [
-      "Kostverlorenkade",
-      0.0,
+      "Achter 't Veer",
+      null,
       "surface",
-      436
+      336
     ],
     [
-      "Lingeplein",
-      0.0,
+      "Geldersestraat",
+      null,
       "surface",
-      459
-    ],
-    [
-      "Laan van Leeuwenstein - Lingeborgh",
-      0.0,
-      "surface",
-      776
-    ],
-    [
-      "De Pluk",
-      0.0,
-      "surface",
-      856
-    ],
-    [
-      "Prinses Máximaplein",
-      0.0,
-      "surface",
-      971
+      425
     ]
   ],
   "geldrop": [
+    [
+      "Heuvel",
+      null,
+      "surface",
+      100
+    ],
+    [
+      "Het Machinaal",
+      null,
+      "surface",
+      103
+    ],
+    [
+      "Achter de Kerk",
+      null,
+      "surface",
+      159
+    ],
     [
       "Hofdael",
       0.0,
@@ -2375,45 +2515,9 @@
       0.0,
       "surface",
       489
-    ],
-    [
-      "Het Goed",
-      0.0,
-      "surface",
-      1023
-    ],
-    [
-      "Maluwe",
-      0.0,
-      "surface",
-      1025
-    ],
-    [
-      "SV Braakhuizen",
-      0.0,
-      "surface",
-      1310
     ]
   ],
   "geleen": [
-    [
-      "Gieskoel",
-      0.0,
-      "surface",
-      522
-    ],
-    [
-      "Cityflat",
-      0.0,
-      "surface",
-      911
-    ],
-    [
-      "Jos Klijnenlaan",
-      0.0,
-      "surface",
-      1929
-    ],
     [
       "Markt P1",
       null,
@@ -2431,6 +2535,24 @@
       null,
       "surface",
       467
+    ],
+    [
+      "Gieskoel",
+      0.0,
+      "surface",
+      522
+    ],
+    [
+      "Prinsenplein",
+      null,
+      "surface",
+      785
+    ],
+    [
+      "Cityflat",
+      0.0,
+      "surface",
+      911
     ]
   ],
   "gemert": [
@@ -2443,30 +2565,6 @@
   ],
   "goes": [
     [
-      "De Zouterij",
-      0.0,
-      "surface",
-      489
-    ],
-    [
-      "Westerschans",
-      0.0,
-      "surface",
-      759
-    ],
-    [
-      "Stationspark",
-      0.0,
-      "pr",
-      814
-    ],
-    [
-      "Albert Plesmanweg",
-      0.0,
-      "surface",
-      1013
-    ],
-    [
       "Parkeergarage Centrum",
       null,
       "garage",
@@ -2477,15 +2575,33 @@
       null,
       "street",
       118
+    ],
+    [
+      "Stoofplein",
+      null,
+      "surface",
+      199
+    ],
+    [
+      "Koepoort",
+      null,
+      "surface",
+      234
+    ],
+    [
+      "Oostwal",
+      null,
+      "surface",
+      274
+    ],
+    [
+      "Damplein",
+      null,
+      "surface",
+      319
     ]
   ],
   "goirle": [
-    [
-      "Rielsedijk",
-      0.0,
-      "surface",
-      2244
-    ],
     [
       "Oranjeplein",
       null,
@@ -2503,27 +2619,35 @@
       null,
       "surface",
       2146
+    ],
+    [
+      "Rielsedijk",
+      0.0,
+      "surface",
+      2244
+    ]
+  ],
+  "goor": [
+    [
+      "De Höfte",
+      0.0,
+      "surface",
+      93
+    ],
+    [
+      "De Oliphant",
+      null,
+      "surface",
+      325
+    ],
+    [
+      "Stationslaan",
+      0.0,
+      "pr",
+      392
     ]
   ],
   "gorinchem": [
-    [
-      "Piazza Center",
-      0.0,
-      "surface",
-      647
-    ],
-    [
-      "Da Vinci College",
-      0.0,
-      "surface",
-      1316
-    ],
-    [
-      "Carpoolplaats Avelingen West",
-      0.0,
-      "surface",
-      2018
-    ],
     [
       "Paardenwater",
       null,
@@ -2541,82 +2665,121 @@
       null,
       "garage",
       402
+    ],
+    [
+      "Bagijnenwal",
+      null,
+      "surface",
+      473
+    ],
+    [
+      "Piazza Center",
+      0.0,
+      "surface",
+      647
+    ],
+    [
+      "Stadhuisplein",
+      null,
+      "surface",
+      697
     ]
   ],
+  "gorredijk": [],
   "gouda": [
+    [
+      "NS Station Gouda, Stationsplein",
+      null,
+      "street",
+      162
+    ],
+    [
+      "Tunnelhof",
+      null,
+      "surface",
+      200
+    ],
+    [
+      "Vossenburchkade",
+      null,
+      "surface",
+      210
+    ],
+    [
+      "Schouwburgplein",
+      null,
+      "surface",
+      282
+    ],
+    [
+      "Nieuwe Markt (Q park)",
+      null,
+      "garage",
+      383
+    ],
     [
       "van Limburg Stirumstraat",
       0.0,
       "surface",
       464
-    ],
+    ]
+  ],
+  "groenlo": [
     [
-      "van Hogendorpplein",
+      "Welgelegen",
       0.0,
       "surface",
-      507
+      91
     ],
     [
-      "Parkeerplaats Driestar Educatief",
+      "Nedap",
       0.0,
       "surface",
-      608
+      971
     ],
     [
-      "Gerbrandyweg",
-      0.0,
+      "Parkeerplaats Marveld",
+      null,
       "surface",
-      759
-    ],
-    [
-      "Westerkade",
-      0.0,
-      "surface",
-      934
-    ],
-    [
-      "Lidl",
-      0.0,
-      "surface",
-      946
+      1567
     ]
   ],
   "groningen": [
-    [
-      "Sontplein",
-      0.0,
-      "surface",
-      1352
-    ],
-    [
-      "IKEA",
-      0.0,
-      "pr",
-      1471
-    ],
-    [
-      "Sontplein II",
-      0.0,
-      "surface",
-      1492
-    ],
-    [
-      "Basic Fit",
-      0.0,
-      "surface",
-      1957
-    ],
-    [
-      "Hanze Plaza",
-      0.0,
-      "surface",
-      2135
-    ],
     [
       "Forum Groningen",
       null,
       "underground",
       246
+    ],
+    [
+      "Forum",
+      null,
+      "underground",
+      259
+    ],
+    [
+      "Ossenmarkt",
+      null,
+      "underground",
+      391
+    ],
+    [
+      "Parkeergarage Rademarkt",
+      null,
+      "underground",
+      521
+    ],
+    [
+      "Bios",
+      null,
+      "underground",
+      549
+    ],
+    [
+      "Museum Centrum",
+      null,
+      "underground",
+      567
     ]
   ],
   "haaksbergen": [
@@ -2637,40 +2800,40 @@
   ],
   "haarlem": [
     [
-      "Albert Heijn",
-      5.0,
-      "surface",
-      2043
-    ],
-    [
-      "Karwei",
-      0.0,
-      "surface",
-      1177
-    ],
-    [
-      "Reinaldapad",
-      0.0,
-      "surface",
-      1745
-    ],
-    [
-      "Ikea",
-      0.0,
-      "garage",
-      2179
-    ],
-    [
-      "IKEA",
-      0.0,
-      "surface",
-      2408
-    ],
-    [
       "Parkeergarage Appelaar",
       null,
       "garage",
       159
+    ],
+    [
+      "Jansstraat",
+      null,
+      "underground",
+      340
+    ],
+    [
+      "Parkeergarage de Kamp",
+      null,
+      "garage",
+      387
+    ],
+    [
+      "Parkeergarage Raaks",
+      null,
+      "garage",
+      464
+    ],
+    [
+      "de Koepel",
+      null,
+      "surface",
+      675
+    ],
+    [
+      "Parkeergarage Station",
+      null,
+      "garage",
+      690
     ]
   ],
   "haastrecht": [
@@ -2679,6 +2842,12 @@
       0.0,
       "surface",
       75
+    ],
+    [
+      "Concordiaplein",
+      null,
+      "surface",
+      110
     ],
     [
       "v.v. Haastrecht",
@@ -2697,12 +2866,6 @@
       0.0,
       "surface",
       2362
-    ],
-    [
-      "Concordiaplein",
-      null,
-      "surface",
-      110
     ]
   ],
   "haps": [
@@ -2714,24 +2877,6 @@
     ]
   ],
   "hardenberg": [
-    [
-      "P+R Station",
-      0.0,
-      "surface",
-      689
-    ],
-    [
-      "De Boshoek",
-      0.0,
-      "surface",
-      2130
-    ],
-    [
-      "Evenementenhal",
-      0.0,
-      "surface",
-      2395
-    ],
     [
       "Van Wevelinckhovenplein",
       null,
@@ -2749,9 +2894,45 @@
       null,
       "surface",
       182
+    ],
+    [
+      "Centrum/Theater",
+      null,
+      "garage",
+      196
+    ],
+    [
+      "De Spinde",
+      null,
+      "surface",
+      204
+    ],
+    [
+      "Badhuisplein",
+      null,
+      "surface",
+      206
     ]
   ],
   "harderwijk": [
+    [
+      "Parkeergarage Sint Jansdal",
+      null,
+      "garage",
+      328
+    ],
+    [
+      "Stationsplein",
+      null,
+      "surface",
+      358
+    ],
+    [
+      "Kiss & Ride",
+      null,
+      "street",
+      524
+    ],
     [
       "P+R Harderwijk",
       0.0,
@@ -2759,34 +2940,54 @@
       562
     ],
     [
-      "Simon Carmiggeltplein",
-      0.0,
-      "surface",
-      986
-    ],
-    [
-      "Hella Haasseplein",
-      0.0,
-      "surface",
-      988
-    ],
-    [
-      "P3",
-      0.0,
-      "surface",
-      1850
-    ],
-    [
-      "Watertorenweg",
-      0.0,
-      "surface",
-      2357
-    ],
-    [
-      "Parkeergarage Sint Jansdal",
+      "P19 Westeinde",
       null,
-      "garage",
-      328
+      "surface",
+      592
+    ],
+    [
+      "Selhorstweg",
+      null,
+      "surface",
+      657
+    ]
+  ],
+  "harlingen": [
+    [
+      "Tiepelplein",
+      null,
+      "surface",
+      261
+    ],
+    [
+      "Dirk Hooglandplein",
+      null,
+      "surface",
+      437
+    ],
+    [
+      "P+R Harlingen",
+      null,
+      "pr",
+      483
+    ],
+    [
+      "Buine Vloot Parkeren",
+      0.3,
+      "surface",
+      642
+    ],
+    [
+      "P1",
+      0.3,
+      "pr",
+      661
+    ],
+    [
+      "P2",
+      0.3,
+      "pr",
+      828
     ]
   ],
   "hasselt": [
@@ -2798,12 +2999,6 @@
     ]
   ],
   "heemskerk": [
-    [
-      "Euratomplein",
-      0.0,
-      "pr",
-      2100
-    ],
     [
       "Haydnplein",
       null,
@@ -2821,21 +3016,15 @@
       null,
       "surface",
       2031
+    ],
+    [
+      "Euratomplein",
+      0.0,
+      "pr",
+      2100
     ]
   ],
   "heemstede": [
-    [
-      "Floridastraat Centrum Schalkwijk",
-      1.2,
-      "garage",
-      2447
-    ],
-    [
-      "Parkeerplaats Leyduin",
-      0.0,
-      "surface",
-      2476
-    ],
     [
       "P+R terrein Roemer Visscherplein",
       null,
@@ -2847,6 +3036,18 @@
       null,
       "surface",
       2287
+    ],
+    [
+      "Floridastraat Centrum Schalkwijk",
+      1.2,
+      "garage",
+      2447
+    ],
+    [
+      "Parkeerplaats Leyduin",
+      0.0,
+      "surface",
+      2476
     ]
   ],
   "heerde": [
@@ -2864,18 +3065,6 @@
     ]
   ],
   "heerenveen": [
-    [
-      "Jisterplein",
-      0.0,
-      "surface",
-      762
-    ],
-    [
-      "P8",
-      0.0,
-      "surface",
-      2067
-    ],
     [
       "Nieuwe Baptistengemeente",
       null,
@@ -2899,32 +3088,26 @@
       null,
       "surface",
       466
+    ],
+    [
+      "Ernst van Harenplein",
+      null,
+      "surface",
+      512
+    ],
+    [
+      "Gashoudersplein",
+      null,
+      "surface",
+      575
     ]
   ],
   "heerhugowaard": [
-    [
-      "Parkeergarage Middenweg",
-      1.2,
-      "garage",
-      1607
-    ],
-    [
-      "P1 Zuidtangent",
-      1.0,
-      "surface",
-      1526
-    ],
     [
       "P+R Umbriëllaan",
       0.0,
       "pr",
       1294
-    ],
-    [
-      "P+R Heerhugowaard Handelsstraat",
-      0.0,
-      "pr",
-      1719
     ],
     [
       "Busparkeerplaats",
@@ -2933,25 +3116,31 @@
       1505
     ],
     [
+      "P1 Zuidtangent",
+      1.0,
+      "surface",
+      1526
+    ],
+    [
+      "Parkeergarage Middenweg",
+      1.2,
+      "garage",
+      1607
+    ],
+    [
       "De Morgen",
       null,
       "surface",
       1609
+    ],
+    [
+      "Stationsplein 1 Parking",
+      null,
+      "surface",
+      1627
     ]
   ],
   "heerlen": [
-    [
-      "NS Personeel parkeerplaats",
-      0.0,
-      "street",
-      987
-    ],
-    [
-      "Irmgard Smitsweg",
-      0.0,
-      "surface",
-      2407
-    ],
     [
       "Q-Park Putgraaf",
       null,
@@ -2975,6 +3164,18 @@
       null,
       "underground",
       743
+    ],
+    [
+      "Corio Center",
+      null,
+      "garage",
+      794
+    ],
+    [
+      "De Aar",
+      null,
+      "surface",
+      833
     ]
   ],
   "heeze": [],
@@ -2984,18 +3185,6 @@
       0.0,
       "pr",
       885
-    ],
-    [
-      "Parkeerplaats winkelcentrum 't Loo",
-      0.0,
-      "surface",
-      1595
-    ],
-    [
-      "Abdij van Egmond",
-      0.0,
-      "surface",
-      1928
     ],
     [
       "Station Centrum",
@@ -3014,22 +3203,22 @@
       null,
       "surface",
       1399
+    ],
+    [
+      "Parkeerplaats winkelcentrum 't Loo",
+      0.0,
+      "surface",
+      1595
+    ],
+    [
+      "Langparkeren winkelcentrum 't Loo",
+      null,
+      "surface",
+      1615
     ]
   ],
   "hellevoetsluis": [],
   "helmond": [
-    [
-      "Halen en brengen",
-      0.0,
-      "surface",
-      630
-    ],
-    [
-      "Pastoor Janssensplantsoen",
-      0.0,
-      "surface",
-      780
-    ],
     [
       "Ameidewal",
       null,
@@ -3053,14 +3242,38 @@
       null,
       "surface",
       542
+    ],
+    [
+      "Albert Heijn XL",
+      null,
+      "surface",
+      561
+    ],
+    [
+      "Kegelaar",
+      null,
+      "street",
+      607
     ]
   ],
   "hendrik-ido-ambacht": [
+    [
+      "Burgemeester Hofplein",
+      null,
+      "surface",
+      89
+    ],
     [
       "Burgemeester Broekhuisplein",
       0.0,
       "surface",
       840
+    ],
+    [
+      "Parkeergarage Hoog Ambacht",
+      null,
+      "underground",
+      1065
     ],
     [
       "Karwei",
@@ -3075,22 +3288,10 @@
       1827
     ],
     [
-      "Albert Schweitzer Ziekenhuis, loc. Zwijndrecht",
-      0.0,
-      "surface",
-      2064
-    ],
-    [
-      "Ter Steeghepad",
-      0.0,
-      "street",
-      2176
-    ],
-    [
-      "Carpool",
-      0.0,
-      "surface",
-      2223
+      "Eemstein",
+      null,
+      "garage",
+      2013
     ]
   ],
   "hengelo": [
@@ -3139,43 +3340,44 @@
       1382
     ]
   ],
+  "heythuysen": [],
   "hilvarenbeek": [],
   "hilversum": [
-    [
-      "De Jonge Haan",
-      0.0,
-      "surface",
-      838
-    ],
-    [
-      "Seinhorst",
-      0.0,
-      "underground",
-      1451
-    ],
-    [
-      "Colosseum",
-      0.0,
-      "surface",
-      1646
-    ],
-    [
-      "Parkeergarage B",
-      0.0,
-      "underground",
-      1981
-    ],
-    [
-      "Spoedzorg",
-      0.0,
-      "surface",
-      1991
-    ],
     [
       "Gooiland ingang Langestraat",
       null,
       "underground",
       162
+    ],
+    [
+      "Q-Park Hilvertshof",
+      null,
+      "garage",
+      177
+    ],
+    [
+      "Gooische Brink",
+      null,
+      "underground",
+      321
+    ],
+    [
+      "Q-Park Silverpoint",
+      null,
+      "underground",
+      405
+    ],
+    [
+      "Noordse Bosje",
+      null,
+      "garage",
+      408
+    ],
+    [
+      "Diepeweg",
+      null,
+      "street",
+      490
     ]
   ],
   "hoensbroek": [
@@ -3192,37 +3394,31 @@
       205
     ],
     [
-      "Postplein",
-      0.0,
-      "surface",
-      453
-    ],
-    [
-      "P+R Nuth",
-      0.0,
-      "pr",
-      2333
-    ],
-    [
       "Nieuwstraat",
       null,
       "surface",
       260
     ],
     [
+      "Postplein",
+      0.0,
+      "surface",
+      453
+    ],
+    [
       "Hommerterweg",
       null,
       "surface",
       899
+    ],
+    [
+      "Emmastaete",
+      null,
+      "surface",
+      1070
     ]
   ],
   "hoofddorp": [
-    [
-      "Manege",
-      0.0,
-      "surface",
-      2243
-    ],
     [
       "Winkelcentrum Hoofddorp",
       null,
@@ -3252,6 +3448,12 @@
       null,
       "surface",
       532
+    ],
+    [
+      "Raadhuisplein",
+      null,
+      "surface",
+      583
     ]
   ],
   "hoogerheide": [
@@ -3260,6 +3462,12 @@
       0.0,
       "surface",
       88
+    ],
+    [
+      "Raadhuisparking",
+      null,
+      "underground",
+      146
     ],
     [
       "Sint Lucasplein",
@@ -3272,33 +3480,9 @@
       0.0,
       "surface",
       419
-    ],
-    [
-      "Raadhuisparking",
-      null,
-      "underground",
-      146
     ]
   ],
   "hoogeveen": [
-    [
-      "Klanten Jumper",
-      0.0,
-      "surface",
-      345
-    ],
-    [
-      "P+R Stationsplein",
-      0.0,
-      "pr",
-      1139
-    ],
-    [
-      "Fokker",
-      0.0,
-      "surface",
-      2290
-    ],
     [
       "Nicolaas Beetsplein",
       null,
@@ -3316,12 +3500,30 @@
       null,
       "surface",
       218
+    ],
+    [
+      "Bilderdijkplein",
+      null,
+      "surface",
+      269
+    ],
+    [
+      "De Kaap",
+      null,
+      "underground",
+      290
+    ],
+    [
+      "Klanten Jumper",
+      0.0,
+      "surface",
+      345
     ]
   ],
   "hoogezand": [
     [
       "Carpoolplaats Kolham",
-      null,
+      0.0,
       "surface",
       1139
     ],
@@ -3372,81 +3574,93 @@
   ],
   "hoorn": [
     [
+      "Westerdijk",
+      null,
+      "surface",
+      402
+    ],
+    [
+      "Touringcars",
+      null,
+      "surface",
+      416
+    ],
+    [
+      "P+R Hoorn",
+      null,
+      "pr",
+      502
+    ],
+    [
       "Vale hen",
       0.0,
       "surface",
       512
     ],
     [
-      "Nieuwe Wal",
-      0.0,
+      "Noorderveemarkt",
+      null,
       "surface",
-      914
+      546
     ],
     [
-      "Galgenbocht",
-      0.0,
-      "surface",
-      1551
-    ],
-    [
-      "Carpoolplein De Leekerlanden",
-      0.0,
-      "surface",
-      1876
-    ],
-    [
-      "Betje Wolffplein",
-      0.0,
-      "surface",
-      2067
-    ],
-    [
-      "Aagje Dekenplein",
-      0.0,
-      "surface",
-      2079
+      "Van Dedemstraat",
+      null,
+      "pr",
+      589
     ]
   ],
   "horn": [
     [
+      "Westerdijk",
+      null,
+      "surface",
+      402
+    ],
+    [
+      "Touringcars",
+      null,
+      "surface",
+      416
+    ],
+    [
+      "P+R Hoorn",
+      null,
+      "pr",
+      502
+    ],
+    [
       "Vale hen",
       0.0,
       "surface",
       512
     ],
     [
-      "Nieuwe Wal",
-      0.0,
+      "Noorderveemarkt",
+      null,
       "surface",
-      914
+      546
     ],
     [
-      "Galgenbocht",
-      0.0,
-      "surface",
-      1551
-    ],
-    [
-      "Carpoolplein De Leekerlanden",
-      0.0,
-      "surface",
-      1876
-    ],
-    [
-      "Betje Wolffplein",
-      0.0,
-      "surface",
-      2067
-    ],
-    [
-      "Aagje Dekenplein",
-      0.0,
-      "surface",
-      2079
+      "Van Dedemstraat",
+      null,
+      "pr",
+      589
     ]
   ],
   "horst": [
+    [
+      "Rode Kruisplein",
+      null,
+      "surface",
+      152
+    ],
+    [
+      "Librije",
+      null,
+      "surface",
+      156
+    ],
     [
       "P2-Kerkeveld",
       0.0,
@@ -3470,26 +3684,26 @@
       0.0,
       "surface",
       435
-    ],
-    [
-      "Rode Kruisplein",
-      null,
-      "surface",
-      152
-    ],
-    [
-      "Librije",
-      null,
-      "surface",
-      156
     ]
   ],
   "houten": [
+    [
+      "Oude Station",
+      null,
+      "street",
+      420
+    ],
     [
       "De Engel",
       0.0,
       "surface",
       539
+    ],
+    [
+      "Parkeergarage Kruitmolen",
+      null,
+      "garage",
+      633
     ],
     [
       "De Fuik",
@@ -3498,54 +3712,30 @@
       726
     ],
     [
+      "Spoorhaag",
+      null,
+      "garage",
+      788
+    ],
+    [
       "Randhoeve",
       0.0,
       "surface",
       826
-    ],
-    [
-      "Hefbrug",
-      0.0,
-      "surface",
-      832
-    ],
-    [
-      "Tuibrug",
-      0.0,
-      "surface",
-      862
-    ],
-    [
-      "Kruisboog",
-      0.0,
-      "surface",
-      897
     ]
   ],
   "huizen": [
-    [
-      "AH garage",
-      0.0,
-      "underground",
-      530
-    ],
-    [
-      "Lidl garage",
-      0.0,
-      "underground",
-      741
-    ],
-    [
-      "Nautisch Kwartier",
-      0.0,
-      "surface",
-      1182
-    ],
     [
       "Koperslagerplein",
       null,
       "surface",
       406
+    ],
+    [
+      "AH garage",
+      0.0,
+      "underground",
+      530
     ],
     [
       "Blokker garage",
@@ -3554,10 +3744,22 @@
       620
     ],
     [
+      "Lidl garage",
+      0.0,
+      "underground",
+      741
+    ],
+    [
       "Schipperstraat",
       null,
       "surface",
       747
+    ],
+    [
+      "Nautisch Kwartier",
+      0.0,
+      "surface",
+      1182
     ]
   ],
   "ijmuiden": [
@@ -3580,12 +3782,6 @@
       1134
     ],
     [
-      "Midden-Herenduin",
-      0.0,
-      "surface",
-      2404
-    ],
-    [
       "Parkeerplaats veerpont",
       null,
       "surface",
@@ -3596,21 +3792,15 @@
       null,
       "surface",
       1645
+    ],
+    [
+      "Midden-Herenduin",
+      0.0,
+      "surface",
+      2404
     ]
   ],
   "ijsselstein": [
-    [
-      "Parkeerplaats de Clinkhoef",
-      0.0,
-      "surface",
-      840
-    ],
-    [
-      "Nedereindse Plas",
-      0.0,
-      "surface",
-      2079
-    ],
     [
       "Vingerhoekhof",
       null,
@@ -3634,6 +3824,18 @@
       null,
       "surface",
       381
+    ],
+    [
+      "Podium",
+      null,
+      "surface",
+      427
+    ],
+    [
+      "Parkeerplaats de Clinkhoef",
+      0.0,
+      "surface",
+      840
     ]
   ],
   "kamerik": [
@@ -3702,6 +3904,12 @@
       601
     ],
     [
+      "P4",
+      null,
+      "surface",
+      860
+    ],
+    [
       "P+R Schenkel",
       0.0,
       "pr",
@@ -3720,30 +3928,18 @@
       1518
     ],
     [
-      "P+R Capelsebrug",
-      0.0,
-      "pr",
-      1651
-    ],
-    [
-      "Raadhuisplein",
-      0.0,
+      "Vrachtwagenparkeerplaats Groenedijk",
+      null,
       "surface",
-      1819
+      1558
     ]
   ],
   "katwijk": [
     [
-      "Strandplein",
-      3.0,
+      "Turfmarkt",
+      null,
       "surface",
-      2315
-    ],
-    [
-      "Boulevard-Zeezijde Garage",
-      1.8,
-      "underground",
-      2295
+      175
     ],
     [
       "Rijn Park Katwijk",
@@ -3758,81 +3954,63 @@
       931
     ],
     [
-      "Quick Boys",
-      0.0,
+      "Hoftuinplein",
+      null,
       "surface",
-      1853
+      1353
     ],
     [
-      "Oosterhof",
-      0.0,
+      "Pieter Groen Noord",
+      null,
       "surface",
-      2045
+      1482
+    ],
+    [
+      "Pekelplein",
+      null,
+      "surface",
+      1642
     ]
   ],
   "kerkrade": [
+    [
+      "Wijngracht",
+      null,
+      "underground",
+      34
+    ],
+    [
+      "Theaterplein",
+      null,
+      "surface",
+      85
+    ],
+    [
+      "Orlandopassage",
+      null,
+      "underground",
+      126
+    ],
+    [
+      "Kloosterraderplein",
+      null,
+      "surface",
+      177
+    ],
+    [
+      "Kerkplein",
+      null,
+      "surface",
+      193
+    ],
     [
       "Marktstraat",
       0.0,
       "surface",
       193
-    ],
-    [
-      "Einderstraat",
-      0.0,
-      "surface",
-      427
-    ],
-    [
-      "Erenstein",
-      0.0,
-      "surface",
-      898
-    ],
-    [
-      "Catharinahoes Holz",
-      0.0,
-      "surface",
-      971
-    ],
-    [
-      "P+R Chèvremont",
-      0.0,
-      "surface",
-      1128
-    ],
-    [
-      "Doctor Ackensplein",
-      0.0,
-      "surface",
-      1717
     ]
   ],
   "krimpen aan den ijssel": [
-    [
-      "De Korf",
-      0.0,
-      "surface",
-      836
-    ],
-    [
-      "Raadhuisplein",
-      0.0,
-      "surface",
-      989
-    ],
-    [
-      "Populierenlaan",
-      0.0,
-      "surface",
-      1390
-    ],
-    [
-      "P1",
-      0.0,
-      "surface",
-      1847
-    ],
     [
       "Sportsingel Boveneindselaan",
       null,
@@ -3844,6 +4022,30 @@
       null,
       "surface",
       834
+    ],
+    [
+      "De Korf",
+      0.0,
+      "surface",
+      836
+    ],
+    [
+      "Politievoertuigen",
+      null,
+      "surface",
+      989
+    ],
+    [
+      "Raadhuisplein",
+      0.0,
+      "surface",
+      989
+    ],
+    [
+      "Vrachtwagenparkeerplaats Groenedijk",
+      null,
+      "surface",
+      1284
     ]
   ],
   "laren": [
@@ -3856,18 +4058,6 @@
   ],
   "leerdam": [
     [
-      "Voorwaartsveld",
-      0.0,
-      "surface",
-      322
-    ],
-    [
-      "Oranje Nassaulaan Noord",
-      0.0,
-      "surface",
-      368
-    ],
-    [
       "Markthof",
       null,
       "surface",
@@ -3878,6 +4068,18 @@
       null,
       "surface",
       303
+    ],
+    [
+      "Voorwaartsveld",
+      0.0,
+      "surface",
+      322
+    ],
+    [
+      "Oranje Nassaulaan Noord",
+      0.0,
+      "surface",
+      368
     ],
     [
       "Oranje Nassaulaan Zuid",
@@ -3900,55 +4102,37 @@
       224
     ],
     [
-      "Albert Heijn",
-      0.0,
-      "surface",
-      492
-    ],
-    [
-      "De Centrale",
-      0.0,
-      "surface",
-      727
-    ],
-    [
-      "P+R Kalverdijkje",
-      0.0,
-      "pr",
-      1611
-    ],
-    [
       "Cambuurplein",
       null,
       "surface",
       397
     ],
     [
+      "Albert Heijn",
+      0.0,
+      "surface",
+      492
+    ],
+    [
       "Parkeergarage Oosterstraat",
       null,
       "underground",
       565
+    ],
+    [
+      "Parkeergarage Hoeksterend",
+      null,
+      "garage",
+      624
+    ],
+    [
+      "FrieslandCampina",
+      null,
+      "surface",
+      702
     ]
   ],
   "leiden": [
-    [
-      "Parkeergarage De Luifelbaan",
-      0.0,
-      "underground",
-      1528
-    ],
-    [
-      "Schubertplein",
-      0.0,
-      "surface",
-      2207
-    ],
-    [
-      "Parkzicht",
-      0.0,
-      "surface",
-      2273
-    ],
     [
       "Kaasmarkt",
       null,
@@ -3966,6 +4150,24 @@
       null,
       "underground",
       365
+    ],
+    [
+      "Haarlemmerstraat",
+      null,
+      "garage",
+      368
+    ],
+    [
+      "Parkeergarage Dirk Langegracht",
+      null,
+      "garage",
+      532
+    ],
+    [
+      "Waardkerkplein",
+      null,
+      "surface",
+      565
     ]
   ],
   "leiderdorp": [
@@ -3974,18 +4176,6 @@
       0.0,
       "underground",
       559
-    ],
-    [
-      "Ranzijn",
-      0.0,
-      "surface",
-      768
-    ],
-    [
-      "Parkzicht",
-      0.0,
-      "surface",
-      2397
     ],
     [
       "Q-Park Rijnland Vierzicht P1",
@@ -4000,10 +4190,22 @@
       759
     ],
     [
+      "Ranzijn",
+      0.0,
+      "surface",
+      768
+    ],
+    [
       "Amaliaplein",
       null,
       "surface",
       852
+    ],
+    [
+      "Gezondheidscentrum Rijnland",
+      null,
+      "surface",
+      862
     ]
   ],
   "lelystad": [
@@ -4012,24 +4214,6 @@
       1.8,
       "garage",
       179
-    ],
-    [
-      "Meenthoek",
-      0.0,
-      "surface",
-      761
-    ],
-    [
-      "Zuiderwagenplein",
-      0.0,
-      "surface",
-      1358
-    ],
-    [
-      "Hoek van het IJ",
-      0.0,
-      "surface",
-      1491
     ],
     [
       "Zilverparkgarage",
@@ -4042,6 +4226,24 @@
       null,
       "garage",
       216
+    ],
+    [
+      "'t Pleintje",
+      null,
+      "surface",
+      566
+    ],
+    [
+      "Meenthoek",
+      0.0,
+      "surface",
+      761
+    ],
+    [
+      "Zuiderwagenplein",
+      0.0,
+      "surface",
+      1358
     ]
   ],
   "leusden": [
@@ -4114,20 +4316,46 @@
       2138
     ]
   ],
-  "loon op zand": [],
-  "losser": [
+  "lochem": [
     [
-      "Martinus Plein",
+      "Mauritsweg",
+      null,
+      "surface",
+      275
+    ],
+    [
+      "Parkeren Plus Mensink",
       0.0,
       "surface",
       386
     ],
     [
-      "Pastoor Drieverplein",
+      "invalide parkeerplaatsen",
       0.0,
       "surface",
-      650
+      398
     ],
+    [
+      "Invaliden parkeerplaatsen",
+      0.0,
+      "surface",
+      412
+    ],
+    [
+      "Graaf Janlaan",
+      0.0,
+      "street",
+      518
+    ],
+    [
+      "Graafschapterrein",
+      0.0,
+      "surface",
+      664
+    ]
+  ],
+  "loon op zand": [],
+  "losser": [
     [
       "Langenkamp",
       null,
@@ -4139,6 +4367,18 @@
       null,
       "surface",
       267
+    ],
+    [
+      "Martinus Plein",
+      0.0,
+      "surface",
+      386
+    ],
+    [
+      "Pastoor Drieverplein",
+      0.0,
+      "surface",
+      650
     ]
   ],
   "maarheeze": [
@@ -4157,24 +4397,6 @@
   ],
   "maarssen": [
     [
-      "Station Maarssen",
-      0.0,
-      "pr",
-      768
-    ],
-    [
-      "Parkeerplaats TriOpSys",
-      0.0,
-      "surface",
-      1376
-    ],
-    [
-      "Zonnebaan",
-      0.0,
-      "street",
-      2197
-    ],
-    [
       "Nassauplein",
       null,
       "surface",
@@ -4191,9 +4413,45 @@
       null,
       "surface",
       437
+    ],
+    [
+      "Station Maarssen",
+      0.0,
+      "pr",
+      768
+    ],
+    [
+      "Bisonspoor P1",
+      null,
+      "garage",
+      873
+    ],
+    [
+      "Parkeerplaats TriOpSys",
+      0.0,
+      "surface",
+      1376
     ]
   ],
   "maassluis": [
+    [
+      "Marelplein",
+      null,
+      "surface",
+      215
+    ],
+    [
+      "Haven",
+      null,
+      "street",
+      306
+    ],
+    [
+      "Noordvliet Zuidzijde",
+      null,
+      "surface",
+      354
+    ],
     [
       "Industrieweg",
       0.0,
@@ -4211,38 +4469,26 @@
       0.0,
       "surface",
       825
-    ],
-    [
-      "Koningshoek P1",
-      0.0,
-      "surface",
-      996
-    ],
-    [
-      "Marelplein",
-      null,
-      "surface",
-      215
-    ],
-    [
-      "Haven",
-      null,
-      "street",
-      306
     ]
   ],
   "maastricht": [
+    [
+      "Vrijthof",
+      1.46,
+      "underground",
+      92
+    ],
+    [
+      "Bollenpark",
+      null,
+      "surface",
+      487
+    ],
     [
       "Onze Lieve Vrouweparking",
       3.6,
       "underground",
       487
-    ],
-    [
-      "De Griend",
-      2.81,
-      "underground",
-      897
     ],
     [
       "Mosae Forum",
@@ -4251,22 +4497,48 @@
       511
     ],
     [
-      "Stadspark I",
-      1.5,
-      "surface",
-      873
-    ],
-    [
-      "Vrijthof",
-      1.46,
+      "Bassin",
+      null,
       "underground",
-      92
+      608
     ],
     [
-      "Sphinx",
-      0.58,
+      "Stadspark II",
+      null,
       "surface",
-      836
+      801
+    ]
+  ],
+  "mechelen": [
+    [
+      "Dokter Janssenplein",
+      0.0,
+      "surface",
+      336
+    ],
+    [
+      "De Mecherlerhof",
+      0.0,
+      "surface",
+      618
+    ],
+    [
+      "Geulhof",
+      null,
+      "surface",
+      699
+    ],
+    [
+      "P1",
+      0.0,
+      "surface",
+      2305
+    ],
+    [
+      "P2",
+      0.0,
+      "surface",
+      2487
     ]
   ],
   "medemblik": [
@@ -4291,24 +4563,6 @@
   ],
   "meppel": [
     [
-      "Ogterop",
-      0.0,
-      "surface",
-      480
-    ],
-    [
-      "Winkelcentrum Blankenstein",
-      0.0,
-      "surface",
-      505
-    ],
-    [
-      "Carpool",
-      0.0,
-      "surface",
-      1408
-    ],
-    [
       "Vledderstraat",
       null,
       "surface",
@@ -4321,36 +4575,42 @@
       422
     ],
     [
+      "Ogterop",
+      0.0,
+      "surface",
+      480
+    ],
+    [
       "Kiss & Ride Station Meppel",
       null,
       "street",
       486
+    ],
+    [
+      "Grote Akkerstraat",
+      null,
+      "surface",
+      490
+    ],
+    [
+      "Winkelcentrum Blankenstein",
+      0.0,
+      "surface",
+      505
     ]
   ],
   "middelburg": [
-    [
-      "Parkeergarage Geere",
-      0.0,
-      "underground",
-      510
-    ],
-    [
-      "Oude Veerseweg",
-      0.0,
-      "surface",
-      1071
-    ],
-    [
-      "Camperplaats Oude Veerseweg Middelburg",
-      0.0,
-      "surface",
-      1112
-    ],
     [
       "Bodenplaats",
       null,
       "surface",
       298
+    ],
+    [
+      "Parkeergarage Geere",
+      0.0,
+      "underground",
+      510
     ],
     [
       "Parkeergarage Tref",
@@ -4363,20 +4623,32 @@
       null,
       "pr",
       656
+    ],
+    [
+      "Hof van Tange",
+      null,
+      "surface",
+      721
+    ],
+    [
+      "Oude Veerseweg",
+      0.0,
+      "surface",
+      1071
     ]
   ],
   "middelharnis": [
-    [
-      "Bosseschool",
-      0.0,
-      "surface",
-      422
-    ],
     [
       "Spuiplein",
       null,
       "surface",
       332
+    ],
+    [
+      "Bosseschool",
+      0.0,
+      "surface",
+      422
     ],
     [
       "Zandpad",
@@ -4386,6 +4658,12 @@
     ]
   ],
   "mill": [
+    [
+      "Parkeerplaats Centrum",
+      null,
+      "surface",
+      411
+    ],
     [
       "Nel Neul plein",
       0.0,
@@ -4397,12 +4675,6 @@
       0.0,
       "surface",
       2440
-    ],
-    [
-      "Parkeerplaats Centrum",
-      null,
-      "surface",
-      411
     ]
   ],
   "moergestel": [],
@@ -4426,12 +4698,6 @@
       1134
     ],
     [
-      "Midden-Herenduin",
-      0.0,
-      "surface",
-      2404
-    ],
-    [
       "Parkeerplaats veerpont",
       null,
       "surface",
@@ -4442,6 +4708,12 @@
       null,
       "surface",
       1645
+    ],
+    [
+      "Midden-Herenduin",
+      0.0,
+      "surface",
+      2404
     ]
   ],
   "naaldwijk": [
@@ -4492,64 +4764,59 @@
   ],
   "nieuw-vennep": [
     [
-      "P+R Getsewoud",
-      0.0,
-      "pr",
-      1747
-    ],
-    [
       "Hoofdweg Westzijde",
       null,
       "underground",
       151
+    ],
+    [
+      "P+R Getsewoud",
+      0.0,
+      "pr",
+      1747
     ]
   ],
   "nieuwegein": [
     [
-      "Merwesteijn",
-      0.0,
-      "surface",
-      878
+      "CityPlaza west",
+      null,
+      "underground",
+      89
     ],
     [
-      "Kerkveld",
-      0.0,
-      "surface",
-      981
+      "CityPlaza noord",
+      null,
+      "underground",
+      90
     ],
     [
-      "Parkhout",
-      0.0,
-      "surface",
-      1182
+      "Bankstede",
+      null,
+      "underground",
+      149
     ],
     [
-      "Nedereindse Plas",
-      0.0,
-      "surface",
-      1609
+      "CityPlaza oost",
+      null,
+      "underground",
+      192
     ],
     [
-      "Helmkruid",
-      0.0,
-      "surface",
-      1989
+      "Het theater P6",
+      null,
+      "garage",
+      332
     ],
     [
-      "Parkeerplaats de Clinkhoef",
-      0.0,
+      "Personeelsparkeerplaats",
+      null,
       "surface",
-      2251
+      353
     ]
   ],
   "nieuwendijk": [],
+  "nijeveen": [],
   "nijkerk": [
-    [
-      "Oosterpoort",
-      0.9,
-      "underground",
-      476
-    ],
     [
       "Parkeerterrein Stadspark",
       0.0,
@@ -4561,6 +4828,12 @@
       0.0,
       "surface",
       239
+    ],
+    [
+      "Oosterpoort",
+      0.9,
+      "underground",
+      476
     ],
     [
       "Parkeerterrein Gele Weiland",
@@ -4583,40 +4856,40 @@
   ],
   "nijmegen": [
     [
-      "P12",
-      2.8,
+      "K+R Nijmegen Centraal",
+      null,
       "surface",
-      2320
+      85
     ],
     [
-      "P11",
-      2.8,
+      "Keizer Karel",
+      null,
       "underground",
-      2330
+      237
     ],
     [
-      "parkeerplaats Villa Nova",
-      0.0,
-      "surface",
-      831
+      "P+R terrein Eerste Oude Heselaan",
+      null,
+      "pr",
+      298
     ],
     [
-      "De Kolk",
-      0.0,
+      "Oude Stad",
+      null,
       "surface",
-      1788
+      565
     ],
     [
-      "Daniëlsplein",
-      0.0,
+      "Gravendal",
+      null,
       "surface",
-      1850
+      763
     ],
     [
-      "SV Blauw-Wit",
-      0.0,
+      "Parkeerplaats Molenpoortdak",
+      null,
       "surface",
-      2151
+      774
     ]
   ],
   "nijverdal": [
@@ -4645,16 +4918,16 @@
       804
     ],
     [
-      "Koersendijk",
-      0.0,
-      "surface",
-      1345
-    ],
-    [
       "Kiss and Ride",
       null,
       "surface",
       831
+    ],
+    [
+      "Koersendijk",
+      0.0,
+      "surface",
+      1345
     ]
   ],
   "nistelrode": [
@@ -4705,28 +4978,16 @@
   ],
   "nootdorp": [
     [
-      "P&R Station Ypenburg",
-      2.5,
-      "pr",
-      1194
-    ],
-    [
-      "Station Nootdorp",
-      0.0,
-      "pr",
-      1345
-    ],
-    [
-      "Sportpark Brasserskade",
-      0.0,
-      "surface",
-      2379
-    ],
-    [
       "Jozefhuis",
       null,
       "surface",
       615
+    ],
+    [
+      "P&R Station Ypenburg",
+      2.5,
+      "pr",
+      1194
     ],
     [
       "Melkeppe",
@@ -4739,6 +5000,18 @@
       null,
       "surface",
       1299
+    ],
+    [
+      "Station Nootdorp",
+      0.0,
+      "pr",
+      1345
+    ],
+    [
+      "Zwembad Het Hofbad",
+      null,
+      "surface",
+      1359
     ]
   ],
   "nuenen": [
@@ -4750,24 +5023,6 @@
     ]
   ],
   "nunspeet": [
-    [
-      "Zwembad De Brake",
-      0.0,
-      "surface",
-      907
-    ],
-    [
-      "Veluwetransferium Nunspeet",
-      0.0,
-      "pr",
-      1040
-    ],
-    [
-      "Carpool Nunspeet-Zuid A28",
-      0.0,
-      "surface",
-      1969
-    ],
     [
       "Whemeplein",
       null,
@@ -4785,6 +5040,24 @@
       null,
       "street",
       773
+    ],
+    [
+      "P+R F.A. Molijnlaan",
+      null,
+      "pr",
+      854
+    ],
+    [
+      "Zwembad De Brake",
+      0.0,
+      "surface",
+      907
+    ],
+    [
+      "Veluwetransferium Nunspeet",
+      0.0,
+      "pr",
+      1040
     ]
   ],
   "obdam": [
@@ -4801,12 +5074,6 @@
       0.0,
       "surface",
       776
-    ],
-    [
-      "A44 Elsgeest",
-      0.0,
-      "surface",
-      2037
     ],
     [
       "Vinkenstraat",
@@ -4831,32 +5098,26 @@
       null,
       "garage",
       1518
+    ],
+    [
+      "Heemland Terras",
+      null,
+      "surface",
+      1527
     ]
   ],
   "oisterwijk": [
-    [
-      "K+R",
-      0.0,
-      "street",
-      358
-    ],
-    [
-      "Den Donk",
-      0.0,
-      "surface",
-      1107
-    ],
-    [
-      "Parkeerterrein Klein Aderven",
-      0.0,
-      "surface",
-      2299
-    ],
     [
       "Vloeiweg 40",
       null,
       "surface",
       326
+    ],
+    [
+      "K+R",
+      0.0,
+      "street",
+      358
     ],
     [
       "Tuinweg",
@@ -4869,6 +5130,18 @@
       null,
       "pr",
       647
+    ],
+    [
+      "De Balbian",
+      null,
+      "surface",
+      648
+    ],
+    [
+      "Den Donk",
+      0.0,
+      "surface",
+      1107
     ]
   ],
   "oldenzaal": [
@@ -4879,15 +5152,15 @@
       117
     ],
     [
-      "In Den Vijfhoek",
-      null,
-      "underground",
-      169
-    ],
-    [
       "Citadel",
       null,
       "surface",
+      169
+    ],
+    [
+      "In Den Vijfhoek",
+      null,
+      "underground",
       169
     ],
     [
@@ -4909,26 +5182,46 @@
       2428
     ]
   ],
+  "ommen": [
+    [
+      "Katholieke kerk",
+      0.0,
+      "surface",
+      117
+    ],
+    [
+      "Varsenerstraat",
+      0.0,
+      "surface",
+      119
+    ],
+    [
+      "Nering Bögelstraat",
+      0.0,
+      "surface",
+      135
+    ],
+    [
+      "Markt",
+      0.0,
+      "surface",
+      222
+    ],
+    [
+      "Voormars",
+      0.0,
+      "surface",
+      240
+    ],
+    [
+      "Schurinkhof",
+      0.0,
+      "surface",
+      289
+    ]
+  ],
   "oostburg": [],
   "oosterhout": [
-    [
-      "Parkeerplaats Sporthal Arkendonk",
-      0.0,
-      "surface",
-      1617
-    ],
-    [
-      "Warande",
-      0.0,
-      "surface",
-      1625
-    ],
-    [
-      "Zuiderhout",
-      0.0,
-      "surface",
-      1879
-    ],
     [
       "Torenkwartier",
       null,
@@ -4946,21 +5239,27 @@
       null,
       "surface",
       257
+    ],
+    [
+      "De Braak",
+      null,
+      "surface",
+      291
+    ],
+    [
+      "Q-Park De Arendshof",
+      null,
+      "garage",
+      297
+    ],
+    [
+      "Heuvel",
+      null,
+      "surface",
+      335
     ]
   ],
   "oss": [
-    [
-      "Kiss & Ride",
-      0.0,
-      "pr",
-      841
-    ],
-    [
-      "Winkelcentrum Ussen",
-      0.0,
-      "surface",
-      1129
-    ],
     [
       "Jurgensplein",
       null,
@@ -4980,10 +5279,22 @@
       837
     ],
     [
+      "Kiss & Ride",
+      0.0,
+      "pr",
+      841
+    ],
+    [
       "Eikenboomgaard",
       null,
       "surface",
       857
+    ],
+    [
+      "Burchtplein",
+      null,
+      "surface",
+      946
     ]
   ],
   "oudenbosch": [
@@ -5040,57 +5351,65 @@
       807
     ]
   ],
+  "panningen": [
+    [
+      "Pastoor Huijbenplein",
+      null,
+      "surface",
+      123
+    ],
+    [
+      "Raadhuisplein",
+      0.0,
+      "surface",
+      186
+    ],
+    [
+      "2h",
+      null,
+      "surface",
+      308
+    ]
+  ],
   "papendrecht": [
+    [
+      "Weteringsingel",
+      null,
+      "surface",
+      417
+    ],
+    [
+      "Dr. J,F, Stockmannplein",
+      null,
+      "surface",
+      427
+    ],
+    [
+      "Sterflat",
+      null,
+      "surface",
+      523
+    ],
+    [
+      "Sportcentrum Papendrecht",
+      null,
+      "surface",
+      569
+    ],
+    [
+      "Parkeergarage de Meent",
+      null,
+      "underground",
+      589
+    ],
     [
       "Winkelcentrum Westpolder",
       0.0,
       "surface",
       602
-    ],
-    [
-      "Zonnedauw",
-      0.0,
-      "surface",
-      741
-    ],
-    [
-      "Anthony Fokkerweg",
-      0.0,
-      "surface",
-      1021
-    ],
-    [
-      "Alblasserbos",
-      0.0,
-      "surface",
-      1765
-    ],
-    [
-      "PKC Hal",
-      0.0,
-      "surface",
-      2052
-    ],
-    [
-      "VTC",
-      0.0,
-      "surface",
-      2066
     ]
   ],
   "purmerend": [
-    [
-      "Stadhuispleingarage",
-      1.8,
-      "underground",
-      488
-    ],
-    [
-      "Claxonate",
-      1.8,
-      "garage",
-      1196
-    ],
     [
       "P+R Station Purmerend",
       0.0,
@@ -5098,22 +5417,34 @@
       396
     ],
     [
-      "John F. Kennedyplein",
-      0.0,
-      "surface",
-      801
-    ],
-    [
-      "P+R Station Purmerend Overwhere",
-      0.0,
+      "P+R Wilhelminalaan",
+      null,
       "pr",
-      860
+      447
     ],
     [
-      "Koggenland",
-      0.0,
+      "Dijklander Ziekenhuis",
+      null,
       "surface",
-      1321
+      472
+    ],
+    [
+      "Stadhuispleingarage",
+      1.8,
+      "underground",
+      488
+    ],
+    [
+      "Nieuwstraat",
+      null,
+      "street",
+      707
+    ],
+    [
+      "Schapenmarkt",
+      null,
+      "surface",
+      730
     ]
   ],
   "putten": [
@@ -5188,10 +5519,28 @@
   ],
   "ridderkerk": [
     [
+      "Koningsplein",
+      null,
+      "underground",
+      237
+    ],
+    [
+      "Jorishof",
+      null,
+      "underground",
+      279
+    ],
+    [
       "Gamma",
       0.0,
       "surface",
       336
+    ],
+    [
+      "Q-Park Ridderhof",
+      null,
+      "underground",
+      381
     ],
     [
       "Reyerpark",
@@ -5204,27 +5553,15 @@
       0.0,
       "surface",
       1532
-    ],
-    [
-      "P+R De Schans",
-      0.0,
-      "pr",
-      1868
-    ],
-    [
-      "Carpool Oudelande",
-      0.0,
-      "pr",
-      2291
-    ],
-    [
-      "IHC",
-      0.0,
-      "surface",
-      2410
     ]
   ],
   "rijssen": [
+    [
+      "De Hoge Wal",
+      null,
+      "underground",
+      26
+    ],
     [
       "Bouwstraat",
       0.0,
@@ -5238,28 +5575,22 @@
       178
     ],
     [
+      "Huttenwal",
+      null,
+      "surface",
+      228
+    ],
+    [
       "Parkeergarage De Hagen",
       0.0,
       "surface",
       320
     ],
     [
-      "P+R Station Rijssen",
-      0.0,
-      "pr",
-      640
-    ],
-    [
-      "Parkeerplaats Lucky",
-      0.0,
-      "surface",
-      804
-    ],
-    [
-      "De Hoge Wal",
+      "Van den Broekestraat",
       null,
-      "underground",
-      26
+      "surface",
+      386
     ]
   ],
   "rijswijk": [
@@ -5268,12 +5599,6 @@
       0.0,
       "surface",
       224
-    ],
-    [
-      "Sporthal 't Zandje",
-      0.0,
-      "surface",
-      1693
     ],
     [
       "P1",
@@ -5298,27 +5623,29 @@
       null,
       "underground",
       597
+    ],
+    [
+      "P8",
+      null,
+      "surface",
+      713
+    ]
+  ],
+  "roden": [
+    [
+      "Westerbaan",
+      0.0,
+      "surface",
+      495
+    ],
+    [
+      "Trambaan",
+      null,
+      "pr",
+      698
     ]
   ],
   "roermond": [
-    [
-      "Kazerneplein",
-      1.8,
-      "surface",
-      514
-    ],
-    [
-      "Stationspark",
-      1.8,
-      "surface",
-      586
-    ],
-    [
-      "Big Triangle",
-      0.17,
-      "garage",
-      897
-    ],
     [
       "Q-Park Roercenter",
       null,
@@ -5336,6 +5663,24 @@
       null,
       "surface",
       398
+    ],
+    [
+      "Looskade",
+      null,
+      "surface",
+      452
+    ],
+    [
+      "P+R Godsweerdersingel",
+      null,
+      "pr",
+      491
+    ],
+    [
+      "Wilhelminaplein",
+      null,
+      "surface",
+      494
     ]
   ],
   "roosendaal": [
@@ -5378,24 +5723,6 @@
   ],
   "rotterdam": [
     [
-      "APCOA Parking Westblaak",
-      3.75,
-      "garage",
-      703
-    ],
-    [
-      "Kiss+Ride",
-      0.0,
-      "surface",
-      775
-    ],
-    [
-      "Pincoffs",
-      0.0,
-      "surface",
-      1742
-    ],
-    [
       "Par-King Rotterdam Building",
       null,
       "garage",
@@ -5412,6 +5739,38 @@
       null,
       "underground",
       217
+    ],
+    [
+      "WTC-Beursplein",
+      null,
+      "garage",
+      240
+    ],
+    [
+      "Stadsgarage Meent",
+      null,
+      "surface",
+      289
+    ],
+    [
+      "Parking Hofplein",
+      null,
+      "garage",
+      301
+    ]
+  ],
+  "ruurlo": [
+    [
+      "P+R Stationsstraat",
+      0.0,
+      "surface",
+      842
+    ],
+    [
+      "Parkeren Wolters & Wolters",
+      0.0,
+      "surface",
+      868
     ]
   ],
   "sassenheim": [
@@ -5442,12 +5801,6 @@
   ],
   "schagen": [
     [
-      "Magnushof",
-      0.0,
-      "surface",
-      660
-    ],
-    [
       "Tanja Groenplein",
       null,
       "surface",
@@ -5458,6 +5811,12 @@
       null,
       "surface",
       429
+    ],
+    [
+      "Magnushof",
+      0.0,
+      "surface",
+      660
     ]
   ],
   "scheveningen": [
@@ -5500,30 +5859,6 @@
   ],
   "schiedam": [
     [
-      "Gamma Schiedam-Noord",
-      0.0,
-      "surface",
-      2063
-    ],
-    [
-      "van Hogendorpplaats",
-      0.0,
-      "surface",
-      2081
-    ],
-    [
-      "Lisztplein",
-      0.0,
-      "surface",
-      2451
-    ],
-    [
-      "Schubertplein",
-      0.0,
-      "surface",
-      2480
-    ],
-    [
       "ABC Garage",
       null,
       "surface",
@@ -5534,6 +5869,30 @@
       null,
       "surface",
       985
+    ],
+    [
+      "Stadserf",
+      null,
+      "underground",
+      1019
+    ],
+    [
+      "Nieuwe Passage",
+      null,
+      "underground",
+      1020
+    ],
+    [
+      "Parkeergarage Euroscoop",
+      null,
+      "pr",
+      1307
+    ],
+    [
+      "Hockey Combinatie Schiedam",
+      null,
+      "surface",
+      1356
     ]
   ],
   "schijndel": [],
@@ -5608,10 +5967,10 @@
       976
     ],
     [
-      "P Sportpark",
-      0.0,
+      "Parkeerplaats Dirk van den Broek Oostzijde",
+      null,
       "surface",
-      1305
+      1035
     ]
   ],
   "sneek": [
@@ -5654,12 +6013,6 @@
   ],
   "soest": [
     [
-      "Zonnegloren",
-      0.0,
-      "surface",
-      2474
-    ],
-    [
       "Schoutenkampweg",
       null,
       "surface",
@@ -5670,6 +6023,12 @@
       null,
       "street",
       2085
+    ],
+    [
+      "Zonnegloren",
+      0.0,
+      "surface",
+      2474
     ]
   ],
   "someren": [],
@@ -5682,24 +6041,6 @@
     ]
   ],
   "spijkenisse": [
-    [
-      "P+R De Dome",
-      0.0,
-      "surface",
-      1226
-    ],
-    [
-      "Hongerlandsedijk",
-      0.0,
-      "surface",
-      1267
-    ],
-    [
-      "Anjerplein",
-      0.0,
-      "surface",
-      1501
-    ],
     [
       "Parkeergarage CityPlaza",
       null,
@@ -5717,6 +6058,24 @@
       null,
       "underground",
       631
+    ],
+    [
+      "P+R Heemraadlaan",
+      null,
+      "surface",
+      666
+    ],
+    [
+      "Damstraat",
+      null,
+      "surface",
+      677
+    ],
+    [
+      "Parkeergarage Kolkplein",
+      null,
+      "garage",
+      686
     ]
   ],
   "stadskanaal": [
@@ -5725,6 +6084,18 @@
       0.0,
       "surface",
       86
+    ],
+    [
+      "Geert Teisplein",
+      null,
+      "surface",
+      177
+    ],
+    [
+      "Europaplein",
+      null,
+      "underground",
+      221
     ],
     [
       "Oude Markt",
@@ -5739,22 +6110,10 @@
       379
     ],
     [
-      "Wout Peterseplein",
-      0.0,
-      "surface",
-      1497
-    ],
-    [
-      "Geert Teisplein",
+      "Gandhiplein",
       null,
-      "surface",
-      177
-    ],
-    [
-      "Europaplein",
-      null,
-      "underground",
-      221
+      "pr",
+      498
     ]
   ],
   "steenbergen": [
@@ -5763,6 +6122,44 @@
       null,
       "street",
       991
+    ]
+  ],
+  "steenwijk": [
+    [
+      "P+R Steenwijk",
+      null,
+      "pr",
+      331
+    ],
+    [
+      "Spoorstraat",
+      null,
+      "surface",
+      490
+    ],
+    [
+      "Gasthuispoort",
+      null,
+      "surface",
+      513
+    ],
+    [
+      "Het Schar",
+      null,
+      "surface",
+      899
+    ],
+    [
+      "Carpool",
+      null,
+      "pr",
+      1296
+    ],
+    [
+      "De wiezeboom",
+      null,
+      "street",
+      1578
     ]
   ],
   "strijen": [
@@ -5775,28 +6172,28 @@
   ],
   "tegelen": [
     [
-      "Truckparking",
-      0.0,
-      "surface",
-      1698
-    ],
-    [
-      "Berdenparkeerplaats",
-      0.0,
-      "surface",
-      2491
-    ],
-    [
       "Plein 1817",
       null,
       "surface",
       336
     ],
     [
+      "Truckparking",
+      0.0,
+      "surface",
+      1698
+    ],
+    [
       "Spoedeisende Hulp",
       null,
       "surface",
       2151
+    ],
+    [
+      "Berdenparkeerplaats",
+      0.0,
+      "surface",
+      2491
     ]
   ],
   "terneuzen": [
@@ -5833,30 +6230,6 @@
   ],
   "tiel": [
     [
-      "P+R station Tiel",
-      0.0,
-      "pr",
-      514
-    ],
-    [
-      "J.S. de Jongplein",
-      0.0,
-      "surface",
-      660
-    ],
-    [
-      "Papesteeg parking",
-      0.0,
-      "surface",
-      1484
-    ],
-    [
-      "Zonnedauw",
-      0.0,
-      "surface",
-      2360
-    ],
-    [
       "Albert Heijn",
       null,
       "surface",
@@ -5867,47 +6240,77 @@
       null,
       "surface",
       224
+    ],
+    [
+      "Taluud",
+      null,
+      "surface",
+      358
+    ],
+    [
+      "P+R station Tiel",
+      0.0,
+      "pr",
+      514
+    ],
+    [
+      "Westluidense Poort",
+      null,
+      "underground",
+      556
+    ],
+    [
+      "J.S. de Jongplein",
+      0.0,
+      "surface",
+      660
     ]
   ],
   "tilburg": [
     [
-      "parking Jumbo",
-      0.0,
-      "surface",
-      912
+      "Parkeergarage Emmapassage",
+      null,
+      "garage",
+      186
     ],
     [
-      "Akkerstraat open tussen 08.00u en 18.00u",
-      0.0,
-      "surface",
-      1118
+      "Parkeergarage 013-Tivoli",
+      null,
+      "garage",
+      342
     ],
     [
-      "Parking Sligro",
-      0.0,
-      "surface",
-      1128
+      "Parkeergarage Koningsplein",
+      null,
+      "underground",
+      346
     ],
     [
-      "Koopboulevard Leijparc",
-      0.0,
-      "surface",
-      1152
+      "Parkeergarage Pieter Vreedeplein",
+      null,
+      "underground",
+      357
     ],
     [
-      "Soccer fields",
-      0.0,
+      "Spoorzone P2",
+      null,
       "surface",
-      1630
+      634
     ],
     [
-      "Schwagten",
-      0.0,
+      "Louis Bouwmeesterplein",
+      null,
       "surface",
-      2313
+      672
     ]
   ],
   "tubbergen": [
+    [
+      "Sporthal",
+      null,
+      "surface",
+      191
+    ],
     [
       "Waldeckstraat",
       0.0,
@@ -5919,59 +6322,47 @@
       0.0,
       "surface",
       306
-    ],
-    [
-      "Sporthal",
-      null,
-      "surface",
-      191
     ]
   ],
   "uden": [
-    [
-      "Losplaats",
-      0.0,
-      "surface",
-      644
-    ],
-    [
-      "Willem-Alexanderhof",
-      0.0,
-      "surface",
-      711
-    ],
-    [
-      "Botermarkt",
-      0.0,
-      "surface",
-      721
-    ],
-    [
-      "Drossaard",
-      0.0,
-      "surface",
-      779
-    ],
-    [
-      "Beatrixhof",
-      0.0,
-      "surface",
-      875
-    ],
     [
       "Mondriaanplein",
       null,
       "pr",
       295
+    ],
+    [
+      "Burgemeester Buskensstraat",
+      null,
+      "surface",
+      308
+    ],
+    [
+      "Neringstraat-Oost",
+      null,
+      "surface",
+      344
+    ],
+    [
+      "Brabantplein",
+      null,
+      "underground",
+      366
+    ],
+    [
+      "Markt",
+      null,
+      "surface",
+      512
+    ],
+    [
+      "Nieuwe Markt",
+      null,
+      "surface",
+      545
     ]
   ],
   "uithoorn": [
-    [
-      "Qui Vive",
-      0.0,
-      "surface",
-      2061
-    ],
     [
       "Gemeentehuis Uithoorn",
       null,
@@ -5997,10 +6388,54 @@
       1745
     ],
     [
+      "Qui Vive",
+      0.0,
+      "surface",
+      2061
+    ],
+    [
       "Sportpark De Randhoorn",
       null,
       "surface",
       2161
+    ]
+  ],
+  "ulft": [
+    [
+      "BROODS",
+      null,
+      "surface",
+      88
+    ],
+    [
+      "Debbeshoek",
+      null,
+      "surface",
+      145
+    ],
+    [
+      "De Blenk",
+      null,
+      "surface",
+      193
+    ],
+    [
+      "Bongerd",
+      null,
+      "surface",
+      330
+    ],
+    [
+      "Albert Heijn",
+      0.0,
+      "surface",
+      400
+    ],
+    [
+      "Kennedyplein",
+      0.0,
+      "surface",
+      445
     ]
   ],
   "urk": [
@@ -6025,16 +6460,16 @@
   ],
   "utrecht": [
     [
-      "Q-Park La Vie",
-      7.2,
+      "Parkeergarage Springweg",
+      0.0,
       "garage",
-      613
+      286
     ],
     [
-      "Parkeergarage Croeselaan",
-      4.76,
-      "underground",
-      1126
+      "Hoog Catharijne P6",
+      null,
+      "garage",
+      503
     ],
     [
       "Parkeergarage Kruisstraat",
@@ -6043,37 +6478,25 @@
       585
     ],
     [
-      "Parkeergarage Wisselstraat",
-      3.0,
-      "garage",
-      2111
+      "P5 Vredenburg",
+      null,
+      "underground",
+      602
     ],
     [
-      "Spoorwegmuseum",
-      0.5,
-      "surface",
-      672
+      "Hoog Catharijne P1",
+      null,
+      "garage",
+      612
     ],
     [
-      "Parkeergarage Springweg",
-      0.0,
+      "Q-Park La Vie",
+      7.2,
       "garage",
-      286
+      613
     ]
   ],
   "valkenswaard": [
-    [
-      "Kerverijplein",
-      0.0,
-      "surface",
-      320
-    ],
-    [
-      "Van der Clusenstraat",
-      0.0,
-      "surface",
-      894
-    ],
     [
       "Prinses Irene Brigadeplein",
       null,
@@ -6087,6 +6510,18 @@
       196
     ],
     [
+      "Kerverijplein",
+      0.0,
+      "surface",
+      320
+    ],
+    [
+      "Van der Clusenstraat",
+      0.0,
+      "surface",
+      894
+    ],
+    [
       "Martinusplein",
       null,
       "surface",
@@ -6094,12 +6529,6 @@
     ]
   ],
   "veendam": [
-    [
-      "Bezoekers RDW",
-      0.0,
-      "surface",
-      1567
-    ],
     [
       "Kerkplein",
       null,
@@ -6120,9 +6549,15 @@
     ],
     [
       "Kiss & Ride",
-      null,
+      0.0,
       "street",
       566
+    ],
+    [
+      "Bezoekers RDW",
+      0.0,
+      "surface",
+      1567
     ],
     [
       "Golfclub De Compagnie",
@@ -6133,49 +6568,43 @@
   ],
   "veenendaal": [
     [
-      "Parkeerplaats Stadspark",
-      0.0,
-      "surface",
-      1084
+      "Parkeergarage De Scheepjeshof",
+      null,
+      "underground",
+      219
     ],
     [
-      "Rembrandtlaan / Station Veenendaal Centrum",
-      0.0,
+      "Fluitersstraat",
+      null,
       "surface",
-      1187
+      236
     ],
     [
-      "Goya Oriental",
-      0.0,
+      "Smidstraat",
+      null,
       "surface",
-      1421
+      430
     ],
     [
-      "Carpool",
-      0.0,
+      "Duivenweide",
+      null,
       "surface",
-      1597
+      574
     ],
     [
-      "McDonald's",
-      0.0,
+      "Duivenwal",
+      null,
       "surface",
-      1627
+      730
     ],
     [
-      "Doctor Slotemaker de Bruïneplein",
-      0.0,
+      "Vijftien Morgen",
+      null,
       "surface",
-      1664
+      1022
     ]
   ],
   "veghel": [
-    [
-      "CHV Noordkade",
-      0.0,
-      "surface",
-      1213
-    ],
     [
       "Parkeerterrein Vlas en Graan",
       null,
@@ -6187,82 +6616,88 @@
       null,
       "surface",
       466
+    ],
+    [
+      "CHV Noordkade",
+      0.0,
+      "surface",
+      1213
     ]
   ],
   "veldhoven": [
     [
-      "Lei",
-      0.0,
+      "Bree",
+      null,
       "surface",
-      426
+      231
     ],
     [
-      "Groenen Bouwmarkt",
-      0.0,
+      "Repel",
+      null,
       "surface",
-      1420
+      281
     ],
     [
-      "De Hazewinkel",
-      0.0,
-      "surface",
-      1625
+      "Parkeergarage Geer",
+      null,
+      "underground",
+      286
     ],
     [
-      "OBS Dick Bruna",
-      0.0,
+      "Braak Noord",
+      null,
       "surface",
-      1785
+      403
     ],
     [
-      "ASML P4",
-      0.0,
+      "Braak Zuid",
+      null,
       "surface",
-      1975
+      417
     ],
     [
-      "Parkeerplaats RKVVO",
-      0.0,
+      "Parkeerterrein Geer",
+      null,
       "surface",
-      2099
+      422
     ]
   ],
   "venlo": [
     [
-      "Antoniusplein",
-      0.0,
-      "surface",
-      1026
+      "Parkeergarage Maasboulevard",
+      null,
+      "underground",
+      230
     ],
     [
-      "Schepenenplein",
-      0.0,
-      "surface",
-      1227
+      "Q-Park Arsenaal",
+      null,
+      "garage",
+      282
     ],
     [
-      "Laurentiusplein",
-      0.0,
-      "surface",
-      1260
+      "Nolensplein",
+      null,
+      "underground",
+      349
     ],
     [
-      "Wieënplein",
-      0.0,
+      "Maaswaard",
+      null,
       "surface",
-      1304
+      391
     ],
     [
-      "Berdenparkeerplaats",
-      0.0,
+      "Blok van Gendt",
+      null,
       "surface",
-      1331
+      482
     ],
     [
-      "Tuincentrum Leurs",
-      0.0,
+      "P+R Kaldenkerkerweg",
+      null,
       "surface",
-      1800
+      727
     ]
   ],
   "venray": [
@@ -6281,10 +6716,10 @@
   ],
   "vlaardingen": [
     [
-      "Parking Liesveld",
-      2.5,
-      "garage",
-      257
+      "Bestelwagen parkeerplaats Broekweg",
+      null,
+      "surface",
+      168
     ],
     [
       "Broekweg",
@@ -6293,28 +6728,28 @@
       175
     ],
     [
+      "Parking Liesveld",
+      2.5,
+      "garage",
+      257
+    ],
+    [
       "Parkeerplaats Zwembad de Kulk",
       0.0,
       "surface",
       375
     ],
     [
+      "Parkeergarage Stadhuis Centrum",
+      null,
+      "underground",
+      553
+    ],
+    [
       "van Hogendorpplaats",
       0.0,
       "surface",
       1284
-    ],
-    [
-      "Parkeerterrein AH Dr. Wiardi Beckmansingel",
-      0.0,
-      "surface",
-      1831
-    ],
-    [
-      "Parking De Loper",
-      0.0,
-      "garage",
-      2281
     ]
   ],
   "vlissingen": [
@@ -6365,22 +6800,10 @@
   ],
   "voorburg": [
     [
-      "Q-Park Maanweg",
-      3.33,
-      "underground",
-      894
-    ],
-    [
-      "Q-Park Binck City Park",
-      3.33,
-      "garage",
-      1730
-    ],
-    [
-      "Q-Park P+R Laan van NOI",
-      2.62,
-      "pr",
-      1187
+      "ENAG",
+      null,
+      "surface",
+      590
     ],
     [
       "Zwartepad",
@@ -6389,10 +6812,22 @@
       773
     ],
     [
+      "P+R Voorburg",
+      null,
+      "pr",
+      815
+    ],
+    [
       "Oude Haven",
       0.0,
       "underground",
       881
+    ],
+    [
+      "Q-Park Maanweg",
+      3.33,
+      "underground",
+      894
     ],
     [
       "Station Voorburg 't Loo",
@@ -6415,30 +6850,31 @@
       180
     ],
     [
-      "Pijlkruid",
-      0.0,
-      "surface",
-      912
-    ],
-    [
-      "Grote Egelskop",
-      0.0,
-      "surface",
-      1328
-    ],
-    [
-      "Schubertplein",
-      0.0,
-      "surface",
-      2385
-    ],
-    [
       "Cultureel Centrum Voorschoten",
       null,
       "surface",
       312
+    ],
+    [
+      "Parkeergarage Deltaplein",
+      null,
+      "underground",
+      364
+    ],
+    [
+      "Koninklijke Marinelaan",
+      null,
+      "surface",
+      414
+    ],
+    [
+      "Burgemeester Van der Haarplein",
+      null,
+      "surface",
+      612
     ]
   ],
+  "vroomshoop": [],
   "vught": [
     [
       "Stationsstraat",
@@ -6543,40 +6979,40 @@
   ],
   "wageningen": [
     [
-      "Dreijenplein",
-      0.0,
-      "surface",
-      973
-    ],
-    [
-      "WUR Parking P3",
-      0.0,
-      "surface",
-      1426
-    ],
-    [
-      "WUR parking P4",
-      0.0,
-      "garage",
-      1460
-    ],
-    [
-      "WUR parking P2",
-      0.0,
-      "surface",
-      1660
-    ],
-    [
-      "WUR parking P1",
-      0.0,
-      "garage",
-      1843
-    ],
-    [
       "P12 Stadsbrink",
       null,
       "surface",
       44
+    ],
+    [
+      "P13 Olympiaplein",
+      null,
+      "surface",
+      76
+    ],
+    [
+      "Gedempte Gracht",
+      null,
+      "surface",
+      287
+    ],
+    [
+      "Gevangentoren",
+      null,
+      "surface",
+      302
+    ],
+    [
+      "Beuningplein",
+      null,
+      "surface",
+      459
+    ],
+    [
+      "Salverdaplein",
+      null,
+      "surface",
+      521
     ]
   ],
   "wassenaar": [
@@ -6599,6 +7035,12 @@
       572
     ],
     [
+      "Parkeergarage Den Hoek (voetgangers)",
+      null,
+      "underground",
+      608
+    ],
+    [
       "Parkeergarage Den Hoek (auto's)",
       0.0,
       "underground",
@@ -6609,33 +7051,9 @@
       0.0,
       "pr",
       764
-    ],
-    [
-      "Berkheiveld",
-      0.0,
-      "surface",
-      793
     ]
   ],
   "wateringen": [
-    [
-      "Parkeergarage Hoge Veld",
-      0.0,
-      "underground",
-      1392
-    ],
-    [
-      "TOP Wateringen",
-      0.0,
-      "surface",
-      2334
-    ],
-    [
-      "P+R De Uithof",
-      0.0,
-      "pr",
-      2395
-    ],
     [
       "Waterpopplaats",
       null,
@@ -6649,19 +7067,31 @@
       427
     ],
     [
+      "Parkeergarage Hoge Veld",
+      0.0,
+      "underground",
+      1392
+    ],
+    [
       "Parijsplein",
       null,
       "underground",
       1944
+    ],
+    [
+      "Fred Racképlaats",
+      null,
+      "surface",
+      2211
+    ],
+    [
+      "TOP Wateringen",
+      0.0,
+      "surface",
+      2334
     ]
   ],
   "weert": [
-    [
-      "Oranje Plein",
-      0.0,
-      "surface",
-      939
-    ],
     [
       "Walburgpassage",
       null,
@@ -6691,15 +7121,15 @@
       null,
       "underground",
       261
+    ],
+    [
+      "Stationsplein",
+      null,
+      "underground",
+      286
     ]
   ],
   "weesp": [
-    [
-      "P+R Muiden",
-      0.0,
-      "pr",
-      2454
-    ],
     [
       "P+R Weesp",
       null,
@@ -6711,6 +7141,12 @@
       null,
       "surface",
       1584
+    ],
+    [
+      "P+R Muiden",
+      0.0,
+      "pr",
+      2454
     ]
   ],
   "wervershoof": [
@@ -6767,6 +7203,12 @@
       75
     ],
     [
+      "Kasteeltuin",
+      null,
+      "surface",
+      136
+    ],
+    [
       "Dorsvlegel",
       0.0,
       "surface",
@@ -6779,22 +7221,16 @@
       334
     ],
     [
+      "Sportschool Derks",
+      null,
+      "surface",
+      767
+    ],
+    [
       "Het Hof van Kaatje",
       0.0,
       "surface",
       1664
-    ],
-    [
-      "Carpoolplaats Bankhoef",
-      0.0,
-      "surface",
-      2219
-    ],
-    [
-      "Kasteeltuin",
-      null,
-      "surface",
-      136
     ]
   ],
   "wijk bij duurstede": [
@@ -6803,6 +7239,12 @@
       0.0,
       "surface",
       133
+    ],
+    [
+      "Parkeergarage Steenstraat Albert Heijn",
+      null,
+      "underground",
+      145
     ],
     [
       "Kruijf Plein",
@@ -6827,15 +7269,49 @@
       0.0,
       "surface",
       665
+    ]
+  ],
+  "winschoten": [
+    [
+      "'t Rond",
+      0.0,
+      "garage",
+      159
     ],
     [
-      "Parkeergarage Steenstraat Albert Heijn",
+      "Winschoten Poststraat",
+      0.0,
+      "surface",
+      310
+    ],
+    [
+      "Parking intratuin Winschoten",
       null,
-      "underground",
-      145
+      "surface",
+      1803
+    ]
+  ],
+  "winsum": [
+    [
+      "P+R Station Winsum",
+      null,
+      "pr",
+      160
+    ],
+    [
+      "Het Aanleg",
+      null,
+      "surface",
+      1042
     ]
   ],
   "winterswijk": [
+    [
+      "Dalphin",
+      null,
+      "surface",
+      17
+    ],
     [
       "Markt",
       0.0,
@@ -6849,49 +7325,25 @@
       204
     ],
     [
+      "Weeninkpad",
+      null,
+      "surface",
+      250
+    ],
+    [
+      "De Ontmoeting",
+      null,
+      "surface",
+      276
+    ],
+    [
       "Sleeswijk",
       0.0,
       "surface",
       320
-    ],
-    [
-      "Burgemeester Vlamstraat",
-      0.0,
-      "surface",
-      425
-    ],
-    [
-      "Weverstraat",
-      0.0,
-      "surface",
-      504
-    ],
-    [
-      "Stationsstraat",
-      0.0,
-      "surface",
-      525
     ]
   ],
   "woerden": [
-    [
-      "Park & Ride Station Woerden",
-      0.0,
-      "surface",
-      576
-    ],
-    [
-      "Waardsedijk",
-      0.0,
-      "street",
-      1257
-    ],
-    [
-      "Carpool Zuid",
-      0.0,
-      "surface",
-      2198
-    ],
     [
       "Parkeergarage Castellum",
       null,
@@ -6905,38 +7357,32 @@
       325
     ],
     [
+      "Park & Ride Station Woerden",
+      0.0,
+      "surface",
+      576
+    ],
+    [
       "Station Woerden",
       null,
       "pr",
       624
+    ],
+    [
+      "P+R terrein Spoorlaan",
+      null,
+      "pr",
+      717
+    ],
+    [
+      "Molenvlietbaan",
+      null,
+      "surface",
+      1227
     ]
   ],
   "ysselsteyn": [],
   "zaandam": [
-    [
-      "Ouverture",
-      0.0,
-      "surface",
-      1355
-    ],
-    [
-      "Hornbach",
-      0.0,
-      "surface",
-      1414
-    ],
-    [
-      "Ankerweg",
-      0.0,
-      "surface",
-      2316
-    ],
-    [
-      "Parkeerterrein Eetcafe De Toog",
-      0.0,
-      "surface",
-      2400
-    ],
     [
       "De Burcht",
       null,
@@ -6948,6 +7394,30 @@
       null,
       "garage",
       158
+    ],
+    [
+      "Parkeerplaats / Markt ( Donderdag, Zaterdag )",
+      null,
+      "surface",
+      442
+    ],
+    [
+      "Hermitage",
+      null,
+      "underground",
+      643
+    ],
+    [
+      "Houthavenkade",
+      null,
+      "surface",
+      669
+    ],
+    [
+      "Privé terein Brandweer",
+      null,
+      "surface",
+      698
     ]
   ],
   "zaltbommel": [
@@ -6956,24 +7426,6 @@
       0.0,
       "surface",
       252
-    ],
-    [
-      "Rotterdamse Bol",
-      0.0,
-      "surface",
-      754
-    ],
-    [
-      "P+R Zaltbommel",
-      0.0,
-      "surface",
-      1189
-    ],
-    [
-      "Carpool",
-      0.0,
-      "surface",
-      1681
     ],
     [
       "Havendijk",
@@ -6986,33 +7438,27 @@
       null,
       "surface",
       713
+    ],
+    [
+      "Rotterdamse Bol",
+      0.0,
+      "surface",
+      754
+    ],
+    [
+      "Morgental",
+      null,
+      "surface",
+      792
+    ],
+    [
+      "Fiep Westendorpplein",
+      null,
+      "surface",
+      969
     ]
   ],
   "zeist": [
-    [
-      "Science Park Zeist",
-      0.0,
-      "surface",
-      874
-    ],
-    [
-      "de Grote Koppel",
-      0.0,
-      "surface",
-      1335
-    ],
-    [
-      "Brugakker",
-      0.0,
-      "surface",
-      1676
-    ],
-    [
-      "Parking Centraal Beheer Achmea",
-      0.0,
-      "surface",
-      2442
-    ],
     [
       "Passage",
       null,
@@ -7024,9 +7470,39 @@
       null,
       "underground",
       732
+    ],
+    [
+      "Slotlaan 1",
+      null,
+      "underground",
+      838
+    ],
+    [
+      "Science Park Zeist",
+      0.0,
+      "surface",
+      874
+    ],
+    [
+      "Slotlaan 2",
+      null,
+      "underground",
+      883
+    ],
+    [
+      "Slotlaan 3",
+      null,
+      "surface",
+      946
     ]
   ],
   "zevenaar": [
+    [
+      "Rode Kruis",
+      null,
+      "surface",
+      163
+    ],
     [
       "Schievestraat",
       1.0,
@@ -7046,31 +7522,19 @@
       385
     ],
     [
+      "Haspelstraat",
+      null,
+      "surface",
+      387
+    ],
+    [
       "Masiusplein",
       1.0,
       "surface",
       394
-    ],
-    [
-      "Jumbo",
-      0.0,
-      "surface",
-      458
-    ],
-    [
-      "Gemeentehuis Zevenaar",
-      0.0,
-      "surface",
-      960
     ]
   ],
   "zevenhuizen": [
-    [
-      "Waleweingaarde",
-      0.0,
-      "surface",
-      2300
-    ],
     [
       "Haven Centrum",
       null,
@@ -7100,9 +7564,33 @@
       null,
       "surface",
       1323
+    ],
+    [
+      "Parkeergarage",
+      null,
+      "surface",
+      1366
     ]
   ],
   "zoetermeer": [
+    [
+      "Forum Zoetermeer",
+      null,
+      "surface",
+      333
+    ],
+    [
+      "Stadshart P5 Amsterdamstraat",
+      null,
+      "garage",
+      399
+    ],
+    [
+      "Stadshart P3 Driekant",
+      null,
+      "surface",
+      404
+    ],
     [
       "Osylaan",
       0.0,
@@ -7110,49 +7598,19 @@
       416
     ],
     [
-      "Belvederebos",
-      0.0,
-      "surface",
-      1105
+      "Cadenza/Hoogvliet",
+      null,
+      "underground",
+      507
     ],
     [
-      "Albrandswaard",
-      0.0,
-      "surface",
-      1463
-    ],
-    [
-      "Ingenieur Veltplein",
-      0.0,
-      "surface",
-      1591
-    ],
-    [
-      "P+R NS-station Rokkeveen",
-      0.0,
-      "surface",
-      1798
-    ],
-    [
-      "Silverdome",
-      0.0,
-      "surface",
-      1932
+      "Stadshart P2 Onderlangs",
+      null,
+      "garage",
+      523
     ]
   ],
   "zuid-scharwoude": [
-    [
-      "P+R Heerhugowaard Handelsstraat",
-      0.0,
-      "pr",
-      2068
-    ],
-    [
-      "P+R Umbriëllaan",
-      0.0,
-      "pr",
-      2313
-    ],
     [
       "Broekerplein",
       null,
@@ -7166,25 +7624,63 @@
       1155
     ],
     [
+      "P+R Heerhugowaard Handelsstraat",
+      0.0,
+      "pr",
+      2068
+    ],
+    [
       "Stationsplein 1 Parking",
       null,
       "surface",
       2166
+    ],
+    [
+      "P+R Umbriëllaan",
+      0.0,
+      "pr",
+      2313
+    ]
+  ],
+  "zuidhorn": [
+    [
+      "Kiss & Ride",
+      null,
+      "street",
+      268
+    ],
+    [
+      "P+R Zuidhorn",
+      null,
+      "pr",
+      324
+    ],
+    [
+      "P+R Zuidhorn P1",
+      0.0,
+      "surface",
+      355
+    ],
+    [
+      "Marktplein",
+      null,
+      "surface",
+      436
+    ],
+    [
+      "P+R Zuidhorn P2",
+      0.0,
+      "surface",
+      438
+    ],
+    [
+      "Overtuinen",
+      0.0,
+      "underground",
+      540
     ]
   ],
   "zutphen": [
-    [
-      "Waterkwartier",
-      0.0,
-      "surface",
-      641
-    ],
-    [
-      "Bussenweide",
-      0.0,
-      "surface",
-      1826
-    ],
     [
       "Miroterrein",
       null,
@@ -7208,6 +7704,18 @@
       null,
       "surface",
       393
+    ],
+    [
+      "Hagepoortplein",
+      null,
+      "surface",
+      480
+    ],
+    [
+      "'s Gravenhof",
+      null,
+      "surface",
+      491
     ]
   ],
   "zwijndrecht": [
@@ -7250,18 +7758,6 @@
   ],
   "zwolle": [
     [
-      "Jumbo Parking",
-      0.0,
-      "surface",
-      776
-    ],
-    [
-      "Parkeerplaats Winkelcentrum AA-Landen",
-      0.0,
-      "surface",
-      1857
-    ],
-    [
       "Parkeergarage Noordereiland",
       null,
       "garage",
@@ -7284,6 +7780,18 @@
       null,
       "surface",
       482
+    ],
+    [
+      "Schuttevaerkade",
+      null,
+      "surface",
+      495
+    ],
+    [
+      "Van Karnebeekstraat",
+      null,
+      "surface",
+      531
     ]
   ]
 }

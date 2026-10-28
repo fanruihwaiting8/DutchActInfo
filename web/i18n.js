@@ -76,7 +76,7 @@
       postcodeReset: 'Reset',
       postcodeOk: function (place) { return 'Travel times are measured from ' + place + '.'; },
       postcodeBad: 'Enter the first four digits of a Dutch postcode.',
-      aboutGuide: 'Each activity has a travel guide: the nearest train station, a transit route link, and nearby car parks sorted from the most expensive down. Parking prices come from OpenStreetMap and can be out of date, so treat them as a rough guide.',
+      aboutGuide: 'Each activity has a travel guide: the nearest train station, a transit route link, and nearby car parks listed from the closest outwards, each with its distance and hourly rate. Parking prices come from OpenStreetMap and can be out of date, so treat them as a rough guide.',
       guideTitle: 'How to get there',
       ptHeading: 'Public transport: ',
       ptStation: function (station, km) {
@@ -85,15 +85,14 @@
       ptNoStation: 'no train station nearby, check bus or tram',
       ptPlan: 'Plan the route \u2192',
       parkingHeading: 'Parking: ',
-      parkingSorted: 'most expensive first',
+      parkingSorted: 'nearest the city centre first, with distance and hourly rate',
       parkingNone: 'no car park data for this city',
       parkingSearch: 'Search parking \u2192',
       parkingRate: function (price) { return '\u20ac' + price.toFixed(2) + '/h'; },
       parkingFree: 'free',
       parkingUnknown: 'price unknown',
       parkingDistance: function (metres) {
-        return metres < 1000 ? metres + ' m from centre'
-          : (metres / 1000).toFixed(1) + ' km from centre';
+        return metres < 1000 ? metres + ' m' : (metres / 1000).toFixed(1) + ' km';
       },
       parkingKinds: {
         garage: 'garage', underground: 'underground', street: 'on-street',
@@ -174,7 +173,7 @@
       postcodeReset: '\u91cd\u7f6e',
       postcodeOk: function (place) { return '\u8f66\u7a0b\u4ee5' + place + '\u4e3a\u8d77\u70b9\u8ba1\u7b97\u3002'; },
       postcodeBad: '\u8bf7\u8f93\u5165\u8377\u5170\u90ae\u7f16\u7684\u524d\u56db\u4f4d\u6570\u5b57\u3002',
-      aboutGuide: '\u6bcf\u4e2a\u6d3b\u52a8\u90fd\u9644\u5e26\u4ea4\u901a\u6307\u5f15\uff1a\u6700\u8fd1\u7684\u706b\u8f66\u7ad9\u3001\u516c\u5171\u4ea4\u901a\u8def\u7ebf\u94fe\u63a5\uff0c\u4ee5\u53ca\u5468\u8fb9\u505c\u8f66\u573a\uff08\u6309\u4ef7\u683c\u7531\u9ad8\u5230\u4f4e\u6392\u5217\uff09\u3002\u505c\u8f66\u4ef7\u683c\u6765\u81ea OpenStreetMap\uff0c\u53ef\u80fd\u5df2\u8fc7\u65f6\uff0c\u4ec5\u4f9b\u53c2\u8003\u3002',
+      aboutGuide: '\u6bcf\u4e2a\u6d3b\u52a8\u90fd\u9644\u5e26\u4ea4\u901a\u6307\u5f15\uff1a\u6700\u8fd1\u7684\u706b\u8f66\u7ad9\u3001\u516c\u5171\u4ea4\u901a\u8def\u7ebf\u94fe\u63a5\uff0c\u4ee5\u53ca\u5468\u8fb9\u505c\u8f66\u573a\uff08\u6309\u8ddd\u79bb\u7531\u8fd1\u5230\u8fdc\u6392\u5217\uff0c\u5e76\u6807\u6ce8\u6bcf\u5c0f\u65f6\u4ef7\u683c\uff09\u3002\u505c\u8f66\u4ef7\u683c\u6765\u81ea OpenStreetMap\uff0c\u53ef\u80fd\u5df2\u8fc7\u65f6\uff0c\u4ec5\u4f9b\u53c2\u8003\u3002',
       guideTitle: '\u600e\u4e48\u53bb',
       ptHeading: '\u516c\u5171\u4ea4\u901a\uff1a',
       ptStation: function (station, km) {
@@ -183,15 +182,14 @@
       ptNoStation: '\u9644\u8fd1\u6ca1\u6709\u706b\u8f66\u7ad9\uff0c\u5efa\u8bae\u67e5\u516c\u4ea4\u6216\u6709\u8f68\u7535\u8f66',
       ptPlan: '\u89c4\u5212\u8def\u7ebf \u2192',
       parkingHeading: '\u505c\u8f66\uff1a',
-      parkingSorted: '\u6309\u4ef7\u683c\u7531\u9ad8\u5230\u4f4e',
+      parkingSorted: '\u6309\u8ddd\u5e02\u4e2d\u5fc3\u7531\u8fd1\u5230\u8fdc\u6392\u5217\uff0c\u542b\u8ddd\u79bb\u4e0e\u6bcf\u5c0f\u65f6\u4ef7\u683c',
       parkingNone: '\u6682\u65e0\u8be5\u57ce\u5e02\u505c\u8f66\u573a\u6570\u636e',
       parkingSearch: '\u641c\u7d22\u505c\u8f66\u573a \u2192',
       parkingRate: function (price) { return '\u20ac' + price.toFixed(2) + '/\u5c0f\u65f6'; },
       parkingFree: '\u514d\u8d39',
       parkingUnknown: '\u4ef7\u683c\u672a\u77e5',
       parkingDistance: function (metres) {
-        return metres < 1000 ? metres + ' \u7c73\uff08\u8ddd\u5e02\u4e2d\u5fc3\uff09'
-          : (metres / 1000).toFixed(1) + ' \u516c\u91cc\uff08\u8ddd\u5e02\u4e2d\u5fc3\uff09';
+        return metres < 1000 ? metres + ' \u7c73' : (metres / 1000).toFixed(1) + ' \u516c\u91cc';
       },
       parkingKinds: {
         garage: '\u505c\u8f66\u697c', underground: '\u5730\u4e0b\u8f66\u5e93', street: '\u8def\u8fb9\u8f66\u4f4d',

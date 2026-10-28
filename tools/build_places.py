@@ -18,6 +18,7 @@ Usage
   python tools/build_places.py              # fill the gaps, then write web/places.js
   python tools/build_places.py --web        # only rewrite web/places.js
   python tools/build_places.py --force      # refetch everything
+  python tools/build_places.py --force-parking  # refetch car parks only
 """
 from __future__ import annotations
 
@@ -320,11 +321,9 @@ def merge_rows(current: list, extra: list) -> list:
         seen = rows.get(row[0])
         if seen is None or row[3] < seen[3]:
             rows[row[0]] = row
-    # Paid spots first, most expensive on top; unknown prices last.
-    ordered = sorted(
-        rows.values(),
-        key=lambda row: (row[1] is None, -(row[1] or 0.0), row[3]),
-    )
+    # Closest spots first - that is what a driver actually picks, and the rate
+    # is shown next to every entry anyway.
+    ordered = sorted(rows.values(), key=lambda row: (row[3], row[0]))
     return ordered[:PARKING_PER_CITY]
 
 
@@ -442,6 +441,9 @@ def parking_targets(geo: dict, catalogue: dict) -> dict[str, list]:
 
 def main(argv: list[str]) -> int:
     force = "--force" in argv
+    # The parking sort order changed (nearest first), so the cached top-6 per
+    # city has to be refetched without also re-downloading postcodes/stations.
+    force_parking = force or "--force-parking" in argv
     web_only = "--web" in argv
 
     geo = read_json(os.path.join(DATA_DIR, "geo_nl.json"), {}) or {}
@@ -459,7 +461,7 @@ def main(argv: list[str]) -> int:
             postcodes = build_postcodes()
         if force or not stations:
             stations = build_stations()
-        parking = build_parking(parking_targets(geo, catalogue), parking, force)
+        parking = build_parking(parking_targets(geo, catalogue), parking, force_parking)
 
     if not postcodes or not stations:
         log("postcode or station cache is empty - rerun without --web")
