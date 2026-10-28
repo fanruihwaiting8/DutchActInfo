@@ -126,6 +126,7 @@ input[type="search"]::placeholder { color: #7f8da5; }
 }
 
 .pc-note.bad { color: #ff9a8a; }
+.pc-note.hint { color: var(--accent); }
 
 .chip-row {
   display: flex;
@@ -179,6 +180,8 @@ button.primary {
   font-weight: 600;
   cursor: pointer;
 }
+
+button.primary.small { padding: 9px 14px; font-size: 13px; }
 
 .select-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 

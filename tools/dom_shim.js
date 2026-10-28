@@ -284,8 +284,11 @@
     }
   }
 
-  function fire(type, node) {
-    var event = { target: node };
+  function fire(type, node, props) {
+    var event = { target: node, preventDefault: function () {} };
+    if (props) {
+      Object.keys(props).forEach(function (key) { event[key] = props[key]; });
+    }
     var current = node;
     while (current) {
       (current.listeners && current.listeners[type] || []).forEach(function (handler) {
@@ -303,6 +306,7 @@
     change: change,
     fire: fire,
     type: function (node, value) { node.value = String(value); fire('input', node); },
+    press: function (node, key) { fire('keydown', node, { key: key }); },
     opened: opened,
     refreshIds: function () {
       byId = {};

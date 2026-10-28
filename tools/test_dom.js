@@ -179,7 +179,11 @@
   var defaultTravel = travelText();
 
   dom.type(id('postcode'), '7511');
-  check('a valid postcode is accepted', id('home-note').classList.contains('bad') === false
+  check('typing alone leaves the centre untouched',
+    travelText() === defaultTravel && id('home-note').classList.contains('hint') === true);
+
+  dom.click(id('postcode-apply'));
+  check('a confirmed postcode is accepted', id('home-note').classList.contains('bad') === false
     && String(id('home-note').textContent) !== defaultNote);
   check('the accepted postcode names its own town',
     String(id('home-note').textContent).toLowerCase().indexOf('enschede') > 0);
@@ -188,8 +192,17 @@
   check('the new centre feeds the transit links',
     String(guides()[0].querySelectorAll('.guide-link')[0].href).indexOf('7511') > 0);
 
+  var firstTravel = travelText();
+  dom.type(id('postcode'), '1012');
+  dom.press(id('postcode'), 'Enter');
+  check('pressing Enter confirms the postcode too',
+    travelText() !== firstTravel && id('home-note').classList.contains('bad') === false);
+
   dom.type(id('postcode'), '99');
-  check('a half-typed postcode is flagged', id('home-note').classList.contains('bad') === true);
+  check('a half-typed postcode is not applied on its own',
+    id('home-note').classList.contains('bad') === false);
+  dom.click(id('postcode-apply'));
+  check('a half-typed postcode is flagged once confirmed', id('home-note').classList.contains('bad') === true);
 
   dom.click(id('postcode-clear'));
   check('clearing the field empties the input', String(id('postcode').value) === '');

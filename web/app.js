@@ -341,6 +341,13 @@
     el.homeNote.textContent = bad ? t('postcodeBad') : t('postcodeOk')(home);
   }
 
+  /* Shown while the box holds something the user has not confirmed yet. */
+  function showPendingNote() {
+    if (!el.homeNote) { return; }
+    el.homeNote.className = 'pc-note hint';
+    el.homeNote.textContent = t('postcodePending');
+  }
+
   /* The centre name shows up in the note and in the about dialog. */
   function refreshHomeTexts(bad) {
     if (el.aboutRadius) {
@@ -369,6 +376,7 @@
       langBtn: document.getElementById('lang-btn'),
       includeLocal: document.getElementById('include-local'),
       postcode: document.getElementById('postcode'),
+      postcodeApply: document.getElementById('postcode-apply'),
       postcodeClear: document.getElementById('postcode-clear'),
       homeNote: document.getElementById('home-note')
     };
@@ -764,27 +772,37 @@
     applyI18n();
     rebuildSelects();
 
+    function applyPostcode() {
+      var raw = el.postcode ? el.postcode.value.trim() : '';
+      var code = normalisePostcode(raw);
+      if (raw && !code) { updateHomeNote(true); return; }
+      var ok = setHome(code);
+      storePostcode(raw && ok ? code : '');
+      refreshHomeTexts(!!raw && !ok);
+      state.shown = PAGE_SIZE;
+      rebuildSelects();
+      render();
+    }
+
     if (el.postcode) {
+      /* The centre only moves on an explicit confirmation, so a half-typed
+         postcode never re-sorts the list under the user's fingers. */
       el.postcode.addEventListener('input', function () {
         var raw = el.postcode.value.trim();
-        var code = normalisePostcode(raw);
-        if (!raw) {
-          setHome('');
-          storePostcode('');
+        if (normalisePostcode(raw) === homeCode && (raw || !homeCode)) {
           refreshHomeTexts(false);
-          state.shown = PAGE_SIZE;
-          rebuildSelects();
-          render();
           return;
         }
-        if (!code) { updateHomeNote(true); return; }
-        var ok = setHome(code);
-        storePostcode(ok ? code : '');
-        refreshHomeTexts(!ok);
-        state.shown = PAGE_SIZE;
-        rebuildSelects();
-        render();
+        showPendingNote();
       });
+      el.postcode.addEventListener('keydown', function (event) {
+        if (!event || (event.key !== 'Enter' && event.keyCode !== 13)) { return; }
+        if (event.preventDefault) { event.preventDefault(); }
+        applyPostcode();
+      });
+    }
+    if (el.postcodeApply) {
+      el.postcodeApply.addEventListener('click', applyPostcode);
     }
     if (el.postcodeClear) {
       el.postcodeClear.addEventListener('click', function () {
