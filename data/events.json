@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T05:17:56Z",
+  "generated_at": "2026-11-03T05:12:08Z",
   "window": {
     "from": "2026-11-01",
     "to": "2026-12-31"
@@ -94,10 +94,10 @@
       "name": "Museum.nl museum events",
       "site": "https://www.museum.nl/",
       "category": "museum",
-      "count": 130
+      "count": 129
     }
   ],
-  "total": 435,
+  "total": 434,
   "events": [
     {
       "id": "625b43a72509",
@@ -916,7 +916,7 @@
       "url": "https://www.museum.nl/nl/huis-marseille-museum-voor-fotografie/tentoonstelling/adolphe-de-meyer-de-essentie-van-een-venetiaanse-droom",
       "image": "https://cdn.museum.nl/assets/67e21c33-214d-4ff7-9f5f-59fcb94d6ea5?w=1920&x=231&y=0&cropWidth=966&cropHeight=483&c=f5d188542e82b6d236314d59c4104688ed46edfd955a5ad3f67efa56d5c5e666",
       "start": "2026-10-24",
-      "end": "2027-03-07",
+      "end": "2027-02-14",
       "dates": [
         "2026-11-06",
         "2026-11-07",
@@ -2067,7 +2067,7 @@
       "url": "https://www.museum.nl/nl/huis-marseille-museum-voor-fotografie/tentoonstelling/maya-ines-touam-belongings",
       "image": "https://cdn.museum.nl/assets/57bb49ab-81d0-4af1-bd53-101e75232214?w=1920&c=47e1a0b3ffceaa18122175d859598bd659feb780240f81d347d5a3c131e15ae2",
       "start": "2026-10-24",
-      "end": "2027-03-07",
+      "end": "2027-02-14",
       "dates": [
         "2026-11-06",
         "2026-11-07",
@@ -7027,7 +7027,7 @@
       "city": "Gorredijk",
       "province": "Friesland",
       "venue": "Museum Opsterlân",
-      "description": "Van 5 september tot en met 31 december 2026 presenteert Museum Opsterlân de tentoonstelling Koffer vol verhalen. De tentoonstelling laat het leven en werk van Friese dienstmeisjes zien aan de hand van gevonden brieven, dagboeken, persoon...",
+      "description": "De tentoonstelling Koffer vol verhalen laat het leven en werk van Friese dienstmeisjes zien aan de hand van gevonden brieven, dagboeken, persoonlijke verhalen en indringende portretten.",
       "performers": [],
       "category": "expo",
       "seasonal": false,
@@ -9643,53 +9643,6 @@
       "category": "expo",
       "seasonal": false,
       "source": "museum_expo",
-      "distance_km": 16,
-      "travel_minutes": 26,
-      "travel": "near",
-      "local": false
-    },
-    {
-      "id": "627ca3a8c880",
-      "title": "Feest op zondag",
-      "url": "https://www.museum.nl/nl/wereldmuseum-leiden/activiteit/feest-op-zondag",
-      "image": "https://cdn.museum.nl/assets/b1b27894-de02-4d03-a8bf-61153326f38c?w=1920&c=659d0001eff327f57b4948465d04b317d5ce0947519dc5603fee081d34b40559",
-      "start": "2026-01-18",
-      "end": "2027-01-03",
-      "dates": [
-        "2026-11-06",
-        "2026-11-07",
-        "2026-11-08",
-        "2026-11-13",
-        "2026-11-14",
-        "2026-11-15",
-        "2026-11-20",
-        "2026-11-21",
-        "2026-11-22",
-        "2026-11-27",
-        "2026-11-28",
-        "2026-11-29",
-        "2026-12-04",
-        "2026-12-05",
-        "2026-12-06",
-        "2026-12-11",
-        "2026-12-12",
-        "2026-12-13",
-        "2026-12-18",
-        "2026-12-19",
-        "2026-12-20",
-        "2026-12-25",
-        "2026-12-26",
-        "2026-12-27"
-      ],
-      "time": "",
-      "city": "Leiden",
-      "province": "Zuid-Holland",
-      "venue": "Wereldmuseum Leiden",
-      "description": "Feest op zondag",
-      "performers": [],
-      "category": "museum",
-      "seasonal": false,
-      "source": "museum_event",
       "distance_km": 16,
       "travel_minutes": 26,
       "travel": "near",
